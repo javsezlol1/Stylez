@@ -51,7 +51,3 @@ Styles Editor:
 used to create styles grabbing current prompts as well as last generated images.
 allows deletion and overwriting of existing images.
 
-
-#Uninstall:
-
-unistall as you usually would you will also have to remove the Stylez.js in the WebUI 'Javascript' folder
