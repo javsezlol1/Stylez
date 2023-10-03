@@ -16,6 +16,7 @@ in the URL for extension's git repository
 
 
 #Usage
+
 Stylez is installed into the extensions folder, and it uses some CSS and JS to remove the old styles.
 the old styles will be replaced by this button
 
