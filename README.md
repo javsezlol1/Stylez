@@ -9,6 +9,10 @@ I hope the community enjoys and creates their own styles to share.
 
 #Usage
 Stylez is installed into the extensions folder, and it uses some CSS and JS to remove the old styles.
+the old styles will be replaced by this button
+
+<img src="screenshots/Screenshot 2023-10-03 141150.png" alt="Alt text" title="Optional title">
+
 
 Don’t worry though on first launch all your saved styles will be converted into individual JSON files.
 This will allow you to use them with the library. Adding blank preview images to later be changed if desired.
