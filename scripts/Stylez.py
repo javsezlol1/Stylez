@@ -87,9 +87,13 @@ def save_json_objects(json_objects):
         img.save(image_path)
 if (autoconvert == True):
     csv_file_path = os.path.join(os.getcwd(), "styles.csv")
-    json_objects = create_json_objects_from_csv(csv_file_path)
-    save_json_objects(json_objects)
-    save_settings("autoconvert", False)
+    if os.path.exists(csv_file_path):
+        json_objects = create_json_objects_from_csv(csv_file_path)
+        save_json_objects(json_objects)
+    else:
+        save_settings("autoconvert", False)
+
+
 
 # generate cards
 def generate_html_code():
