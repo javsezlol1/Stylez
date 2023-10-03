@@ -98,6 +98,12 @@ function checkElement() {
         var heightWithoutPx = parseInt(styleCardHeight, 10);
         const slider = gradioApp().querySelector("#card_thumb_size > div > div > input");
         applyValues(slider, heightWithoutPx);
+        gradioApp().getElementById('style_save_btn').addEventListener('click', () => {
+            saveRefresh();
+        });
+        gradioApp().getElementById('style_delete_btn').addEventListener('click', () => {
+            deleteRefresh();
+        });
     } else {
         setTimeout(checkElement, 100);
     }
@@ -286,4 +292,16 @@ function grabCurrentSettings() {
     const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
     const editorPromptNeggative = gradioApp().querySelector('#style_negative_txt > label > textarea');
     applyValues(editorPromptNeggative, promptNeg.value);
+}
+function deleteRefresh() {
+    const galleryrefresh = gradioApp().querySelector('#style_refresh');
+    const stylesclear = gradioApp().querySelector('#style_clear_btn');
+    galleryrefresh.click();
+    stylesclear.click();
+}
+function saveRefresh() {
+    setTimeout(() => {
+        const galleryrefresh = gradioApp().querySelector('#style_refresh');
+        galleryrefresh.click();
+    }, 1000); // 1000 milliseconds = 1 second
 }

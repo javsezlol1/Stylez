@@ -1,14 +1,9 @@
 import os
-import shutil
 import datetime
 import urllib.parse
 import gradio as gr
-import modules.extras
 from PIL import Image
-import modules.ui
-from modules.shared import opts, cmd_opts
-from modules import shared, scripts
-from modules import script_callbacks
+from modules import scripts
 from pathlib import Path
 from typing import List, Tuple
 import json
@@ -161,7 +156,7 @@ def refresh_styles(cat):
     newhtml_sendback = newhtml[0]
     newcat_sendback = newhtml[1]
     newfilecat_sendback = newhtml[2]
-    return newhtml_sendback,gr.update(choices=newcat_sendback),gr.update(choices=newfilecat_sendback)
+    return newhtml_sendback,gr.update(choices=newcat_sendback),gr.update(value="All"),gr.update(choices=newfilecat_sendback)
 
 def save_style(title, img, description, prompt, prompt_negative, filename, save_folder):
     if save_folder and filename:
@@ -183,11 +178,19 @@ def save_style(title, img, description, prompt, prompt_negative, filename, save_
             json.dump(json_data, json_file, indent=4)
         img_path = os.path.join(save_folder_path, filename + ".jpg")
         img.save(img_path)
-        msg = f"""<p style="color:green;">File Saved to '{save_folder}'</p>"""
+        msg = f"""File Saved to '{save_folder}'"""
+        info(msg)
     else:
-        msg = """<p style="color:red;">Please provide a valid save folder, category, tags.</p>"""
-    return filename_check(save_folder,filename),gr.update(value=msg)
+        msg = """Please provide a valid save folder and Filename"""
+        warning(msg)
+    return filename_check(save_folder,filename)
 
+def info(message):
+    gr.Info(message)
+
+def warning(message):
+    gr.Warning(message)
+    
 def tempfolderbox(dropdown):
     return gr.update(value=dropdown)
 
@@ -212,17 +215,16 @@ def deletestyle(folder, filename):
     json_file_path = os.path.join(base_path, filename + ".json")
     jpg_file_path = os.path.join(base_path, filename + ".jpg")
 
+
     if os.path.exists(json_file_path):
         os.remove(json_file_path)
-        print(f"Deleted {json_file_path}")
-
+        warning(f"""Stlye "{filename}" deleted!! """)
         if os.path.exists(jpg_file_path):
             os.remove(jpg_file_path)
-            print(f"Deleted {jpg_file_path}")
         else:
-            shared.log.warning(f"Error: {jpg_file_path} not found.")
+            warning(f"Error: {jpg_file_path} not found.")
     else:
-        shared.log.warning(f"Error: {json_file_path} not found.")
+        warning(f"Error: {json_file_path} not found.")
 def LoadCss():
     cssfile = """
     #Stylez { position: absolute;top: 33%;background: #0b0f19;width: 50%;z-index: 1000;right: 0;height: fit-content;display: none;}
@@ -311,7 +313,7 @@ class Stylez(scripts.Script):
                             style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=self.generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
                             style_savefolder_temp = gr.Textbox(label="Save Folder:",value="Styles", lines=1, elem_id="style_savefolder_temp",visible=False)
 
-        refresh_button.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,style_savefolder_txt])
+        refresh_button.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,category_dropdown,style_savefolder_txt])
         card_size_slider.release(fn=save_card_def,inputs=[card_size_slider])
         card_size_slider.change(fn=None,inputs=[card_size_slider],_js="cardSizeChange")
         category_dropdown.change(fn=None,_js="filterSearch",inputs=[category_dropdown,Style_Search])
@@ -319,26 +321,10 @@ class Stylez(scripts.Script):
         style_img_url_txt.change(fn=img_to_thumbnail, inputs=[style_img_url_txt],outputs=[thumbnailbox])
         style_grab_current_btn.click(fn=None,_js='grabCurrentSettings')
         style_lastgen_btn.click(fn=None,_js='grabLastGeneratedimage')
-        style_savefolder_refrsh_btn.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,style_savefolder_txt])
-        style_save_btn.click(fn=save_style, inputs=[style_title_txt, thumbnailbox, style_description_txt,style_prompt_txt, style_negative_txt, style_filename_txt, style_savefolder_temp], outputs=[style_filname_check,style_save_check])
+        style_savefolder_refrsh_btn.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,category_dropdown,style_savefolder_txt])
+        style_save_btn.click(fn=save_style, inputs=[style_title_txt, thumbnailbox, style_description_txt,style_prompt_txt, style_negative_txt, style_filename_txt, style_savefolder_temp], outputs=[style_filname_check])
         style_filename_txt.change(fn=filename_check, inputs=[style_savefolder_temp,style_filename_txt], outputs=[style_filname_check])
         style_savefolder_txt.change(fn=tempfolderbox, inputs=[style_savefolder_txt], outputs=[style_savefolder_temp])
         style_savefolder_temp.change(fn=filename_check, inputs=[style_savefolder_temp,style_filename_txt], outputs=[style_filname_check])
         style_clear_btn.click(fn=clear_style, outputs=[style_title_txt,style_img_url_txt,thumbnailbox,style_description_txt,style_prompt_txt,style_negative_txt,style_filename_txt])
         style_delete_btn.click(fn=deletestyle, inputs=[style_savefolder_temp,style_filename_txt])
-
-def on_ui_settings():
-    section = ("styleselector", "Style Selector")
-    shared.opts.add_option("styles_ui", shared.OptionInfo(
-        "radio-buttons", "How should Style Names Rendered on UI", gr.Radio, {"choices": ["radio-buttons", "select-list"]}, section=section))
-
-    shared.opts.add_option(
-        "enable_styleselector_by_default",
-        shared.OptionInfo(
-            True,
-            "enable Style Selector by default",
-            gr.Checkbox,
-            section=section
-            )
-    )
-script_callbacks.on_ui_settings(on_ui_settings)
