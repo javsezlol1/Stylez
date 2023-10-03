@@ -2,11 +2,10 @@
 
 Created a styles library with 600+ artists already included.
 
-Am hope the community enjoys and creates their own styles to share.
+I hope the community enjoys and creates their own styles to share.
 
-https://github.com/javsezlol1/Stylez/blob/main/screenshots/Screenshot%202023-10-03%20141019.png
+<img src="screenshots/Screenshot 2023-10-03 141019.png" alt="Alt text" title="Optional title">
 
-![alt text]([http://url/to/img.png](https://github.com/javsezlol1/Stylez/blob/main/screenshots/Screenshot%202023-10-03%20141019.png))
 
 #Usage
 Stylez is installed into the extensions folder, and it uses some CSS and JS to remove the old styles.
