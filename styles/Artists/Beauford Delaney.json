@@ -1,0 +1,8 @@
+{
+    "name": "Beauford Delaney",
+    "description": "art by Beauford Delaney",
+    "preview": "Beauford Delaney.jpg",
+    "prompt": "art by Beauford Delaney",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

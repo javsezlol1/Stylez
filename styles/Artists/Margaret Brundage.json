@@ -1,0 +1,8 @@
+{
+    "name": "Margaret Brundage",
+    "description": "art by Margaret Brundage",
+    "preview": "Margaret Brundage.jpg",
+    "prompt": "art by Margaret Brundage",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

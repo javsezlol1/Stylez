@@ -1,0 +1,8 @@
+{
+    "name": "Hokusai",
+    "description": "art by Hokusai",
+    "preview": "Hokusai.jpg",
+    "prompt": "art by Hokusai",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

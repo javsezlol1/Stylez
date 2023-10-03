@@ -1,0 +1,8 @@
+{
+    "name": "Jean-Baptiste Carpeaux",
+    "description": "art by Jean-Baptiste Carpeaux",
+    "preview": "Jean-Baptiste Carpeaux.jpg",
+    "prompt": "art by Jean-Baptiste Carpeaux",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

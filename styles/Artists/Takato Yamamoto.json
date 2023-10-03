@@ -1,0 +1,8 @@
+{
+    "name": "Takato Yamamoto",
+    "description": "art by Takato Yamamoto",
+    "preview": "Takato Yamamoto.jpg",
+    "prompt": "art by Takato Yamamoto",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

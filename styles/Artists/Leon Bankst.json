@@ -1,0 +1,8 @@
+{
+    "name": "Leon Bankst",
+    "description": "art by Leon Bankst",
+    "preview": "Leon Bankst.jpg",
+    "prompt": "art by Leon Bankst",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

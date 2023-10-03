@@ -1,0 +1,8 @@
+{
+    "name": "Henri Matisse",
+    "description": "art by Henri Matisse",
+    "preview": "Henri Matisse.jpg",
+    "prompt": "art by Henri Matisse",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

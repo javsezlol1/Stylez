@@ -1,0 +1,8 @@
+{
+    "name": "Ron Walotsky",
+    "description": "art by Ron Walotsky",
+    "preview": "Ron Walotsky.jpg",
+    "prompt": "art by Ron Walotsky",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

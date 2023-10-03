@@ -1,0 +1,8 @@
+{
+    "name": "Brian Despain",
+    "description": "art by Brian Despain",
+    "preview": "Brian Despain.jpg",
+    "prompt": "art by Brian Despain",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

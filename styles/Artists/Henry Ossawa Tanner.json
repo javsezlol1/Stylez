@@ -1,0 +1,8 @@
+{
+    "name": "Henry Ossawa Tanner",
+    "description": "art by Henry Ossawa Tanner",
+    "preview": "Henry Ossawa Tanner.jpg",
+    "prompt": "art by Henry Ossawa Tanner",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

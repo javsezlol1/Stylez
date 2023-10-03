@@ -1,0 +1,8 @@
+{
+    "name": "Hal Foster",
+    "description": "art by Hal Foster",
+    "preview": "Hal Foster.jpg",
+    "prompt": "art by Hal Foster",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

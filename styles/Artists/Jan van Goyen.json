@@ -1,0 +1,8 @@
+{
+    "name": "Jan van Goyen",
+    "description": "art by Jan van Goyen",
+    "preview": "Jan van Goyen.jpg",
+    "prompt": "art by Jan van Goyen",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

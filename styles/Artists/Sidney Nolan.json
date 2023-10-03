@@ -1,0 +1,8 @@
+{
+    "name": "Sidney Nolan",
+    "description": "art by Sidney Nolan",
+    "preview": "Sidney Nolan.jpg",
+    "prompt": "art by Sidney Nolan",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Hope Gangloff",
+    "description": "art by Hope Gangloff",
+    "preview": "Hope Gangloff.jpg",
+    "prompt": "art by Hope Gangloff",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Hans Bellmer",
+    "description": "art by Hans Bellmer",
+    "preview": "Hans Bellmer.jpg",
+    "prompt": "art by Hans Bellmer",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

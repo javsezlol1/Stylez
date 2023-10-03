@@ -1,0 +1,8 @@
+{
+    "name": "Peter Elson",
+    "description": "art by Peter Elson",
+    "preview": "Peter Elson.jpg",
+    "prompt": "art by Peter Elson",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Simone Martini",
+    "description": "art by Simone Martini",
+    "preview": "Simone Martini.jpg",
+    "prompt": "art by Simone Martini",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Bob Eggleton",
+    "description": "art by Bob Eggleton",
+    "preview": "Bob Eggleton.jpg",
+    "prompt": "art by Bob Eggleton",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

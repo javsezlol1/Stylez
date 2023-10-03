@@ -1,0 +1,8 @@
+{
+    "name": "Charles E. Burchfield",
+    "description": "art by Charles E. Burchfield",
+    "preview": "Charles E. Burchfield.jpg",
+    "prompt": "art by Charles E. Burchfield",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

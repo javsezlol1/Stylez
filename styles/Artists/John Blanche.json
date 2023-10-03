@@ -1,0 +1,8 @@
+{
+    "name": "John Blanche",
+    "description": "art by John Blanche",
+    "preview": "John Blanche.jpg",
+    "prompt": "art by John Blanche",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

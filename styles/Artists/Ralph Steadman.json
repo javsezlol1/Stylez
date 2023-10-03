@@ -1,0 +1,8 @@
+{
+    "name": "Ralph Steadman",
+    "description": "art by Ralph Steadman",
+    "preview": "Ralph Steadman.jpg",
+    "prompt": "art by Ralph Steadman",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

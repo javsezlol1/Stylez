@@ -1,0 +1,8 @@
+{
+    "name": "Moebius (Jean Giraud)",
+    "description": "art by Moebius (Jean Giraud)",
+    "preview": "Moebius (Jean Giraud).jpg",
+    "prompt": "art by Moebius (Jean Giraud)",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

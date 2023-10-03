@@ -1,0 +1,8 @@
+{
+    "name": "Honore Daumier",
+    "description": "art by Honore Daumier",
+    "preview": "Honore Daumier.jpg",
+    "prompt": "art by Honore Daumier",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

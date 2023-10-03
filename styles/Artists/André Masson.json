@@ -1,0 +1,8 @@
+{
+    "name": "Andr\u00e9 Masson",
+    "description": "art by Andr\u00e9 Masson",
+    "preview": "Andr\u00e9 Masson.jpg",
+    "prompt": "art by Andr\u00e9 Masson",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

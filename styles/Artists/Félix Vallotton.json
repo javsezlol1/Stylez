@@ -1,0 +1,8 @@
+{
+    "name": "F\u00e9lix Vallotton",
+    "description": "art by F\u00e9lix Vallotton",
+    "preview": "F\u00e9lix Vallotton.jpg",
+    "prompt": "art by F\u00e9lix Vallotton",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

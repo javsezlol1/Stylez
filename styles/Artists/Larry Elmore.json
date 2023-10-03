@@ -1,0 +1,8 @@
+{
+    "name": "Larry Elmore",
+    "description": "art by Larry Elmore",
+    "preview": "Larry Elmore.jpg",
+    "prompt": "art by Larry Elmore",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

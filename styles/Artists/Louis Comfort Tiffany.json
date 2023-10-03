@@ -1,0 +1,8 @@
+{
+    "name": "Louis Comfort Tiffany",
+    "description": "art by Louis Comfort Tiffany",
+    "preview": "Louis Comfort Tiffany.jpg",
+    "prompt": "art by Louis Comfort Tiffany",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

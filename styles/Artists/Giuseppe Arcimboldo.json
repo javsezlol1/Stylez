@@ -1,0 +1,8 @@
+{
+    "name": "Giuseppe Arcimboldo",
+    "description": "art by Giuseppe Arcimboldo",
+    "preview": "Giuseppe Arcimboldo.jpg",
+    "prompt": "art by Giuseppe Arcimboldo",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

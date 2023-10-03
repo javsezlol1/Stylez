@@ -1,0 +1,8 @@
+{
+    "name": "Patrick Henry Bruce",
+    "description": "art by Patrick Henry Bruce",
+    "preview": "Patrick Henry Bruce.jpg",
+    "prompt": "art by Patrick Henry Bruce",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

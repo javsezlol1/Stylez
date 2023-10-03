@@ -1,0 +1,8 @@
+{
+    "name": "Jack Butler Yeats",
+    "description": "art by Jack Butler Yeats",
+    "preview": "Jack Butler Yeats.jpg",
+    "prompt": "art by Jack Butler Yeats",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

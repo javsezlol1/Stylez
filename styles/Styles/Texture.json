@@ -1,0 +1,8 @@
+{
+    "name": "Texture",
+    "description": "Texture",
+    "preview": "Texture.jpg",
+    "prompt": "texture {prompt} top down close-up",
+    "negative": "ugly, deformed, noisy, blurry",
+    "extra": "Steps:20, Sampler:UniPC, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

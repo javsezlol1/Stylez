@@ -1,0 +1,8 @@
+{
+    "name": "Ram\u00f3n Casas",
+    "description": "art by Ram\u00f3n Casas",
+    "preview": "Ram\u00f3n Casas.jpg",
+    "prompt": "art by Ram\u00f3n Casas",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

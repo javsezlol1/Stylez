@@ -1,0 +1,8 @@
+{
+    "name": "Diego Velazquez",
+    "description": "art by Diego Velazquez",
+    "preview": "Diego Velazquez.jpg",
+    "prompt": "art by Diego Velazquez",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

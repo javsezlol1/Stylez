@@ -1,0 +1,8 @@
+{
+    "name": "Le caravaggesque",
+    "description": "art by Le caravaggesque",
+    "preview": "Le caravaggesque.jpg",
+    "prompt": "art by Le caravaggesque",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

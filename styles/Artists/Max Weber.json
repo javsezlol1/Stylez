@@ -1,0 +1,8 @@
+{
+    "name": "Max Weber",
+    "description": "art by Max Weber",
+    "preview": "Max Weber.jpg",
+    "prompt": "art by Max Weber",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Nychos",
+    "description": "art by Nychos",
+    "preview": "Nychos.jpg",
+    "prompt": "art by Nychos",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

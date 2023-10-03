@@ -1,0 +1,8 @@
+{
+    "name": "Ub Iwerks",
+    "description": "art by Ub Iwerks",
+    "preview": "Ub Iwerks.jpg",
+    "prompt": "art by Ub Iwerks",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

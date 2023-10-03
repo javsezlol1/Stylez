@@ -1,0 +1,8 @@
+{
+    "name": "Simon Bisley",
+    "description": "art by Simon Bisley",
+    "preview": "Simon Bisley.jpg",
+    "prompt": "art by Simon Bisley",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

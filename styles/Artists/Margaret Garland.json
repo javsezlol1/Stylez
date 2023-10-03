@@ -1,0 +1,8 @@
+{
+    "name": "Margaret Garland",
+    "description": "art by Margaret Garland",
+    "preview": "Margaret Garland.jpg",
+    "prompt": "art by Margaret Garland",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

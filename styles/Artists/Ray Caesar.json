@@ -1,0 +1,8 @@
+{
+    "name": "Ray Caesar",
+    "description": "art by Ray Caesar",
+    "preview": "Ray Caesar.jpg",
+    "prompt": "art by Ray Caesar",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

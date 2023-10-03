@@ -1,0 +1,8 @@
+{
+    "name": "Kilian Eng",
+    "description": "art by Kilian Eng",
+    "preview": "Kilian Eng.jpg",
+    "prompt": "art by Kilian Eng",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

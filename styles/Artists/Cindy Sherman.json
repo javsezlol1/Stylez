@@ -1,0 +1,8 @@
+{
+    "name": "Cindy Sherman",
+    "description": "art by Cindy Sherman",
+    "preview": "Cindy Sherman.jpg",
+    "prompt": "art by Cindy Sherman",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

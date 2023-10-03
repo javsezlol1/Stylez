@@ -1,0 +1,8 @@
+{
+    "name": "Harold Elliott",
+    "description": "art by Harold Elliott",
+    "preview": "Harold Elliott.jpg",
+    "prompt": "art by Harold Elliott",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

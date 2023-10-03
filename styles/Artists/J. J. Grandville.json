@@ -1,0 +1,8 @@
+{
+    "name": "J. J. Grandville",
+    "description": "art by J. J. Grandville",
+    "preview": "J. J. Grandville.jpg",
+    "prompt": "art by J. J. Grandville",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

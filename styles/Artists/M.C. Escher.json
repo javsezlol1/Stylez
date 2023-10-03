@@ -1,0 +1,8 @@
+{
+    "name": "M.C. Escher",
+    "description": "art by M.C. Escher",
+    "preview": "M.C. Escher.jpg",
+    "prompt": "art by M.C. Escher",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Johan Christian Dahl",
+    "description": "art by Johan Christian Dahl",
+    "preview": "Johan Christian Dahl.jpg",
+    "prompt": "art by Johan Christian Dahl",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Johannes Vermeer",
+    "description": "art by Johannes Vermeer",
+    "preview": "Johannes Vermeer.jpg",
+    "prompt": "art by Johannes Vermeer",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

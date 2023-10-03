@@ -1,0 +1,8 @@
+{
+    "name": "Tsutomu Nihei",
+    "description": "art by Tsutomu Nihei",
+    "preview": "Tsutomu Nihei.jpg",
+    "prompt": "art by Tsutomu Nihei",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Alexander Milne Calder",
+    "description": "art by Alexander Milne Calder",
+    "preview": "Alexander Milne Calder.jpg",
+    "prompt": "art by Alexander Milne Calder",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

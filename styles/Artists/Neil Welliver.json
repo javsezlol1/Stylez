@@ -1,0 +1,8 @@
+{
+    "name": "Neil Welliver",
+    "description": "art by Neil Welliver",
+    "preview": "Neil Welliver.jpg",
+    "prompt": "art by Neil Welliver",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

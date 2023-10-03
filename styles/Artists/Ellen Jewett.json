@@ -1,0 +1,8 @@
+{
+    "name": "Ellen Jewett",
+    "description": "art by Ellen Jewett",
+    "preview": "Ellen Jewett.jpg",
+    "prompt": "art by Ellen Jewett",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

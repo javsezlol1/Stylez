@@ -1,0 +1,8 @@
+{
+    "name": "James Jean",
+    "description": "art by James Jean",
+    "preview": "James Jean.jpg",
+    "prompt": "art by James Jean",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Steve Dillon",
+    "description": "art by Steve Dillon",
+    "preview": "Steve Dillon.jpg",
+    "prompt": "art by Steve Dillon",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

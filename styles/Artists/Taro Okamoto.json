@@ -1,0 +1,8 @@
+{
+    "name": "Taro Okamoto",
+    "description": "art by Taro Okamoto",
+    "preview": "Taro Okamoto.jpg",
+    "prompt": "art by Taro Okamoto",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

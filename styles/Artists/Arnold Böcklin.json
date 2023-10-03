@@ -1,0 +1,8 @@
+{
+    "name": "Arnold B\u00f6cklin",
+    "description": "art by Arnold B\u00f6cklin",
+    "preview": "Arnold B\u00f6cklin.jpg",
+    "prompt": "art by Arnold B\u00f6cklin",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

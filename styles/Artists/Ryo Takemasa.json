@@ -1,0 +1,8 @@
+{
+    "name": "Ryo Takemasa",
+    "description": "art by Ryo Takemasa",
+    "preview": "Ryo Takemasa.jpg",
+    "prompt": "art by Ryo Takemasa",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

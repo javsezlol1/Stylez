@@ -1,0 +1,8 @@
+{
+    "name": "Alberto Vargas",
+    "description": "art by Alberto Vargas",
+    "preview": "Alberto Vargas.jpg",
+    "prompt": "art by Alberto Vargas",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

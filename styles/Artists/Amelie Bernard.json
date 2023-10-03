@@ -1,0 +1,8 @@
+{
+    "name": "Amelie Bernard",
+    "description": "art by Amelie Bernard",
+    "preview": "Amelie Bernard.jpg",
+    "prompt": "art by Amelie Bernard",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Jean Delville",
+    "description": "art by Jean Delville",
+    "preview": "Jean Delville.jpg",
+    "prompt": "art by Jean Delville",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

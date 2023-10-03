@@ -1,0 +1,8 @@
+{
+    "name": "Liam Wong",
+    "description": "art by Liam Wong",
+    "preview": "Liam Wong.jpg",
+    "prompt": "art by Liam Wong",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

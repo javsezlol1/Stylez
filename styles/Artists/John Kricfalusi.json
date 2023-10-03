@@ -1,0 +1,8 @@
+{
+    "name": "John Kricfalusi",
+    "description": "art by John Kricfalusi",
+    "preview": "John Kricfalusi.jpg",
+    "prompt": "art by John Kricfalusi",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

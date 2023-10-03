@@ -1,0 +1,8 @@
+{
+    "name": "Pablo Picasso",
+    "description": "art by Pablo Picasso",
+    "preview": "Pablo Picasso.jpg",
+    "prompt": "art by Pablo Picasso",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Diane Arbus",
+    "description": "art by Diane Arbus",
+    "preview": "Diane Arbus.jpg",
+    "prompt": "art by Diane Arbus",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Lovis Corinth",
+    "description": "art by Lovis Corinth",
+    "preview": "Lovis Corinth.jpg",
+    "prompt": "art by Lovis Corinth",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

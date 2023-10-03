@@ -1,0 +1,8 @@
+{
+    "name": "Andr\u00e9 Kert\u00e9sz",
+    "description": "art by Andr\u00e9 Kert\u00e9sz",
+    "preview": "Andr\u00e9 Kert\u00e9sz.jpg",
+    "prompt": "art by Andr\u00e9 Kert\u00e9sz",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

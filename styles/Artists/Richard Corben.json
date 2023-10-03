@@ -1,0 +1,8 @@
+{
+    "name": "Richard Corben",
+    "description": "art by Richard Corben",
+    "preview": "Richard Corben.jpg",
+    "prompt": "art by Richard Corben",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Kaethe Butcher",
+    "description": "art by Kaethe Butcher",
+    "preview": "Kaethe Butcher.jpg",
+    "prompt": "art by Kaethe Butcher",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

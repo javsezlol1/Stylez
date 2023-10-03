@@ -1,0 +1,8 @@
+{
+    "name": "Jeffrey Catherine Jones",
+    "description": "art by Jeffrey Catherine Jones",
+    "preview": "Jeffrey Catherine Jones.jpg",
+    "prompt": "art by Jeffrey Catherine Jones",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

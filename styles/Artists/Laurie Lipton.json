@@ -1,0 +1,8 @@
+{
+    "name": "Laurie Lipton",
+    "description": "art by Laurie Lipton",
+    "preview": "Laurie Lipton.jpg",
+    "prompt": "art by Laurie Lipton",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

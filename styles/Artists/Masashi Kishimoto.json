@@ -1,0 +1,8 @@
+{
+    "name": "Masashi Kishimoto",
+    "description": "art by Masashi Kishimoto",
+    "preview": "Masashi Kishimoto.jpg",
+    "prompt": "art by Masashi Kishimoto",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Don Maitz",
+    "description": "art by Don Maitz",
+    "preview": "Don Maitz.jpg",
+    "prompt": "art by Don Maitz",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

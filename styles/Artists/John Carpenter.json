@@ -1,0 +1,8 @@
+{
+    "name": "John Carpenter",
+    "description": "art by John Carpenter",
+    "preview": "John Carpenter.jpg",
+    "prompt": "art by John Carpenter",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

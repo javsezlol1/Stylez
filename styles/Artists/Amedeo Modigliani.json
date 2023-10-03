@@ -1,0 +1,8 @@
+{
+    "name": "Amedeo Modigliani",
+    "description": "art by Amedeo Modigliani",
+    "preview": "Amedeo Modigliani.jpg",
+    "prompt": "art by Amedeo Modigliani",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Paul Klee",
+    "description": "art by Paul Klee",
+    "preview": "Paul Klee.jpg",
+    "prompt": "art by Paul Klee",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

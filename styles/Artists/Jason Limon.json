@@ -1,0 +1,8 @@
+{
+    "name": "Jason Limon",
+    "description": "art by Jason Limon",
+    "preview": "Jason Limon.jpg",
+    "prompt": "art by Jason Limon",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

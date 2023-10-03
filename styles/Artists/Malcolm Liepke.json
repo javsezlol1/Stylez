@@ -1,0 +1,8 @@
+{
+    "name": "Malcolm Liepke",
+    "description": "art by Malcolm Liepke",
+    "preview": "Malcolm Liepke.jpg",
+    "prompt": "art by Malcolm Liepke",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

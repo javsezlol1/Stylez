@@ -1,0 +1,8 @@
+{
+    "name": "Jakub Rozalski",
+    "description": "art by Jakub Rozalski",
+    "preview": "Jakub Rozalski.jpg",
+    "prompt": "art by Jakub Rozalski",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Alessio Albi",
+    "description": "art by Alessio Albi",
+    "preview": "Alessio Albi.jpg",
+    "prompt": "art by Alessio Albi",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

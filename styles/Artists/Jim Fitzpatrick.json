@@ -1,0 +1,8 @@
+{
+    "name": "Jim Fitzpatrick",
+    "description": "art by Jim Fitzpatrick",
+    "preview": "Jim Fitzpatrick.jpg",
+    "prompt": "art by Jim Fitzpatrick",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

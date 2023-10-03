@@ -1,0 +1,8 @@
+{
+    "name": "Roberto Ferri",
+    "description": "art by Roberto Ferri",
+    "preview": "Roberto Ferri.jpg",
+    "prompt": "art by Roberto Ferri",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

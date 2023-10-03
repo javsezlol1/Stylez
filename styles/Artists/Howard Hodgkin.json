@@ -1,0 +1,8 @@
+{
+    "name": "Howard Hodgkin",
+    "description": "art by Howard Hodgkin",
+    "preview": "Howard Hodgkin.jpg",
+    "prompt": "art by Howard Hodgkin",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

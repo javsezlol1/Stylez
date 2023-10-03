@@ -1,0 +1,8 @@
+{
+    "name": "Stefan Gesell",
+    "description": "art by Stefan Gesell",
+    "preview": "Stefan Gesell.jpg",
+    "prompt": "art by Stefan Gesell",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

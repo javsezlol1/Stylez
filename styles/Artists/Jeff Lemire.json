@@ -1,0 +1,8 @@
+{
+    "name": "Jeff Lemire",
+    "description": "art by Jeff Lemire",
+    "preview": "Jeff Lemire.jpg",
+    "prompt": "art by Jeff Lemire",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

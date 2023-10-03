@@ -1,0 +1,8 @@
+{
+    "name": "J.M.W. Turner",
+    "description": "art by J.M.W. Turner",
+    "preview": "J.M.W. Turner.jpg",
+    "prompt": "art by J.M.W. Turner",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

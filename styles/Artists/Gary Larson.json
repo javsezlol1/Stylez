@@ -1,0 +1,8 @@
+{
+    "name": "Gary Larson",
+    "description": "art by Gary Larson",
+    "preview": "Gary Larson.jpg",
+    "prompt": "art by Gary Larson",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

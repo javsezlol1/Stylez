@@ -1,0 +1,8 @@
+{
+    "name": "Sonia Delaunay",
+    "description": "art by Sonia Delaunay",
+    "preview": "Sonia Delaunay.jpg",
+    "prompt": "art by Sonia Delaunay",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

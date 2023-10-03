@@ -1,0 +1,8 @@
+{
+    "name": "Russ Mills",
+    "description": "art by Russ Mills",
+    "preview": "Russ Mills.jpg",
+    "prompt": "art by Russ Mills",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

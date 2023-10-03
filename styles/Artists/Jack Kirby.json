@@ -1,0 +1,8 @@
+{
+    "name": "Jack Kirby",
+    "description": "art by Jack Kirby",
+    "preview": "Jack Kirby.jpg",
+    "prompt": "art by Jack Kirby",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

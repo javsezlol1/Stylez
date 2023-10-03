@@ -1,0 +1,8 @@
+{
+    "name": "Lisa Frank",
+    "description": "art by Lisa Frank",
+    "preview": "Lisa Frank.jpg",
+    "prompt": "art by Lisa Frank",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

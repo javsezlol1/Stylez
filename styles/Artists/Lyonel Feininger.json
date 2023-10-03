@@ -1,0 +1,8 @@
+{
+    "name": "Lyonel Feininger",
+    "description": "art by Lyonel Feininger",
+    "preview": "Lyonel Feininger.jpg",
+    "prompt": "art by Lyonel Feininger",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

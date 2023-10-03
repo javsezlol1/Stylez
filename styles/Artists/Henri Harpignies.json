@@ -1,0 +1,8 @@
+{
+    "name": "Henri Harpignies",
+    "description": "art by Henri Harpignies",
+    "preview": "Henri Harpignies.jpg",
+    "prompt": "art by Henri Harpignies",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

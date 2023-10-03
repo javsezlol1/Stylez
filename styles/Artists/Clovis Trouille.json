@@ -1,0 +1,8 @@
+{
+    "name": "Clovis Trouille",
+    "description": "art by Clovis Trouille",
+    "preview": "Clovis Trouille.jpg",
+    "prompt": "art by Clovis Trouille",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

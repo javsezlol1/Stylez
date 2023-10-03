@@ -1,0 +1,8 @@
+{
+    "name": "Mat Collishaw",
+    "description": "art by Mat Collishaw",
+    "preview": "Mat Collishaw.jpg",
+    "prompt": "art by Mat Collishaw",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

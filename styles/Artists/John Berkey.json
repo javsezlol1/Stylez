@@ -1,0 +1,8 @@
+{
+    "name": "John Berkey",
+    "description": "art by John Berkey",
+    "preview": "John Berkey.jpg",
+    "prompt": "art by John Berkey",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

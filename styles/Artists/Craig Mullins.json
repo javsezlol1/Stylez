@@ -1,0 +1,8 @@
+{
+    "name": "Craig Mullins",
+    "description": "art by Craig Mullins",
+    "preview": "Craig Mullins.jpg",
+    "prompt": "art by Craig Mullins",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

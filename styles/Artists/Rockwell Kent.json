@@ -1,0 +1,8 @@
+{
+    "name": "Rockwell Kent",
+    "description": "art by Rockwell Kent",
+    "preview": "Rockwell Kent.jpg",
+    "prompt": "art by Rockwell Kent",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

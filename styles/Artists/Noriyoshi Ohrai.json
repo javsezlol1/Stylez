@@ -1,0 +1,8 @@
+{
+    "name": "Noriyoshi Ohrai",
+    "description": "art by Noriyoshi Ohrai",
+    "preview": "Noriyoshi Ohrai.jpg",
+    "prompt": "art by Noriyoshi Ohrai",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

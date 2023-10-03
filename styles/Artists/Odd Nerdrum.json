@@ -1,0 +1,8 @@
+{
+    "name": "Odd Nerdrum",
+    "description": "art by Odd Nerdrum",
+    "preview": "Odd Nerdrum.jpg",
+    "prompt": "art by Odd Nerdrum",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

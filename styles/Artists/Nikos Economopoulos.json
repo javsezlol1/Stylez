@@ -1,0 +1,8 @@
+{
+    "name": "Nikos Economopoulos",
+    "description": "art by Nikos Economopoulos",
+    "preview": "Nikos Economopoulos.jpg",
+    "prompt": "art by Nikos Economopoulos",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

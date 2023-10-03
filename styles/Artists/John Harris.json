@@ -1,0 +1,8 @@
+{
+    "name": "John Harris",
+    "description": "art by John Harris",
+    "preview": "John Harris.jpg",
+    "prompt": "art by John Harris",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

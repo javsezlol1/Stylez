@@ -1,0 +1,8 @@
+{
+    "name": "Damien Hirst",
+    "description": "art by Damien Hirst",
+    "preview": "Damien Hirst.jpg",
+    "prompt": "art by Damien Hirst",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Kenojuak Ashevak",
+    "description": "art by Kenojuak Ashevak",
+    "preview": "Kenojuak Ashevak.jpg",
+    "prompt": "art by Kenojuak Ashevak",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

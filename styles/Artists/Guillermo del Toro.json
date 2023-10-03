@@ -1,0 +1,8 @@
+{
+    "name": "Guillermo del Toro",
+    "description": "art by Guillermo del Toro",
+    "preview": "Guillermo del Toro.jpg",
+    "prompt": "art by Guillermo del Toro",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

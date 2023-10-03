@@ -1,0 +1,8 @@
+{
+    "name": "Paul Cezanne",
+    "description": "art by Paul Cezanne",
+    "preview": "Paul Cezanne.jpg",
+    "prompt": "art by Paul Cezanne",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

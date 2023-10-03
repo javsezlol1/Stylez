@@ -1,0 +1,8 @@
+{
+    "name": "John Constable",
+    "description": "art by John Constable",
+    "preview": "John Constable.jpg",
+    "prompt": "art by John Constable",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

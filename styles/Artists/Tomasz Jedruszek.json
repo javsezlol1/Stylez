@@ -1,0 +1,8 @@
+{
+    "name": "Tomasz Jedruszek",
+    "description": "art by Tomasz Jedruszek",
+    "preview": "Tomasz Jedruszek.jpg",
+    "prompt": "art by Tomasz Jedruszek",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

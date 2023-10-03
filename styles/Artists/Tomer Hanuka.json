@@ -1,0 +1,8 @@
+{
+    "name": "Tomer Hanuka",
+    "description": "art by Tomer Hanuka",
+    "preview": "Tomer Hanuka.jpg",
+    "prompt": "art by Tomer Hanuka",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

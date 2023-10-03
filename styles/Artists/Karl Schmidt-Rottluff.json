@@ -1,0 +1,8 @@
+{
+    "name": "Karl Schmidt-Rottluff",
+    "description": "art by Karl Schmidt-Rottluff",
+    "preview": "Karl Schmidt-Rottluff.jpg",
+    "prompt": "art by Karl Schmidt-Rottluff",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

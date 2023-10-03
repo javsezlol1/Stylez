@@ -1,0 +1,8 @@
+{
+    "name": "Filippo Lippi",
+    "description": "art by Filippo Lippi",
+    "preview": "Filippo Lippi.jpg",
+    "prompt": "art by Filippo Lippi",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

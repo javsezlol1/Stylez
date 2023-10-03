@@ -1,0 +1,8 @@
+{
+    "name": "Jacob Lawrence",
+    "description": "art by Jacob Lawrence",
+    "preview": "Jacob Lawrence.jpg",
+    "prompt": "art by Jacob Lawrence",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

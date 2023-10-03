@@ -1,0 +1,8 @@
+{
+    "name": "Franz Sedlacek",
+    "description": "art by Franz Sedlacek",
+    "preview": "Franz Sedlacek.jpg",
+    "prompt": "art by Franz Sedlacek",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

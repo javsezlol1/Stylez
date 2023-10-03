@@ -1,0 +1,8 @@
+{
+    "name": "Bernd and Hilla Becher",
+    "description": "art by Bernd and Hilla Becher",
+    "preview": "Bernd and Hilla Becher.jpg",
+    "prompt": "art by Bernd and Hilla Becher",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

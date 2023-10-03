@@ -1,0 +1,8 @@
+{
+    "name": "Clive Barker",
+    "description": "art by Clive Barker",
+    "preview": "Clive Barker.jpg",
+    "prompt": "art by Clive Barker",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "David Park",
+    "description": "art by David Park",
+    "preview": "David Park.jpg",
+    "prompt": "art by David Park",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

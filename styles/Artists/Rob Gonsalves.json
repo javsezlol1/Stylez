@@ -1,0 +1,8 @@
+{
+    "name": "Rob Gonsalves",
+    "description": "art by Rob Gonsalves",
+    "preview": "Rob Gonsalves.jpg",
+    "prompt": "art by Rob Gonsalves",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

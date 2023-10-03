@@ -1,0 +1,8 @@
+{
+    "name": "John Romita Jr",
+    "description": "art by John Romita Jr",
+    "preview": "John Romita Jr.jpg",
+    "prompt": "art by John Romita Jr",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

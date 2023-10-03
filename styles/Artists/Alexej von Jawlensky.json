@@ -1,0 +1,8 @@
+{
+    "name": "Alexej von Jawlensky",
+    "description": "art by Alexej von Jawlensky",
+    "preview": "Alexej von Jawlensky.jpg",
+    "prompt": "art by Alexej von Jawlensky",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

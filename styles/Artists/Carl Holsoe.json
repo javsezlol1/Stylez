@@ -1,0 +1,8 @@
+{
+    "name": "Carl Holsoe",
+    "description": "art by Carl Holsoe",
+    "preview": "Carl Holsoe.jpg",
+    "prompt": "art by Carl Holsoe",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

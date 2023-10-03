@@ -1,0 +1,8 @@
+{
+    "name": "Jean-Michel Basquiat",
+    "description": "art by Jean-Michel Basquiat",
+    "preview": "Jean-Michel Basquiat.jpg",
+    "prompt": "art by Jean-Michel Basquiat",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

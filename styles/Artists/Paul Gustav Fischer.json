@@ -1,0 +1,8 @@
+{
+    "name": "Paul Gustav Fischer",
+    "description": "art by Paul Gustav Fischer",
+    "preview": "Paul Gustav Fischer.jpg",
+    "prompt": "art by Paul Gustav Fischer",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

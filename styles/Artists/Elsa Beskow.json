@@ -1,0 +1,8 @@
+{
+    "name": "Elsa Beskow",
+    "description": "art by Elsa Beskow",
+    "preview": "Elsa Beskow.jpg",
+    "prompt": "art by Elsa Beskow",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

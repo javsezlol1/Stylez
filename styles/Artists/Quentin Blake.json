@@ -1,0 +1,8 @@
+{
+    "name": "Quentin Blake",
+    "description": "art by Quentin Blake",
+    "preview": "Quentin Blake.jpg",
+    "prompt": "art by Quentin Blake",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

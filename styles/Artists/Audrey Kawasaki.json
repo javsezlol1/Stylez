@@ -1,0 +1,8 @@
+{
+    "name": "Audrey Kawasaki",
+    "description": "art by Audrey Kawasaki",
+    "preview": "Audrey Kawasaki.jpg",
+    "prompt": "art by Audrey Kawasaki",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

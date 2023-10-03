@@ -1,0 +1,8 @@
+{
+    "name": "Bill Plympton",
+    "description": "art by Bill Plympton",
+    "preview": "Bill Plympton.jpg",
+    "prompt": "art by Bill Plympton",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

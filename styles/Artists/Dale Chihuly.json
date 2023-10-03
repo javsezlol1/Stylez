@@ -1,0 +1,8 @@
+{
+    "name": "Dale Chihuly",
+    "description": "art by Dale Chihuly",
+    "preview": "Dale Chihuly.jpg",
+    "prompt": "art by Dale Chihuly",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

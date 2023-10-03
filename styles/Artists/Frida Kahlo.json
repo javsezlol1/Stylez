@@ -1,0 +1,8 @@
+{
+    "name": "Frida Kahlo",
+    "description": "art by Frida Kahlo",
+    "preview": "Frida Kahlo.jpg",
+    "prompt": "art by Frida Kahlo",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Max Pechstein",
+    "description": "art by Max Pechstein",
+    "preview": "Max Pechstein.jpg",
+    "prompt": "art by Max Pechstein",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Gottfried Helnwein",
+    "description": "art by Gottfried Helnwein",
+    "preview": "Gottfried Helnwein.jpg",
+    "prompt": "art by Gottfried Helnwein",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

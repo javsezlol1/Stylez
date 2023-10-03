@@ -1,0 +1,8 @@
+{
+    "name": "William-Adolphe Bouguereau",
+    "description": "art by William-Adolphe Bouguereau",
+    "preview": "William-Adolphe Bouguereau.jpg",
+    "prompt": "art by William-Adolphe Bouguereau",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

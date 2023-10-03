@@ -1,0 +1,8 @@
+{
+    "name": "Tom\u00e0s Barcel\u00f3",
+    "description": "art by Tom\u00e0s Barcel\u00f3",
+    "preview": "Tom\u00e0s Barcel\u00f3.jpg",
+    "prompt": "art by Tom\u00e0s Barcel\u00f3",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

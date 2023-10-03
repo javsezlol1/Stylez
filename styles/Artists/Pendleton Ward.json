@@ -1,0 +1,8 @@
+{
+    "name": "Pendleton Ward",
+    "description": "art by Pendleton Ward",
+    "preview": "Pendleton Ward.jpg",
+    "prompt": "art by Pendleton Ward",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

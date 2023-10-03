@@ -1,0 +1,8 @@
+{
+    "name": "Mark Ryden",
+    "description": "art by Mark Ryden",
+    "preview": "Mark Ryden.jpg",
+    "prompt": "art by Mark Ryden",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Alex Gard",
+    "description": "art by Alex Gard",
+    "preview": "Alex Gard.jpg",
+    "prompt": "art by Alex Gard",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

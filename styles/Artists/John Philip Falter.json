@@ -1,0 +1,8 @@
+{
+    "name": "John Philip Falter",
+    "description": "art by John Philip Falter",
+    "preview": "John Philip Falter.jpg",
+    "prompt": "art by John Philip Falter",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

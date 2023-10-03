@@ -1,0 +1,8 @@
+{
+    "name": "Candido Portinari",
+    "description": "art by Candido Portinari",
+    "preview": "Candido Portinari.jpg",
+    "prompt": "art by Candido Portinari",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

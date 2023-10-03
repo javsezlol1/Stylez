@@ -1,0 +1,8 @@
+{
+    "name": "Leonardo da Vinci",
+    "description": "art by Leonardo da Vinci",
+    "preview": "Leonardo da Vinci.jpg",
+    "prompt": "art by Leonardo da Vinci",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

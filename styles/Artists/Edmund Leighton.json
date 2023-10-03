@@ -1,0 +1,8 @@
+{
+    "name": "Edmund Leighton",
+    "description": "art by Edmund Leighton",
+    "preview": "Edmund Leighton.jpg",
+    "prompt": "art by Edmund Leighton",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

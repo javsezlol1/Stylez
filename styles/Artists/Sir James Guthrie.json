@@ -1,0 +1,8 @@
+{
+    "name": "Sir James Guthrie",
+    "description": "art by Sir James Guthrie",
+    "preview": "Sir James Guthrie.jpg",
+    "prompt": "art by Sir James Guthrie",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

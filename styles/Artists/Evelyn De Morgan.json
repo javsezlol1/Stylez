@@ -1,0 +1,8 @@
+{
+    "name": "Evelyn De Morgan",
+    "description": "art by Evelyn De Morgan",
+    "preview": "Evelyn De Morgan.jpg",
+    "prompt": "art by Evelyn De Morgan",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

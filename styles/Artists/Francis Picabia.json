@@ -1,0 +1,8 @@
+{
+    "name": "Francis Picabia",
+    "description": "art by Francis Picabia",
+    "preview": "Francis Picabia.jpg",
+    "prompt": "art by Francis Picabia",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

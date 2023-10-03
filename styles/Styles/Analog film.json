@@ -1,0 +1,8 @@
+{
+    "name": "Analog film",
+    "description": "Analog film",
+    "preview": "Analog film.jpg",
+    "prompt": "analog film photo {prompt} . faded film, desaturated, 35mm photo, grainy, vignette, vintage, Kodachrome, Lomography, stained, highly detailed, found footage",
+    "negative": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

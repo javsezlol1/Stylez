@@ -1,0 +1,8 @@
+{
+    "name": "Georgia O'Keeffe",
+    "description": "art by Georgia O'Keeffe",
+    "preview": "Georgia O'Keeffe.jpg",
+    "prompt": "art by Georgia O'Keeffe",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

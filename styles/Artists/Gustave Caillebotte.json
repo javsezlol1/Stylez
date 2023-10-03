@@ -1,0 +1,8 @@
+{
+    "name": "Gustave Caillebotte",
+    "description": "art by Gustave Caillebotte",
+    "preview": "Gustave Caillebotte.jpg",
+    "prompt": "art by Gustave Caillebotte",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

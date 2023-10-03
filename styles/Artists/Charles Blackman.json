@@ -1,0 +1,8 @@
+{
+    "name": "Charles Blackman",
+    "description": "art by Charles Blackman",
+    "preview": "Charles Blackman.jpg",
+    "prompt": "art by Charles Blackman",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

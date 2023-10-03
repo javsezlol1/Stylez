@@ -1,0 +1,8 @@
+{
+    "name": "Francisco Goya",
+    "description": "art by Francisco Goya",
+    "preview": "Francisco Goya.jpg",
+    "prompt": "art by Francisco Goya",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

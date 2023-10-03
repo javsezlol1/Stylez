@@ -1,0 +1,8 @@
+{
+    "name": "Gerhard Munthe",
+    "description": "art by Gerhard Munthe",
+    "preview": "Gerhard Munthe.jpg",
+    "prompt": "art by Gerhard Munthe",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "John Singer Sargent",
+    "description": "art by John Singer Sargent",
+    "preview": "John Singer Sargent.jpg",
+    "prompt": "art by John Singer Sargent",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

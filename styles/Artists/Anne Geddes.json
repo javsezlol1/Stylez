@@ -1,0 +1,8 @@
+{
+    "name": "Anne Geddes",
+    "description": "art by Anne Geddes",
+    "preview": "Anne Geddes.jpg",
+    "prompt": "art by Anne Geddes",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

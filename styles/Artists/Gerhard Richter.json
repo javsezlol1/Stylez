@@ -1,0 +1,8 @@
+{
+    "name": "Gerhard Richter",
+    "description": "art by Gerhard Richter",
+    "preview": "Gerhard Richter.jpg",
+    "prompt": "art by Gerhard Richter",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

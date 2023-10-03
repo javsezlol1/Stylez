@@ -1,0 +1,8 @@
+{
+    "name": "Lee Madgwick",
+    "description": "art by Lee Madgwick",
+    "preview": "Lee Madgwick.jpg",
+    "prompt": "art by Lee Madgwick",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

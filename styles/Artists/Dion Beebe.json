@@ -1,0 +1,8 @@
+{
+    "name": "Dion Beebe",
+    "description": "art by Dion Beebe",
+    "preview": "Dion Beebe.jpg",
+    "prompt": "art by Dion Beebe",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

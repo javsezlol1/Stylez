@@ -1,0 +1,8 @@
+{
+    "name": "Alberto Giacometti",
+    "description": "art by Alberto Giacometti",
+    "preview": "Alberto Giacometti.jpg",
+    "prompt": "art by Alberto Giacometti",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

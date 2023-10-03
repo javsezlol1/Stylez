@@ -1,0 +1,8 @@
+{
+    "name": "Marc Simonetti",
+    "description": "art by Marc Simonetti",
+    "preview": "Marc Simonetti.jpg",
+    "prompt": "art by Marc Simonetti",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

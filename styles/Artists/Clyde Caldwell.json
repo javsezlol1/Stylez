@@ -1,0 +1,8 @@
+{
+    "name": "Clyde Caldwell",
+    "description": "art by Clyde Caldwell",
+    "preview": "Clyde Caldwell.jpg",
+    "prompt": "art by Clyde Caldwell",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

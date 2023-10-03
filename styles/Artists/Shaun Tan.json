@@ -1,0 +1,8 @@
+{
+    "name": "Shaun Tan",
+    "description": "art by Shaun Tan",
+    "preview": "Shaun Tan.jpg",
+    "prompt": "art by Shaun Tan",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

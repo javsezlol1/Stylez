@@ -1,0 +1,8 @@
+{
+    "name": "Bruce Pennington",
+    "description": "art by Bruce Pennington",
+    "preview": "Bruce Pennington.jpg",
+    "prompt": "art by Bruce Pennington",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

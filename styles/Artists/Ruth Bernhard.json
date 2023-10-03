@@ -1,0 +1,8 @@
+{
+    "name": "Ruth Bernhard",
+    "description": "art by Ruth Bernhard",
+    "preview": "Ruth Bernhard.jpg",
+    "prompt": "art by Ruth Bernhard",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

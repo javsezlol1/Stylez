@@ -1,0 +1,8 @@
+{
+    "name": "Giacomo Balla",
+    "description": "art by Giacomo Balla",
+    "preview": "Giacomo Balla.jpg",
+    "prompt": "art by Giacomo Balla",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

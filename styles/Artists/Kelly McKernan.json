@@ -1,0 +1,8 @@
+{
+    "name": "Kelly McKernan",
+    "description": "art by Kelly McKernan",
+    "preview": "Kelly McKernan.jpg",
+    "prompt": "art by Kelly McKernan",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

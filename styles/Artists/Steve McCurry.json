@@ -1,0 +1,8 @@
+{
+    "name": "Steve McCurry",
+    "description": "art by Steve McCurry",
+    "preview": "Steve McCurry.jpg",
+    "prompt": "art by Steve McCurry",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

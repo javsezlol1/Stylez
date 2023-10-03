@@ -1,0 +1,8 @@
+{
+    "name": "Randolph Caldecott",
+    "description": "art by Randolph Caldecott",
+    "preview": "Randolph Caldecott.jpg",
+    "prompt": "art by Randolph Caldecott",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

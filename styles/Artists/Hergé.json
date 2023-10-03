@@ -1,0 +1,8 @@
+{
+    "name": "Herg\u00e9",
+    "description": "art by Herg\u00e9",
+    "preview": "Herg\u00e9.jpg",
+    "prompt": "art by Herg\u00e9",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

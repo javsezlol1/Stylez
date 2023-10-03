@@ -1,0 +1,8 @@
+{
+    "name": "Nick Knight",
+    "description": "art by Nick Knight",
+    "preview": "Nick Knight.jpg",
+    "prompt": "art by Nick Knight",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

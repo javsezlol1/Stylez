@@ -1,0 +1,8 @@
+{
+    "name": "Anthony van Dyck",
+    "description": "art by Anthony van Dyck",
+    "preview": "Anthony van Dyck.jpg",
+    "prompt": "art by Anthony van Dyck",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Lowpoly",
+    "description": "Lowpoly",
+    "preview": "Lowpoly.jpg",
+    "prompt": "low-poly style {prompt} . low-poly game art, polygon mesh, jagged, blocky, wireframe edges, centered composition",
+    "negative": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

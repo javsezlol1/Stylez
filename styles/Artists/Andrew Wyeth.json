@@ -1,0 +1,8 @@
+{
+    "name": "Andrew Wyeth",
+    "description": "art by Andrew Wyeth",
+    "preview": "Andrew Wyeth.jpg",
+    "prompt": "art by Andrew Wyeth",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

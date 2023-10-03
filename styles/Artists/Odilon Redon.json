@@ -1,0 +1,8 @@
+{
+    "name": "Odilon Redon",
+    "description": "art by Odilon Redon",
+    "preview": "Odilon Redon.jpg",
+    "prompt": "art by Odilon Redon",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

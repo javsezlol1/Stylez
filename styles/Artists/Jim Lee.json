@@ -1,0 +1,8 @@
+{
+    "name": "Jim Lee",
+    "description": "art by Jim Lee",
+    "preview": "Jim Lee.jpg",
+    "prompt": "art by Jim Lee",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

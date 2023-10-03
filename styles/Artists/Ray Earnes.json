@@ -1,0 +1,8 @@
+{
+    "name": "Ray Earnes",
+    "description": "art by Ray Earnes",
+    "preview": "Ray Earnes.jpg",
+    "prompt": "art by Ray Earnes",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

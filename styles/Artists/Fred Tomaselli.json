@@ -1,0 +1,8 @@
+{
+    "name": "Fred Tomaselli",
+    "description": "art by Fred Tomaselli",
+    "preview": "Fred Tomaselli.jpg",
+    "prompt": "art by Fred Tomaselli",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

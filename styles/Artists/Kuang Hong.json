@@ -1,0 +1,8 @@
+{
+    "name": "Kuang Hong",
+    "description": "art by Kuang Hong",
+    "preview": "Kuang Hong.jpg",
+    "prompt": "art by Kuang Hong",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

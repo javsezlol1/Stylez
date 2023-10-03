@@ -1,0 +1,8 @@
+{
+    "name": "Tim Burton",
+    "description": "art by Tim Burton",
+    "preview": "Tim Burton.jpg",
+    "prompt": "art by Tim Burton",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

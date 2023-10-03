@@ -1,0 +1,8 @@
+{
+    "name": "H. R. Giger",
+    "description": "art by H. R. Giger",
+    "preview": "H. R. Giger.jpg",
+    "prompt": "art by H. R. Giger",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

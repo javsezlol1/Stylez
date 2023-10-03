@@ -1,0 +1,8 @@
+{
+    "name": "Clive Madgwick",
+    "description": "art by Clive Madgwick",
+    "preview": "Clive Madgwick.jpg",
+    "prompt": "art by Clive Madgwick",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

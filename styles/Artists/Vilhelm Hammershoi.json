@@ -1,0 +1,8 @@
+{
+    "name": "Vilhelm Hammershoi",
+    "description": "art by Vilhelm Hammershoi",
+    "preview": "Vilhelm Hammershoi.jpg",
+    "prompt": "art by Vilhelm Hammershoi",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

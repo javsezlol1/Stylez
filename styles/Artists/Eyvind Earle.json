@@ -1,0 +1,8 @@
+{
+    "name": "Eyvind Earle",
+    "description": "art by Eyvind Earle",
+    "preview": "Eyvind Earle.jpg",
+    "prompt": "art by Eyvind Earle",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

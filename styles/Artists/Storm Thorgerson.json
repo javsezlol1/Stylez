@@ -1,0 +1,8 @@
+{
+    "name": "Storm Thorgerson",
+    "description": "art by Storm Thorgerson",
+    "preview": "Storm Thorgerson.jpg",
+    "prompt": "art by Storm Thorgerson",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

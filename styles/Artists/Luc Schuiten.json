@@ -1,0 +1,8 @@
+{
+    "name": "Luc Schuiten",
+    "description": "art by Luc Schuiten",
+    "preview": "Luc Schuiten.jpg",
+    "prompt": "art by Luc Schuiten",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

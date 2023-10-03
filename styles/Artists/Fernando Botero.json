@@ -1,0 +1,8 @@
+{
+    "name": "Fernando Botero",
+    "description": "art by Fernando Botero",
+    "preview": "Fernando Botero.jpg",
+    "prompt": "art by Fernando Botero",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

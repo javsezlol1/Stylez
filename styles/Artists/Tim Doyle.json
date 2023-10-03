@@ -1,0 +1,8 @@
+{
+    "name": "Tim Doyle",
+    "description": "art by Tim Doyle",
+    "preview": "Tim Doyle.jpg",
+    "prompt": "art by Tim Doyle",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

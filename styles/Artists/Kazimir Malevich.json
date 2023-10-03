@@ -1,0 +1,8 @@
+{
+    "name": "Kazimir Malevich",
+    "description": "art by Kazimir Malevich",
+    "preview": "Kazimir Malevich.jpg",
+    "prompt": "art by Kazimir Malevich",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

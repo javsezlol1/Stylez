@@ -1,0 +1,8 @@
+{
+    "name": "Rufino Tamayo",
+    "description": "art by Rufino Tamayo",
+    "preview": "Rufino Tamayo.jpg",
+    "prompt": "art by Rufino Tamayo",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

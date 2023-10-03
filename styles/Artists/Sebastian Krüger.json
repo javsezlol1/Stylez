@@ -1,0 +1,8 @@
+{
+    "name": "Sebastian Kr\u00fcger",
+    "description": "art by Sebastian Kr\u00fcger",
+    "preview": "Sebastian Kr\u00fcger.jpg",
+    "prompt": "art by Sebastian Kr\u00fcger",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

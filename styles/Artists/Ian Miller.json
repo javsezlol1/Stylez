@@ -1,0 +1,8 @@
+{
+    "name": "Ian Miller",
+    "description": "art by Ian Miller",
+    "preview": "Ian Miller.jpg",
+    "prompt": "art by Ian Miller",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

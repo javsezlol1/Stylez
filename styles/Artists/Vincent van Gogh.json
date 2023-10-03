@@ -1,0 +1,8 @@
+{
+    "name": "Vincent van Gogh",
+    "description": "art by Vincent van Gogh",
+    "preview": "Vincent van Gogh.jpg",
+    "prompt": "art by Vincent van Gogh",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

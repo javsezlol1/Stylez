@@ -1,0 +1,8 @@
+{
+    "name": "Rob Liefeld",
+    "description": "art by Rob Liefeld",
+    "preview": "Rob Liefeld.jpg",
+    "prompt": "art by Rob Liefeld",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

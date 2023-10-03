@@ -1,0 +1,8 @@
+{
+    "name": "Santiago Caruso",
+    "description": "art by Santiago Caruso",
+    "preview": "Santiago Caruso.jpg",
+    "prompt": "art by Santiago Caruso",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Hannah H\u00f6ch",
+    "description": "art by Hannah H\u00f6ch",
+    "preview": "Hannah H\u00f6ch.jpg",
+    "prompt": "art by Hannah H\u00f6ch",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

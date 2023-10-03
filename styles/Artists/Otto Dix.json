@@ -1,0 +1,8 @@
+{
+    "name": "Otto Dix",
+    "description": "art by Otto Dix",
+    "preview": "Otto Dix.jpg",
+    "prompt": "art by Otto Dix",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

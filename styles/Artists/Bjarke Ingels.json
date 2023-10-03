@@ -1,0 +1,8 @@
+{
+    "name": "Bjarke Ingels",
+    "description": "art by Bjarke Ingels",
+    "preview": "Bjarke Ingels.jpg",
+    "prompt": "art by Bjarke Ingels",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

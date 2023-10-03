@@ -1,0 +1,8 @@
+{
+    "name": "Maria Prymachenko",
+    "description": "art by Maria Prymachenko",
+    "preview": "Maria Prymachenko.jpg",
+    "prompt": "art by Maria Prymachenko",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

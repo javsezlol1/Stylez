@@ -1,0 +1,8 @@
+{
+    "name": "Ren\u00e9 Magritte",
+    "description": "art by Ren\u00e9 Magritte",
+    "preview": "Ren\u00e9 Magritte.jpg",
+    "prompt": "art by Ren\u00e9 Magritte",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

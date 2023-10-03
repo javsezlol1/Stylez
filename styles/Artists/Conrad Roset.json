@@ -1,0 +1,8 @@
+{
+    "name": "Conrad Roset",
+    "description": "art by Conrad Roset",
+    "preview": "Conrad Roset.jpg",
+    "prompt": "art by Conrad Roset",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

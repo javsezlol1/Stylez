@@ -1,0 +1,8 @@
+{
+    "name": "Ted Nasmith",
+    "description": "art by Ted Nasmith",
+    "preview": "Ted Nasmith.jpg",
+    "prompt": "art by Ted Nasmith",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

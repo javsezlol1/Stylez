@@ -1,0 +1,8 @@
+{
+    "name": "Andy Fairhurst",
+    "description": "art by Andy Fairhurst",
+    "preview": "Andy Fairhurst.jpg",
+    "prompt": "art by Andy Fairhurst",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "William Stout",
+    "description": "art by William Stout",
+    "preview": "William Stout.jpg",
+    "prompt": "art by William Stout",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Karel Thole",
+    "description": "art by Karel Thole",
+    "preview": "Karel Thole.jpg",
+    "prompt": "art by Karel Thole",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

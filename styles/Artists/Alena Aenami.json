@@ -1,0 +1,8 @@
+{
+    "name": "Alena Aenami",
+    "description": "art by Alena Aenami",
+    "preview": "Alena Aenami.jpg",
+    "prompt": "art by Alena Aenami",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

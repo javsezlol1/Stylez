@@ -1,0 +1,8 @@
+{
+    "name": "Joan Mir\u00f3",
+    "description": "art by Joan Mir\u00f3",
+    "preview": "Joan Mir\u00f3.jpg",
+    "prompt": "art by Joan Mir\u00f3",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

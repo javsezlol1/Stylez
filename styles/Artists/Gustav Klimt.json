@@ -1,0 +1,8 @@
+{
+    "name": "Gustav Klimt",
+    "description": "art by Gustav Klimt",
+    "preview": "Gustav Klimt.jpg",
+    "prompt": "art by Gustav Klimt",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

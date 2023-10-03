@@ -1,0 +1,8 @@
+{
+    "name": "William Henry Hunt",
+    "description": "art by William Henry Hunt",
+    "preview": "William Henry Hunt.jpg",
+    "prompt": "art by William Henry Hunt",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

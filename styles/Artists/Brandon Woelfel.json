@@ -1,0 +1,8 @@
+{
+    "name": "Brandon Woelfel",
+    "description": "art by Brandon Woelfel",
+    "preview": "Brandon Woelfel.jpg",
+    "prompt": "art by Brandon Woelfel",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

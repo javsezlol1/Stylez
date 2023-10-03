@@ -1,0 +1,8 @@
+{
+    "name": "Alfred Kubin",
+    "description": "art by Alfred Kubin",
+    "preview": "Alfred Kubin.jpg",
+    "prompt": "art by Alfred Kubin",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

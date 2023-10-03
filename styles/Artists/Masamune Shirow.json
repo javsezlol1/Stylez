@@ -1,0 +1,8 @@
+{
+    "name": "Masamune Shirow",
+    "description": "art by Masamune Shirow",
+    "preview": "Masamune Shirow.jpg",
+    "prompt": "art by Masamune Shirow",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

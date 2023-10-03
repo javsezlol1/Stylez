@@ -1,0 +1,8 @@
+{
+    "name": "Erich Heckel",
+    "description": "art by Erich Heckel",
+    "preview": "Erich Heckel.jpg",
+    "prompt": "art by Erich Heckel",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Ivan Albright",
+    "description": "art by Ivan Albright",
+    "preview": "Ivan Albright.jpg",
+    "prompt": "art by Ivan Albright",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

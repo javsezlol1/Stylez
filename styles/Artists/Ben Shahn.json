@@ -1,0 +1,8 @@
+{
+    "name": "Ben Shahn",
+    "description": "art by Ben Shahn",
+    "preview": "Ben Shahn.jpg",
+    "prompt": "art by Ben Shahn",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

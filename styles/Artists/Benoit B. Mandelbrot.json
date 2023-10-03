@@ -1,0 +1,8 @@
+{
+    "name": "Benoit B. Mandelbrot",
+    "description": "art by Benoit B. Mandelbrot",
+    "preview": "Benoit B. Mandelbrot.jpg",
+    "prompt": "art by Benoit B. Mandelbrot",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

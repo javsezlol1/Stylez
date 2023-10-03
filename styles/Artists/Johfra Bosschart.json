@@ -1,0 +1,8 @@
+{
+    "name": "Johfra Bosschart",
+    "description": "art by Johfra Bosschart",
+    "preview": "Johfra Bosschart.jpg",
+    "prompt": "art by Johfra Bosschart",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

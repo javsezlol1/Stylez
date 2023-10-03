@@ -1,0 +1,8 @@
+{
+    "name": "Marc Chagall",
+    "description": "art by Marc Chagall",
+    "preview": "Marc Chagall.jpg",
+    "prompt": "art by Marc Chagall",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

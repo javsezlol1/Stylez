@@ -1,0 +1,8 @@
+{
+    "name": "Milton Glaser",
+    "description": "art by Milton Glaser",
+    "preview": "Milton Glaser.jpg",
+    "prompt": "art by Milton Glaser",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

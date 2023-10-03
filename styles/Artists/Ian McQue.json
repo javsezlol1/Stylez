@@ -1,0 +1,8 @@
+{
+    "name": "Ian McQue",
+    "description": "art by Ian McQue",
+    "preview": "Ian McQue.jpg",
+    "prompt": "art by Ian McQue",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

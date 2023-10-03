@@ -1,0 +1,8 @@
+{
+    "name": "Irma Stern",
+    "description": "art by Irma Stern",
+    "preview": "Irma Stern.jpg",
+    "prompt": "art by Irma Stern",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

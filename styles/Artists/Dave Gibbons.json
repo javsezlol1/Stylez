@@ -1,0 +1,8 @@
+{
+    "name": "Dave Gibbons",
+    "description": "art by Dave Gibbons",
+    "preview": "Dave Gibbons.jpg",
+    "prompt": "art by Dave Gibbons",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

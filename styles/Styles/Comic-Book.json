@@ -1,0 +1,8 @@
+{
+    "name": "Comic book",
+    "description": "Comic Book Style",
+    "preview": "Comic-Book.jpg",
+    "prompt": "comic {prompt} . graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
+    "negative": "photograph, deformed, glitch, noisy, realistic, stock photo",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

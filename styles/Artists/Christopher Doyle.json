@@ -1,0 +1,8 @@
+{
+    "name": "Christopher Doyle",
+    "description": "art by Christopher Doyle",
+    "preview": "Christopher Doyle.jpg",
+    "prompt": "art by Christopher Doyle",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}

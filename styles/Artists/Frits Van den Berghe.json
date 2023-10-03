@@ -1,0 +1,8 @@
+{
+    "name": "Frits Van den Berghe",
+    "description": "art by Frits Van den Berghe",
+    "preview": "Frits Van den Berghe.jpg",
+    "prompt": "art by Frits Van den Berghe",
+    "negative": "",
+    "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
+}
