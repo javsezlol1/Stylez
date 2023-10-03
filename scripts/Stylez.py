@@ -21,15 +21,20 @@ clear_symbol = '\U0001F9F9' #🧹
 card_size_value = 0
 card_size_min = 0
 card_size_max = 0
+favourites = []
 
 def save_card_def(value):
     global card_size_value
     save_settings("card_size",value)
     card_size_value = value
 
-
 config_json = os.path.join(os.path.dirname(__file__), "config.json")
-#read settings
+
+def reload_favourites():
+    with open(config_json, "r") as json_file:
+        data = json.load(json_file)
+        global favourites
+        favourites = data["favourites"]
 
 with open(config_json, "r") as json_file:
     data = json.load(json_file)
@@ -37,6 +42,7 @@ with open(config_json, "r") as json_file:
     card_size_min = data["card_size_min"]
     card_size_max = data["card_size_max"]
     autoconvert = data["autoconvert"]
+    favourites = data["favourites"]
 
 def save_settings(setting,value):
     with open(config_json, "r") as json_file:
@@ -93,13 +99,11 @@ if (autoconvert == True):
     else:
         save_settings("autoconvert", False)
 
-
-
-# generate cards
 def generate_html_code():
+    reload_favourites()
     style = None
     style_html = ""
-    categories_list = ["All"]
+    categories_list = ["All","Favourites"]
     save_categories_list =[]
     styles_dir = os.path.join("extensions", "Stylez", "styles")
     current_time = datetime.datetime.now()
@@ -133,11 +137,20 @@ def generate_html_code():
                             json_file_path = json_file_path.replace("\\", "/")
                             encoded_filename = urllib.parse.quote(filename, safe="")
                             titlelower = str(title).lower()
+                            color = ""
+                            stylefavname =subfolder_name + "/" + filename
+                            if (stylefavname in favourites):
+                                color = "#EBD617"
+                            else:
+                                color = "#ffffff"
                             style_html += f"""
                             <div class="style_card" data-category='{subfolder_name}' data-title='{titlelower}' style="height:{card_size_value}px;">
                                 <img class="styles_thumbnail" src="{"file=" + img +"?timestamp"+ formatted_time}" alt="{title} Preview">
                                 <div class="EditStyleJson">
                                     <button onclick="editStyle('{title}','{imghack}','{description}','{prompt}','{prompt_negative}','{subfolder_name}','{encoded_filename}')">🖉</button>
+                                </div>
+                                <div class="favouriteStyleJson">
+                                    <button class="favouriteStyleBtn" style="color:{color};" onclick="addFavourite('{subfolder_name}','{encoded_filename}', this)">★</button>
                                 </div>
                                     <div onclick="applyStyle('{prompt}','{prompt_negative}')" onmouseenter="event.stopPropagation(); hoverPreviewStyle('{prompt}','{prompt_negative}')" onmouseleave="hoverPreviewStyleOut()" class="styles_overlay"></div>
                                     <div class="styles_title">{title}</div>
@@ -229,6 +242,21 @@ def deletestyle(folder, filename):
             warning(f"Error: {jpg_file_path} not found.")
     else:
         warning(f"Error: {json_file_path} not found.")
+
+def addToFavourite(style):
+ global favourites
+ if (style not in favourites):
+     favourites.append(style)
+     save_settings("favourites",favourites)
+     info("style added to favourites")
+
+def removeFavourite(style):
+ global favourites
+ if (style in favourites):
+     favourites.remove(style)
+     save_settings("favourites",favourites)
+     info("style removed from favourites")
+
 def LoadCss():
     cssfile = """
     #Stylez { position: absolute;top: 33%;background: #0b0f19;width: 50%;z-index: 1000;right: 0;height: fit-content;display: none;}
@@ -249,6 +277,7 @@ def LoadCss():
     #style_refresh{min-width:unset !important;max-width: 2vw;align-self: baseline;}
     #style_tags > label > div{margin-top: 10px;}
     .EditStyleJson{z-index: 9999;position: absolute;background-color: #00000094 !important;right: 0;bottom: 0; padding: 5px !important;}
+    .favouriteStyleJson{z-index: 9999;position: absolute;left: 0;bottom: 0; padding: 5px !important;}
     #style_command_btn_row{width: fit-content !important;align-self: end;}
     #style_filename_check_container{top:-20px;}
     #style_cards_Pref{flex-grow: 0; max-height: fit-content; bottom: 0;}
@@ -257,7 +286,9 @@ def LoadCss():
     .styles_dropdown > label > div{background-color: #00000042 !important;}
     .styles_checkbox > label > input{box-shadow: none !important;}
     #previewPromptPos > label > textarea{ max-height:63px ;}
-    #previewPromptNeg > label > textarea{ max-height:63px ;}"""
+    #previewPromptNeg > label > textarea{ max-height:63px ;}
+    .favouriteStyleBtn{font-size: 30px !important;position: absolute;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; bottom: -10px !important;left: 0px !important;}"""
+
     return cssfile
 
 class Stylez(scripts.Script):
@@ -272,7 +303,6 @@ class Stylez(scripts.Script):
         with gr.Tabs(elem_id = "Stylez"):
             with gr.TabItem(label="Style Libary",elem_id="styles_libary"):
                 with gr.Column():
-                    gr.HTML(f"""<h2 data-cardcover="" data-sidebarwidth=""></h2>""", label="Title", lines=1,visible=False)
                     with gr.Row(elem_id="style_search_search"):
                         Style_Search = gr.Textbox('', show_label=False, elem_id="style_search", placeholder="Search...", elem_classes="textbox", lines=1)
                         refresh_button = gr.Button(refresh_symbol, label="Refresh", elem_id="style_refresh", elem_classes="tool", lines=1)
@@ -289,6 +319,10 @@ class Stylez(scripts.Script):
                     with gr.Row(elem_id="stylesPreviewRow"):
                         gr.Text(elem_id="previewPromptPos",interactive=False,label="Positive:",lines=2)
                         gr.Text(elem_id="previewPromptNeg",interactive=False,label="Negative:",lines=2)
+                    with gr.Row(elem_id="stylesPreviewRow"):
+                        favourite_temp = gr.Text(elem_id="favouriteTempTxt",interactive=False,label="Positive:",lines=2,visible=False)
+                        add_favourite_btn = gr.Button(elem_id="stylezAddFavourite",visible=False)
+                        remove_favourite_btn = gr.Button(elem_id="stylezRemoveFavourite",visible=False)
             with gr.TabItem(label="Style Editor",elem_id="styles_editor"):
                 with gr.Row():
                     with gr.Column():
@@ -298,7 +332,6 @@ class Stylez(scripts.Script):
                         style_negative_txt = gr.Textbox(label="Negative:", lines=2,placeholder="Negative goes here", elem_id="style_negative_txt")
                     with gr.Column():
                         with gr.Row():
-                            style_save_check = gr.HTML("""<p id="style_filename_check" style="color:red;"></p>""",elem_id="style_save_status_container")
                             style_save_btn = gr.Button(save_symbol,label="Save Style", lines=1,elem_classes="tool", elem_id="style_save_btn")
                             style_clear_btn = gr.Button(clear_symbol,label="Clear", lines=1,elem_classes="tool" ,elem_id="style_clear_btn")
                             style_delete_btn = gr.Button(delete_style,label="Delete Style", lines=1,elem_classes="tool", elem_id="style_delete_btn")
@@ -332,3 +365,6 @@ class Stylez(scripts.Script):
         style_savefolder_temp.change(fn=filename_check, inputs=[style_savefolder_temp,style_filename_txt], outputs=[style_filname_check])
         style_clear_btn.click(fn=clear_style, outputs=[style_title_txt,style_img_url_txt,thumbnailbox,style_description_txt,style_prompt_txt,style_negative_txt,style_filename_txt])
         style_delete_btn.click(fn=deletestyle, inputs=[style_savefolder_temp,style_filename_txt])
+        add_favourite_btn.click(fn=addToFavourite, inputs=[favourite_temp])
+        remove_favourite_btn.click(fn=removeFavourite, inputs=[favourite_temp])
+

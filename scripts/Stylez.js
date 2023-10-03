@@ -1,13 +1,7 @@
 onUiLoaded(setupStylez);
-var firstrun = true;
 let orgPrompt = '';
 let orgNegative = '';
-let orgSteps = '';
-let orgSampler = '';
-let orgCFG = '';
-let orgSeed = '';
-let orgWidth = '';
-let orgHeight = '';
+
 
 function setupStylez() {
     //create new button (t2i)
@@ -97,7 +91,6 @@ function checkElement() {
         var styleCardHeight = window.getComputedStyle(firstStyleCard).height;
         var heightWithoutPx = parseInt(styleCardHeight, 10);
         const slider = gradioApp().querySelector("#card_thumb_size > div > div > input");
-        applyValues(slider, heightWithoutPx);
         gradioApp().getElementById('style_save_btn').addEventListener('click', () => {
             saveRefresh();
         });
@@ -189,6 +182,17 @@ function filterSearch(cat, search) {
             styleCards.forEach(card => {
                 card.style.display = "flex";
             });
+        } else if (cat == "Favourites") {
+            styleCards.forEach(card => {
+                var btn = card.querySelector(".favouriteStyleBtn");
+                console.log(btn);
+                let computedelem = getComputedStyle(btn);
+                if (computedelem.color === "rgb(255, 255, 255)") {
+                    card.style.display = "none";
+                } else {
+                    card.style.display = "flex";
+                }
+            });
         } else {
             styleCards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
@@ -209,6 +213,21 @@ function filterSearch(cat, search) {
                     card.style.display = "none";
                 }
             });
+        } else if (cat == "Favourites") {
+            styleCards.forEach(card => {
+                const cardTitle = card.getAttribute('data-title');
+                var btn = card.querySelector(".favouriteStyleBtn");
+                let computedelem = getComputedStyle(btn);
+                if (cardTitle.includes(searchString)) {
+                    if (computedelem.color === "rgb(255, 255, 255)") {
+                        card.style.display = "none";
+                    } else {
+                        card.style.display = "flex";
+                    }
+                } else {
+                    card.style.display = "none";
+                }
+            });
         } else {
             styleCards.forEach(card => {
                 const cardTitle = card.getAttribute('data-title');
@@ -224,7 +243,6 @@ function filterSearch(cat, search) {
 }
 
 function editStyle(title, img, description, prompt, promptNeggative, folder, filename) {
-    const tabname = getENActiveTab();
     // title
     const editorTitle = gradioApp().querySelector('#style_title_txt > label > textarea');
     applyValues(editorTitle, title);
@@ -304,4 +322,23 @@ function saveRefresh() {
         const galleryrefresh = gradioApp().querySelector('#style_refresh');
         galleryrefresh.click();
     }, 1000); // 1000 milliseconds = 1 second
+}
+
+function addFavourite(folder, filename, element) {
+    let computedelem = getComputedStyle(element);
+    const addfavouritebtn = gradioApp().querySelector('#stylezAddFavourite');
+    const removefavouritebtn = gradioApp().querySelector('#stylezRemoveFavourite');
+    filename = decodeURIComponent(filename);
+    const favTempFolder = gradioApp().querySelector('#favouriteTempTxt > label > textarea');
+    if (computedelem.color === "rgb(255, 255, 255)") {
+        element.style.color = "#EBD617";
+        applyValues(favTempFolder, folder + "/" + filename);
+        console.log("add to favourites");
+        addfavouritebtn.click();
+    } else {
+        element.style.color = "#ffffff";
+        console.log("remove from favourites");
+        applyValues(favTempFolder, folder + "/" + filename);
+        removefavouritebtn.click();
+    }
 }
