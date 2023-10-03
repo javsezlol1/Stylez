@@ -7,6 +7,14 @@ I hope the community enjoys and creates their own styles to share.
 <img src="screenshots/Screenshot 2023-10-03 141019.png" alt="Alt text" title="Optional title">
 
 
+#installation 
+launch webui normally (make sure your up-to-date) goto Extensions > Install form url and Paste
+
+https://github.com/javsezlol1/Stylez.git
+
+in the URL for extension's git repository
+
+
 #Usage
 Stylez is installed into the extensions folder, and it uses some CSS and JS to remove the old styles.
 the old styles will be replaced by this button
