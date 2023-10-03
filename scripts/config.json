@@ -2,6 +2,8 @@
     "card_size": 118,
     "card_size_min": 50,
     "card_size_max": 200,
-    "autoconvert": true,
-    "favourites": []
+    "autoconvert": false,
+    "favourites": [
+        "Artists/Akihito Tsukushi.json"
+    ]
 }

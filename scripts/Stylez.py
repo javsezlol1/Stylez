@@ -308,7 +308,7 @@ class Stylez(scripts.Script):
                         refresh_button = gr.Button(refresh_symbol, label="Refresh", elem_id="style_refresh", elem_classes="tool", lines=1)
                     with gr.Row(elem_id="style_cards_row"):
                         with gr.Column(elem_id="style_tags_column"):
-                            category_dropdown = gr.Dropdown(label="Catagory", choices=self.generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown")
+                            category_dropdown = gr.Dropdown(label="Category", choices=self.generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown")
                             with gr.Column(elem_id="style_cards_Pref"):
                                 card_size_slider = gr.Slider(value=card_size_value,minimum=card_size_min,maximum=card_size_max,label="Size:", elem_id="card_thumb_size")
                                 gr.Checkbox(label="Apply Prompt",value=True, default=True, elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
