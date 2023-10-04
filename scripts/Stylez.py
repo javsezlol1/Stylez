@@ -18,7 +18,6 @@ save_symbol = '\U0001F4BE' #💾
 delete_style = '\U0001F5D1' #🗑️
 clear_symbol = '\U0001F9F9' #🧹
 
-
 card_size_value = 0
 card_size_min = 0
 card_size_max = 0
@@ -266,59 +265,14 @@ def removeFavourite(style):
      save_settings("favourites",favourites)
      info("style removed from favourites")
 
-def LoadCss():
-    cssfile = """
-    #Stylez { position: absolute;top: 28%;background: #0b0f19;width: 50%;z-index: 1000;right: 0;height: fit-content;display: none;}
-    #style_tags_column{min-width: unset !important;max-width:8vw; background-color: #1f2937; padding: 5px; min-width: min(0px,100%) !important; border-style: solid; border-left: #e76715;}
-    #style_cards_column{height: 40vh; min-width: unset !important;width: 26vw;overflow: auto;padding-top: 10px;padding-left: 5px;}
-    .style_card{ display: flex; flex-direction: column; align-items: center; justify-content: center; width:auto;float: left; contain: content;margin-top: unset !important; margin: 5px;}
-    .styles_overlay{position: absolute;width: 100%; ;height:100% ;background-color: rgba(46, 46, 46, 0.642);opacity: 0; transition:opacity 0.5s ease;}
-    .style_card:hover .styles_overlay{ opacity: 1;}
-    .style_card:hover {box-shadow: 0px 0px 12px 1px #fff !important;}
-    .styles_thumbnail{height:inherit !important; width:auto; object-fit: contain;}
-    .styles_title{pointer-events: none;position: absolute;top: 0;left: 0;background:#00000094; padding: 2px;}
-    .styles_description{pointer-events: none;position: fixed;text-align: center; opacity: 0; transition:opacity 0.5s ease;}
-    .style_card:hover .styles_description{ opacity: 1; }
-    #txt2img_styles_popout > div{left: 0.3vw;flex-flow: column;}
-    #img2img_styles_popout > div{left: 0.3vw;flex-flow: column;}
-    #txt2img_styles_popout {border-left-style: solid;border-left-width: 2px}
-    #img2img_styles_popout {border-left-style: solid;border-left-width: 2px}
-    #style_refresh{min-width:unset !important;max-width: 2vw;align-self: baseline;}
-    #style_tags > label > div{margin-top: 10px;}
-    .EditStyleJson{z-index: 9999;position: absolute;background-color: #00000094 !important;right: 0;bottom: 0; padding: 5px !important;}
-    .favouriteStyleJson{z-index: 9999;position: absolute;left: 0;bottom: 0; padding: 5px !important;}
-    #style_command_btn_row{width: fit-content !important;align-self: end;}
-    #style_filename_check_container{top:-20px;}
-    #gradio_style_savefolder_row{top: -35px;position: relative !important;}
-    .styles_checkbox{max-width: fit-content;min-width: unset !important;}
-    .styles_dropdown > label > div{background-color: #00000042 !important;}
-    .styles_checkbox > label > input{box-shadow: none !important;}
-    #previewPromptPos > label > textarea{ max-height:63px ;}
-    #previewPromptNeg > label > textarea{ max-height:63px ;}
-    .favouriteStyleBtn{font-size: 30px !important;position: absolute;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; bottom: -10px !important;left: 0px !important;}
-    #style_quicklist_column{height:inherit ;min-width: unset !important;max-width:11vw; background-color: #1f2937; padding: 5px; min-width: min(0px,100%) !important; border-style: solid; border-left: #e76715;}
-    #styles_quicksave_list{max-height: 300px;min-height: 300px;overflow: scroll;background: #0b0f19;border-radius: 5px;padding-left: 6px !important;padding-top: 6px !important;}
-    .styles_quicksave{text-wrap: nowrap;display: flex;align-items: center;border-style: solid;background: #1f2937;border-radius:5px;border: #0b0f19;border-width: 2px;max-width: fit-content !important;min-width: -webkit-fill-available;}
-    .styles_quicksave_del{padding-left: 4px;opacity: 50%;}
-    .styles_quicksave_del:hover{opacity: 100%;}
-    .stylezquicksave_add{max-width:50%;min-width: 2.2em !important;align-content: space-around;font-size:15px !important;height:20px;}
-    .styles_quicksave_btn{display: flex;opacity: 50%;}
-    .styles_quicksave_btn:hover{opacity: 100%;}
-    .styles_quicksave_apply{border-left-style:solid;border-left-width: 5px;display: grid;}
-    #card_thumb_size{max-width: 60px;position: absolute;right: 0px;bottom: 10px;}"""
-
-    
-    return cssfile
 
 class Stylez(scripts.Script):
     generate_styles_and_tags = generate_html_code()
-    css = LoadCss()
     def __init__(self) -> None:
         super().__init__()
     def title(self):
         return "Stylez"
     def ui(self, is_img2img):
-        gr.HTML(f"""<style>{self.css}<\style>">""")
         with gr.Tabs(elem_id = "Stylez"):
             with gr.TabItem(label="Style Libary",elem_id="styles_libary"):
                 with gr.Column():
