@@ -91,6 +91,7 @@ function checkElement() {
         var styleCardHeight = window.getComputedStyle(firstStyleCard).height;
         var heightWithoutPx = parseInt(styleCardHeight, 10);
         const slider = gradioApp().querySelector("#card_thumb_size > div > div > input");
+        applyValues(slider,heightWithoutPx)
         gradioApp().getElementById('style_save_btn').addEventListener('click', () => {
             saveRefresh();
         });
@@ -108,7 +109,7 @@ function applyStyle(prompt, negative) {
     const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
     if (applyStylePrompt.checked === true) {
         const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
-        if (prompt.includes('{prompt}')) {
+        if (prompt.includes("{prompt} .")) {
             orgPrompt = promptPos.value;
             prompt = prompt.replace('{prompt} .',", "+ orgPrompt+", ");
             promptPos.value = prompt;
@@ -150,22 +151,53 @@ function applyValues(a, b) {
 }
 
 function hoverPreviewStyle(prompt, negative) {
-    const promptPos = gradioApp().querySelector(`#previewPromptPos > label > textarea`);
-    const promptNeg = gradioApp().querySelector(`#previewPromptNeg > label > textarea`);
-    promptPos.value = prompt;
-    updateInput(promptPos);
-    promptNeg.value = negative;
-    updateInput(promptNeg);
+    const enablePreviewChk = gradioApp().querySelector('#HoverOverStyle_preview > label > input');
+    const enablePreview = enablePreviewChk.checked;
+    if (enablePreview === true) {
+      const tabname = getENActiveTab();
+      const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+      const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
+      orgPrompt = promptPos.value;
+      orgNegative = promptNeg.value;
+      const previewPrompt = `${promptPos.value},${prompt}`;
+      const previewNegative = `${promptNeg.value},${negative}`;
+      const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
+      if (applyStylePrompt.checked === true) {
+        if (prompt !== '') {
+          if (prompt.includes('{prompt}')) {
+            prompt = prompt.replace('{prompt} .',", " + orgPrompt + ", ");
+            promptPos.value = prompt;
+            updateInput(promptPos);
+          } else {
+            promptPos.value = previewPrompt;
+            updateInput(promptPos);
+          }
+        }
+      }
+      const applyStyleNeg = gradioApp().querySelector('#styles_apply_neg > label > input');
+      if (applyStyleNeg.checked === true) {
+        if (negative !== '') {
+          promptNeg.value = previewNegative;
+          updateInput(promptNeg);
+        }
+      }
+    }
 }
 
 function hoverPreviewStyleOut() {
-    const promptPos = gradioApp().querySelector(`#previewPromptPos > label > textarea`);
-    const promptNeg = gradioApp().querySelector(`#previewPromptNeg > label > textarea`);
-    promptPos.value = "";
-    updateInput(promptPos);
-    promptNeg.value = "";
-    updateInput(promptNeg);
-}
+    const enablePreview = gradioApp().querySelector('#HoverOverStyle_preview > label > input').checked;
+    if (enablePreview === true) {
+      const tabname = getENActiveTab();
+      const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+      const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
+      promptPos.value = orgPrompt;
+      promptNeg.value = orgNegative;
+      updateInput(promptPos);
+      updateInput(promptNeg);
+      orgPrompt = '';
+      orgNegative = '';
+    }
+  }
 
 function cardSizeChange(value) {
     const styleCards = gradioApp().querySelectorAll('.style_card');
@@ -185,7 +217,6 @@ function filterSearch(cat, search) {
         } else if (cat == "Favourites") {
             styleCards.forEach(card => {
                 var btn = card.querySelector(".favouriteStyleBtn");
-                console.log(btn);
                 let computedelem = getComputedStyle(btn);
                 if (computedelem.color === "rgb(255, 255, 255)") {
                     card.style.display = "none";
@@ -333,12 +364,76 @@ function addFavourite(folder, filename, element) {
     if (computedelem.color === "rgb(255, 255, 255)") {
         element.style.color = "#EBD617";
         applyValues(favTempFolder, folder + "/" + filename);
-        console.log("add to favourites");
         addfavouritebtn.click();
     } else {
         element.style.color = "#ffffff";
-        console.log("remove from favourites");
         applyValues(favTempFolder, folder + "/" + filename);
         removefavouritebtn.click();
+    }
+}
+
+function addQuicksave () {
+    const ulElement = gradioApp().getElementById('styles_quicksave_list');
+    const tabname = getENActiveTab();
+    const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+    const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
+    var liElement = document.createElement('li');
+    var deleteButton = document.createElement('button');
+    var innerButton = document.createElement('button');
+    var promptParagraph = document.createElement('button');
+    var negParagraph = document.createElement('button');
+    if (promptPos.value !== "" || promptNeg.value !== "") {
+       
+        if (promptPos.value == "")
+        {
+            promptParagraph.disabled = true  
+            promptParagraph.textContent = "EMPTY"
+        }
+        else {
+            promptParagraph.disabled = false  
+            promptParagraph.textContent = promptPos.value;
+        }
+        if (promptNeg.value == "")
+        {
+            negParagraph.disabled = true
+            negParagraph.textContent = "EMPTY"
+        } else {
+            negParagraph.disabled = false
+            negParagraph.textContent = promptNeg.value;
+        }
+        liElement.className = 'styles_quicksave';
+        deleteButton.className = 'styles_quicksave_del';
+        deleteButton.textContent = '❌';
+        deleteButton.onclick = function() {
+            deletequicksave(this)
+        };
+        promptParagraph.onclick = function() {
+            applyValues(promptPos,this.textContent)
+        };
+        promptParagraph.className = 'styles_quicksave_prompt styles_quicksave_btn';
+
+        negParagraph.onclick = function() {
+            applyValues(promptNeg,this.textContent)
+        };
+        negParagraph.className = 'styles_quicksave_neg styles_quicksave_btn';
+        innerButton.className = 'styles_quicksave_apply';
+        innerButton.appendChild(promptParagraph);
+        innerButton.appendChild(negParagraph);
+        liElement.appendChild(deleteButton);
+        liElement.appendChild(innerButton);
+        ulElement.appendChild(liElement);
+    }
+}
+
+function deletequicksave(elem) {
+    const quicksave = elem.parentNode;
+    const list = quicksave.parentNode;
+    list.removeChild(quicksave);
+}
+
+function clearquicklist() {
+    const list = gradioApp().getElementById("styles_quicksave_list")
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
     }
 }

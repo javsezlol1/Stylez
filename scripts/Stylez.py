@@ -9,6 +9,7 @@ from typing import List, Tuple
 import json
 import csv
 from json import loads
+import re
 stylespath = ""
 
 refresh_symbol = '\U0001f504'  # 🔄
@@ -54,21 +55,26 @@ def save_settings(setting,value):
 def img_to_thumbnail(img):
     return gr.update(value=img)
 
+def remove_special_characters(input_string):
+    return re.sub(r'[^a-zA-Z0-9 ]', '', input_string)
+
 def create_json_objects_from_csv(csv_file):
     json_objects = []
     with open(csv_file, 'r', newline='', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
+            # Retrieve values from CSV with special character handling
             name = row.get('name', None)
             prompt = row.get('prompt', None)
             negative_prompt = row.get('negative_prompt', None)
             if name is None or prompt is None or negative_prompt is None:
                 print("Warning: Skipping row with missing values.")
                 continue
+            cleaned_name = remove_special_characters(name)
             json_data = {
-                "name": name,
+                "name": cleaned_name,
                 "description": "converted from csv",
-                "preview": f"{name}.jpg",
+                "preview": f"{cleaned_name}.jpg",
                 "prompt": prompt,
                 "negative": negative_prompt,
             }
@@ -91,11 +97,13 @@ def save_json_objects(json_objects):
         image_path = os.path.join(csv_conversion_dir, f"{json_obj['name']}.jpg")
         img = Image.open(os.path.join("extensions", "Stylez", "nopreview.jpg"))
         img.save(image_path)
+        
 if (autoconvert == True):
     csv_file_path = os.path.join(os.getcwd(), "styles.csv")
     if os.path.exists(csv_file_path):
         json_objects = create_json_objects_from_csv(csv_file_path)
         save_json_objects(json_objects)
+        save_settings("autoconvert", False)
     else:
         save_settings("autoconvert", False)
 
@@ -259,7 +267,7 @@ def removeFavourite(style):
 
 def LoadCss():
     cssfile = """
-    #Stylez { position: absolute;top: 33%;background: #0b0f19;width: 50%;z-index: 1000;right: 0;height: fit-content;display: none;}
+    #Stylez { position: absolute;top: 28%;background: #0b0f19;width: 50%;z-index: 1000;right: 0;height: fit-content;display: none;}
     #style_tags_column{min-width: unset !important;max-width:8vw; background-color: #1f2937; padding: 5px; min-width: min(0px,100%) !important; border-style: solid; border-left: #e76715;}
     #style_cards_column{height: 40vh; min-width: unset !important;width: 26vw;overflow: auto;padding-top: 10px;padding-left: 5px;}
     .style_card{ display: flex; flex-direction: column; align-items: center; justify-content: center; width:auto;float: left; contain: content;margin-top: unset !important; margin: 5px;}
@@ -280,15 +288,25 @@ def LoadCss():
     .favouriteStyleJson{z-index: 9999;position: absolute;left: 0;bottom: 0; padding: 5px !important;}
     #style_command_btn_row{width: fit-content !important;align-self: end;}
     #style_filename_check_container{top:-20px;}
-    #style_cards_Pref{flex-grow: 0; max-height: fit-content; bottom: 0;}
     #gradio_style_savefolder_row{top: -35px;position: relative !important;}
     .styles_checkbox{max-width: fit-content;min-width: unset !important;}
     .styles_dropdown > label > div{background-color: #00000042 !important;}
     .styles_checkbox > label > input{box-shadow: none !important;}
     #previewPromptPos > label > textarea{ max-height:63px ;}
     #previewPromptNeg > label > textarea{ max-height:63px ;}
-    .favouriteStyleBtn{font-size: 30px !important;position: absolute;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; bottom: -10px !important;left: 0px !important;}"""
+    .favouriteStyleBtn{font-size: 30px !important;position: absolute;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; bottom: -10px !important;left: 0px !important;}
+    #style_quicklist_column{height:inherit ;min-width: unset !important;max-width:11vw; background-color: #1f2937; padding: 5px; min-width: min(0px,100%) !important; border-style: solid; border-left: #e76715;}
+    #styles_quicksave_list{max-height: 300px;min-height: 300px;overflow: scroll;background: #0b0f19;border-radius: 5px;padding-left: 6px !important;padding-top: 6px !important;}
+    .styles_quicksave{text-wrap: nowrap;display: flex;align-items: center;border-style: solid;background: #1f2937;border-radius:5px;border: #0b0f19;border-width: 2px;max-width: fit-content !important;min-width: -webkit-fill-available;}
+    .styles_quicksave_del{padding-left: 4px;opacity: 50%;}
+    .styles_quicksave_del:hover{opacity: 100%;}
+    .stylezquicksave_add{max-width:50%;min-width: 2.2em !important;align-content: space-around;font-size:15px !important;height:20px;}
+    .styles_quicksave_btn{display: flex;opacity: 50%;}
+    .styles_quicksave_btn:hover{opacity: 100%;}
+    .styles_quicksave_apply{border-left-style:solid;border-left-width: 5px;display: grid;}
+    #card_thumb_size{max-width: 60px;position: absolute;right: 0px;bottom: 10px;}"""
 
+    
     return cssfile
 
 class Stylez(scripts.Script):
@@ -304,21 +322,25 @@ class Stylez(scripts.Script):
             with gr.TabItem(label="Style Libary",elem_id="styles_libary"):
                 with gr.Column():
                     with gr.Row(elem_id="style_search_search"):
-                        Style_Search = gr.Textbox('', show_label=False, elem_id="style_search", placeholder="Search...", elem_classes="textbox", lines=1)
+                        Style_Search = gr.Textbox('', label="Searchbox", elem_id="style_search", placeholder="Search...", elem_classes="textbox", lines=1,scale=3)
+                        category_dropdown = gr.Dropdown(label="Category", choices=self.generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown",scale=1)
                         refresh_button = gr.Button(refresh_symbol, label="Refresh", elem_id="style_refresh", elem_classes="tool", lines=1)
-                    with gr.Row(elem_id="style_cards_row"):
-                        with gr.Column(elem_id="style_tags_column"):
-                            category_dropdown = gr.Dropdown(label="Category", choices=self.generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown")
-                            with gr.Column(elem_id="style_cards_Pref"):
-                                card_size_slider = gr.Slider(value=card_size_value,minimum=card_size_min,maximum=card_size_max,label="Size:", elem_id="card_thumb_size")
-                                gr.Checkbox(label="Apply Prompt",value=True, default=True, elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
-                                gr.Checkbox(label="Apply Negative",value=True, default=True, elem_id="styles_apply_neg", elem_classes="styles_checkbox checkbox", lines=1)
+                    with gr.Row(elem_id="style_cards_row"):                        
+                        with gr.Column(elem_id="style_quicklist_column"):
+                            with gr.Row():
+                                gr.Text("QuickSave",show_label=False)
+                                with gr.Row():
+                                    stylezquicksave_add = gr.Button("Add" ,elem_classes="stylezquicksave_add")
+                                    stylezquicksave_clear = gr.Button("Clear" ,elem_classes="stylezquicksave_add")
+                            gr.HTML("""<ul id="styles_quicksave_list"></ul>""")
                         with gr.Column(elem_id="style_cards_column"):
                             with gr.Row():
                                 Styles_html=gr.HTML(self.generate_styles_and_tags[0])
                     with gr.Row(elem_id="stylesPreviewRow"):
-                        gr.Text(elem_id="previewPromptPos",interactive=False,label="Positive:",lines=2)
-                        gr.Text(elem_id="previewPromptNeg",interactive=False,label="Negative:",lines=2)
+                        gr.Checkbox(label="Apply Prompt",value=True, default=True, elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
+                        gr.Checkbox(label="Apply Negative",value=True, default=True, elem_id="styles_apply_neg", elem_classes="styles_checkbox checkbox", lines=1)
+                        gr.Checkbox(label="Hover Over Preview",value=True, default=True, elem_id="HoverOverStyle_preview", elem_classes="styles_checkbox checkbox", lines=1)
+                        card_size_slider = gr.Slider(value=card_size_value,minimum=card_size_min,maximum=card_size_max,label="Size:", elem_id="card_thumb_size")
                     with gr.Row(elem_id="stylesPreviewRow"):
                         favourite_temp = gr.Text(elem_id="favouriteTempTxt",interactive=False,label="Positive:",lines=2,visible=False)
                         add_favourite_btn = gr.Button(elem_id="stylezAddFavourite",visible=False)
@@ -367,4 +389,5 @@ class Stylez(scripts.Script):
         style_delete_btn.click(fn=deletestyle, inputs=[style_savefolder_temp,style_filename_txt])
         add_favourite_btn.click(fn=addToFavourite, inputs=[favourite_temp])
         remove_favourite_btn.click(fn=removeFavourite, inputs=[favourite_temp])
-
+        stylezquicksave_add.click(fn=None,_js="addQuicksave")
+        stylezquicksave_clear.click(fn=None,_js="clearquicklist")
