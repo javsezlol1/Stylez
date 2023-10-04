@@ -184,6 +184,7 @@ def refresh_styles(cat):
     return newhtml_sendback,gr.update(choices=newcat_sendback),gr.update(value="All"),gr.update(choices=newfilecat_sendback)
 
 def save_style(title, img, description, prompt, prompt_negative, filename, save_folder):
+    print(save_folder,filename)
     if save_folder and filename:
         if img is None or img == "":
             img = os.path.join("extensions", "Stylez", "nopreview.jpg")
@@ -370,7 +371,7 @@ class Stylez(scripts.Script):
                         with gr.Row():
                             style_savefolder_refrsh_btn = gr.Button(refresh_symbol, label="Refresh", lines=1,elem_classes="tool")
                             style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=self.generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
-                            style_savefolder_temp = gr.Textbox(label="Save Folder:",value="Styles", lines=1, elem_id="style_savefolder_temp",visible=False)
+                            style_savefolder_temp = gr.Textbox(label="Save Folder:", lines=1, elem_id="style_savefolder_temp",visible=False)
 
         refresh_button.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,category_dropdown,style_savefolder_txt])
         card_size_slider.release(fn=save_card_def,inputs=[card_size_slider])

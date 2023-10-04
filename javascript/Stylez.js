@@ -92,6 +92,9 @@ function checkElement() {
         var heightWithoutPx = parseInt(styleCardHeight, 10);
         const slider = gradioApp().querySelector("#card_thumb_size > div > div > input");
         applyValues(slider,heightWithoutPx)
+        const style_savefolder_temp = gradioApp().querySelector("#style_savefolder_temp > label > textarea")
+        console.log(style_savefolder_temp)
+        applyValues(style_savefolder_temp,"Styles")
         gradioApp().getElementById('style_save_btn').addEventListener('click', () => {
             saveRefresh();
         });
