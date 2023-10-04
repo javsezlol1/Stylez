@@ -22,7 +22,6 @@ the old styles will be replaced by this button
 
 <img src="screenshots/Screenshot 2023-10-03 141150.png" alt="Alt text" title="Optional title">
 
-
 Don’t worry though on first launch all your saved styles will be converted into individual JSON files.
 This will allow you to use them with the library. Adding blank preview images to later be changed if desired.
 
@@ -40,6 +39,17 @@ Any prompts containing the keyword: {prompt} will automatically take you current
 applying the style 3d model will result in: 
 
     professional 3d model a red house octane render, highly detailed, volumetric, dramatic lighting.
+Quicksave:
+New feature added for temporaily saving prompts.
+<img src="screenshots/Screenshot 2023-10-04 191935.png" alt="Alt text" title="Optional title">
+
+Add: Will add your current positive and negatives to a list
+Clear: Clears the list
+❌: Will delete the selected quicksave
+
+to apply your prompts back simply click either the upper propmt or lower prompt within the quicksave
+
+NOTE: these are only stored temporarily and will be deleted on relauch or refresh of the page!!!
 
 Auto Convert:
 Auto convert all your styles in your csv to JSON files ready for use with the library.
