@@ -112,9 +112,9 @@ function applyStyle(prompt, negative) {
     const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
     if (applyStylePrompt.checked === true) {
         const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
-        if (prompt.includes("{prompt} .")) {
+        if (prompt.includes("{prompt}")) {
             orgPrompt = promptPos.value;
-            prompt = prompt.replace('{prompt} .',", "+ orgPrompt+", ");
+            prompt = prompt.replace('{prompt}',", "+ orgPrompt+", ");
             promptPos.value = prompt;
             updateInput(promptPos);
         } else {
@@ -168,7 +168,7 @@ function hoverPreviewStyle(prompt, negative) {
       if (applyStylePrompt.checked === true) {
         if (prompt !== '') {
           if (prompt.includes('{prompt}')) {
-            prompt = prompt.replace('{prompt} .',", " + orgPrompt + ", ");
+            prompt = prompt.replace('{prompt}',", " + orgPrompt + ", ");
             promptPos.value = prompt;
             updateInput(promptPos);
           } else {
