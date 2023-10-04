@@ -265,7 +265,6 @@ def removeFavourite(style):
      save_settings("favourites",favourites)
      info("style removed from favourites")
 
-
 class Stylez(scripts.Script):
     generate_styles_and_tags = generate_html_code()
     def __init__(self) -> None:
