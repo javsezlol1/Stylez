@@ -2,7 +2,7 @@
     "name": "Neon punk",
     "description": "Neonpunk",
     "preview": "Neonpunk.jpg",
-    "prompt": "neonpunk style {prompt} . cyberpunk, vaporwave, neon, vibes, vibrant, stunningly beautiful, crisp, detailed, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate, professional",
+    "prompt": "neonpunk style {prompt} cyberpunk, vaporwave, neon, vibes, vibrant, stunningly beautiful, crisp, detailed, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate, professional",
     "negative": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }

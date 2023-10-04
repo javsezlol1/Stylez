@@ -2,7 +2,7 @@
     "name": "Line art",
     "description": "Line art",
     "preview": "Line art.jpg",
-    "prompt": "line art drawing {prompt} . professional, sleek, modern, minimalist, graphic, line art, vector graphics",
+    "prompt": "line art drawing {prompt} professional, sleek, modern, minimalist, graphic, line art, vector graphics",
     "negative": "anime, photorealistic, 35mm film, deformed, glitch, blurry, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, mutated, realism, realistic, impressionism, expressionism, oil, acrylic",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }

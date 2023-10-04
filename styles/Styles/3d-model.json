@@ -2,7 +2,7 @@
     "name": "3d-model",
     "description": "3d-model",
     "preview": "3d-model.jpg",
-    "prompt": "professional 3d model {prompt} . octane render, highly detailed, volumetric, dramatic lighting",
+    "prompt": "professional 3d model {prompt} octane render, highly detailed, volumetric, dramatic lighting",
     "negative": "ugly, deformed, noisy, low poly, blurry, painting",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }

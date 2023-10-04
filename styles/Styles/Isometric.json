@@ -2,7 +2,7 @@
     "name": "Isometric",
     "description": "Isometric",
     "preview": "Isometric.jpg",
-    "prompt": "isometric style {prompt} . vibrant, beautiful, crisp, detailed, ultra detailed, intricate",
+    "prompt": "isometric style {prompt} vibrant, beautiful, crisp, detailed, ultra detailed, intricate",
     "negative": "deformed, mutated, ugly, disfigured, blur, blurry, noise, noisy, realistic, photographic",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }

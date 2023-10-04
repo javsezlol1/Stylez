@@ -2,7 +2,7 @@
     "name": "Enhance",
     "description": "Detail enhancement ",
     "preview": "Enhance.jpg",
-    "prompt": "breathtaking {prompt} . award-winning, professional, highly detailed",
+    "prompt": "breathtaking {prompt} award-winning, professional, highly detailed",
     "negative": "ugly, deformed, noisy, blurry, distorted, grainy",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }
