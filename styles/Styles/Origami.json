@@ -2,7 +2,7 @@
     "name": "Origami",
     "description": "Origami",
     "preview": "Origami.jpg",
-    "prompt": "origami style {prompt} paper art, pleated paper, folded, origami art, pleats, cut and fold, centered composition",
+    "prompt": "origami style, {prompt}, paper art, pleated paper, folded, origami art, pleats, cut and fold, centered composition",
     "negative": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }

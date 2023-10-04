@@ -2,7 +2,7 @@
     "name": "pixel art",
     "description": "pixel art",
     "preview": "pixel art.jpg",
-    "prompt": "pixel-art {prompt} low-res, blocky, pixel art style, 8-bit graphics",
+    "prompt": "pixel-art, {prompt}, low-res, blocky, pixel art style, 8-bit graphics",
     "negative": "sloppy, messy, blurry, noisy, highly detailed, ultra textured, photo, realistic",
     "extra": "Steps:20, Sampler:UniPC, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }

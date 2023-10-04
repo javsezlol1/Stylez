@@ -2,7 +2,7 @@
     "name": "Craft clay",
     "description": "Craft clay",
     "preview": "Craft clay.jpg",
-    "prompt": "play-doh style {prompt} sculpture, clay art, centered composition, Claymation",
+    "prompt": "play-doh style, {prompt}, sculpture, clay art, centered composition, Claymation",
     "negative": "sloppy, messy, grainy, highly detailed, ultra textured, photo",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }

@@ -2,7 +2,7 @@
     "name": "Fantasy art",
     "description": "fantasy concept art",
     "preview": "Fantasy art.jpg",
-    "prompt": "comic {prompt} graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
+    "prompt": "comic, {prompt}, graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
     "negative": "photographic, realistic, realism, 35mm film, dslr, cropped, frame, text, deformed, glitch, noise, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, sloppy, duplicate, mutated, black and white",
     "extra": "Steps:20, Sampler:LMSD, CFG scale: 6, Seed: -1, Size: 1024x1024"
 }
