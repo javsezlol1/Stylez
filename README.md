@@ -43,6 +43,7 @@ Quicksave:
 New feature added for temporaily saving prompts.
 <img src="screenshots/Screenshot 2023-10-04 191935.png" alt="Alt text" title="Optional title">
 
+
 Add: Will add your current positive and negatives to a list
 Clear: Clears the list
 ❌: Will delete the selected quicksave
