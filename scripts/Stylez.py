@@ -270,7 +270,6 @@ def removeFavourite(style):
      info("style removed from favourites")
 
 def oldstyles(value):
-    print("this ran cunt")
     with open(config_json, "r") as json_file:
         data = json.load(json_file)
         if (data["hide_old_styles"] == True):
