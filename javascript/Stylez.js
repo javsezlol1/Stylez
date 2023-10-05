@@ -116,9 +116,7 @@ function checkElement() {
 checkElement();
 //apply styles
 function applyStyle(prompt, negative) {
-    console.log(prompt)
     prompt = removeFirstAndLastCharacter(prompt)
-    console.log(prompt)
     negative = removeFirstAndLastCharacter(negative)
     const tabname = getENActiveTab();
     const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
