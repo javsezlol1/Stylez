@@ -1,4 +1,5 @@
 import os
+import html
 import datetime
 import urllib.parse
 import gradio as gr
@@ -139,7 +140,9 @@ def generate_html_code():
                             img = os.path.join(os.path.dirname(json_file_path), preview_image)
                             img = os.path.abspath(img)
                             prompt = style.get("prompt", "")
+                            prompt = html.escape(json.dumps(prompt))
                             prompt_negative = style.get("negative", "")
+                            prompt_negative =html.escape(json.dumps(prompt_negative))
                             imghack = img.replace("\\", "/")
                             json_file_path = json_file_path.replace("\\", "/")
                             encoded_filename = urllib.parse.quote(filename, safe="")

@@ -93,7 +93,6 @@ function checkElement() {
         const slider = gradioApp().querySelector("#card_thumb_size > div > div > input");
         applyValues(slider,heightWithoutPx)
         const style_savefolder_temp = gradioApp().querySelector("#style_savefolder_temp > label > textarea")
-        console.log(style_savefolder_temp)
         applyValues(style_savefolder_temp,"Styles")
         gradioApp().getElementById('style_save_btn').addEventListener('click', () => {
             saveRefresh();
@@ -108,6 +107,10 @@ function checkElement() {
 checkElement();
 //apply styles
 function applyStyle(prompt, negative) {
+    console.log(prompt)
+    prompt = removeFirstAndLastCharacter(prompt)
+    console.log(prompt)
+    negative = removeFirstAndLastCharacter(negative)
     const tabname = getENActiveTab();
     const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
     if (applyStylePrompt.checked === true) {
@@ -121,7 +124,7 @@ function applyStyle(prompt, negative) {
             if (orgPrompt === '') {
                 orgPrompt = prompt;
             } else {
-                orgPrompt += `,${prompt}`;
+                orgPrompt += "," + prompt;
             }
             applyPrompts(promptPos, prompt);
         }
@@ -133,7 +136,7 @@ function applyStyle(prompt, negative) {
             if (orgNegative === '') {
                 orgNegative = negative;
             } else {
-                orgNegative += `,${negative}`;
+                orgNegative += "," + negative;
             }
             applyPrompts(promptNeg, negative);
         }
@@ -144,7 +147,7 @@ function applyPrompts(a, b) {
     if (a.value === '') {
         a.value = b;
     } else {
-        a.value = `${a.value},${b}`;
+        a.value +=b;
     }
     updateInput(a);
 }
@@ -153,7 +156,18 @@ function applyValues(a, b) {
     updateInput(a);
 }
 
+function removeFirstAndLastCharacter(inputString) {
+    if (inputString.length >= 2) {
+        return inputString.slice(1, -1);
+    } else {
+        inputString = "";
+        return inputString;
+    }
+}
+
 function hoverPreviewStyle(prompt, negative) {
+    prompt = removeFirstAndLastCharacter(prompt)
+    negative = removeFirstAndLastCharacter(negative)
     const enablePreviewChk = gradioApp().querySelector('#HoverOverStyle_preview > label > input');
     const enablePreview = enablePreviewChk.checked;
     if (enablePreview === true) {
@@ -278,6 +292,8 @@ function filterSearch(cat, search) {
 
 function editStyle(title, img, description, prompt, promptNeggative, folder, filename) {
     // title
+    prompt = removeFirstAndLastCharacter(prompt)
+    promptNeggative = removeFirstAndLastCharacter(promptNeggative)
     const editorTitle = gradioApp().querySelector('#style_title_txt > label > textarea');
     applyValues(editorTitle, title);
     // img
