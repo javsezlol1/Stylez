@@ -23,6 +23,7 @@ card_size_value = 0
 card_size_min = 0
 card_size_max = 0
 favourites = []
+hideoldstyles = False
 
 def save_card_def(value):
     global card_size_value
@@ -44,6 +45,7 @@ with open(config_json, "r") as json_file:
     card_size_max = data["card_size_max"]
     autoconvert = data["autoconvert"]
     favourites = data["favourites"]
+    hideoldstyles = data["hide_old_styles"]
 
 def save_settings(setting,value):
     with open(config_json, "r") as json_file:
@@ -243,7 +245,6 @@ def deletestyle(folder, filename):
     json_file_path = os.path.join(base_path, filename + ".json")
     jpg_file_path = os.path.join(base_path, filename + ".jpg")
 
-
     if os.path.exists(json_file_path):
         os.remove(json_file_path)
         warning(f"""Stlye "{filename}" deleted!! """)
@@ -268,13 +269,21 @@ def removeFavourite(style):
      save_settings("favourites",favourites)
      info("style removed from favourites")
 
+def oldstyles(value):
+    print("this ran cunt")
+    with open(config_json, "r") as json_file:
+        data = json.load(json_file)
+        if (data["hide_old_styles"] == True):
+            save_settings("hide_old_styles",False)
+        else:
+            save_settings("hide_old_styles",True)
+
 class Stylez(scripts.Script):
     generate_styles_and_tags = generate_html_code()
-    def __init__(self) -> None:
-        super().__init__()
     def title(self):
         return "Stylez"
     def ui(self, is_img2img):
+        global hideoldstyles
         with gr.Tabs(elem_id = "Stylez"):
             with gr.TabItem(label="Style Libary",elem_id="styles_libary"):
                 with gr.Column():
@@ -294,10 +303,13 @@ class Stylez(scripts.Script):
                             with gr.Row():
                                 Styles_html=gr.HTML(self.generate_styles_and_tags[0])
                     with gr.Row(elem_id="stylesPreviewRow"):
-                        gr.Checkbox(label="Apply Prompt",value=True, default=True, elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
-                        gr.Checkbox(label="Apply Negative",value=True, default=True, elem_id="styles_apply_neg", elem_classes="styles_checkbox checkbox", lines=1)
-                        gr.Checkbox(label="Hover Over Preview",value=True, default=True, elem_id="HoverOverStyle_preview", elem_classes="styles_checkbox checkbox", lines=1)
+                        gr.Checkbox(value=True,label="Apply Prompt", elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
+                        gr.Checkbox(value=True,label="Apply Negative", elem_id="styles_apply_neg", elem_classes="styles_checkbox checkbox", lines=1)
+                        gr.Checkbox(value=True,label="Hover Over Preview", elem_id="HoverOverStyle_preview", elem_classes="styles_checkbox checkbox", lines=1)
+                        oldstylesCB = gr.Checkbox(value=hideoldstyles,label="Hide Styles Bar", elem_id="hide_default_styles", elem_classes="styles_checkbox checkbox", lines=1,interactive=True)
+                        setattr(oldstylesCB,"do_not_save_to_config",True)
                         card_size_slider = gr.Slider(value=card_size_value,minimum=card_size_min,maximum=card_size_max,label="Size:", elem_id="card_thumb_size")
+                        setattr(card_size_slider,"do_not_save_to_config",True)
                     with gr.Row(elem_id="stylesPreviewRow"):
                         favourite_temp = gr.Text(elem_id="favouriteTempTxt",interactive=False,label="Positive:",lines=2,visible=False)
                         add_favourite_btn = gr.Button(elem_id="stylezAddFavourite",visible=False)
@@ -328,7 +340,7 @@ class Stylez(scripts.Script):
                             style_savefolder_refrsh_btn = gr.Button(refresh_symbol, label="Refresh", lines=1,elem_classes="tool")
                             style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=self.generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
                             style_savefolder_temp = gr.Textbox(label="Save Folder:", lines=1, elem_id="style_savefolder_temp",visible=False)
-
+        oldstylesCB.change(fn=oldstyles,inputs=[oldstylesCB],_js="hideOldStyles")
         refresh_button.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,category_dropdown,style_savefolder_txt])
         card_size_slider.release(fn=save_card_def,inputs=[card_size_slider])
         card_size_slider.change(fn=None,inputs=[card_size_slider],_js="cardSizeChange")

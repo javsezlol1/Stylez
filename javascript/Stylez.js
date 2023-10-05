@@ -9,7 +9,7 @@ function setupStylez() {
     t2i_StyleBtn.setAttribute("class", "lg secondary gradio-button tool svelte-cmf5ev");
     t2i_StyleBtn.setAttribute("id", "t2i_stylez_btn");
     t2i_StyleBtn.setAttribute("onClick", "showHideStylez()");
-    t2i_StyleBtn.innerText = `🖌️`;
+    t2i_StyleBtn.innerText = `🎨`;
     //add new button
     const txt2img_tools = gradioApp().getElementById("txt2img_clear_prompt");
     txt2img_tools.parentNode.appendChild(t2i_StyleBtn);
@@ -18,16 +18,17 @@ function setupStylez() {
     i2i_StyleBtn.setAttribute("class", "lg secondary gradio-button tool svelte-cmf5ev");
     i2i_StyleBtn.setAttribute("id", "i2i_stylez_btn");
     i2i_StyleBtn.setAttribute("onClick", "showHideStylez()");
-    i2i_StyleBtn.innerText = `🖌️`;
+    i2i_StyleBtn.innerText = `🎨`;
     //add new button
     const img2img_tools = gradioApp().getElementById("img2img_clear_prompt");
     img2img_tools.parentNode.appendChild(i2i_StyleBtn);
-    //remove old styles items
-    const stylesOld_t2i = gradioApp().getElementById("txt2img_styles_row");
-    stylesOld_t2i.parentNode.removeChild(stylesOld_t2i);
-    const stylesOld_i2i = gradioApp().getElementById("img2img_styles_row");
-    stylesOld_i2i.parentNode.removeChild(stylesOld_i2i);
     //Setup Browser
+    const hideoldbar = gradioApp().querySelector('#hide_default_styles > label > input');
+    if (hideoldbar.checked === true) {
+        hideOldStyles(true)
+    } else {
+        hideOldStyles(false)
+    }
     const tab_t2i = gradioApp().getElementById("tab_txt2img");
     const tab_i2i = gradioApp().getElementById("tab_img2img");
     const t2i_stylez_container = tab_t2i.querySelector("#Stylez");
@@ -36,6 +37,19 @@ function setupStylez() {
     t2i_stylez_container.parentNode.removeChild(t2i_stylez_container);
     i2i_stylez_container.parentNode.removeChild(i2i_stylez_container);
     tabs.appendChild(t2i_stylez_container);
+}
+function hideOldStyles(bool) {
+    if(bool == true){
+        const stylesOld_t2i = gradioApp().getElementById("txt2img_styles_row");
+        stylesOld_t2i.style.display = 'none';
+        const stylesOld_i2i = gradioApp().getElementById("img2img_styles_row");
+        stylesOld_i2i.style.display = 'none';
+    } else {
+        const stylesOld_t2i = gradioApp().getElementById("txt2img_styles_row");
+        stylesOld_t2i.style.display = 'block';
+        const stylesOld_i2i = gradioApp().getElementById("img2img_styles_row");
+        stylesOld_i2i.style.display = 'block';
+    }
 }
 
 function showHideStylez() {
@@ -87,11 +101,6 @@ function checkElement() {
         const config = {attributes: true};
         observer.observe(tab_txt2img, config);
         observer.observe(tab_img2img, config);
-        const firstStyleCard = gradioApp().querySelector(".style_card");
-        var styleCardHeight = window.getComputedStyle(firstStyleCard).height;
-        var heightWithoutPx = parseInt(styleCardHeight, 10);
-        const slider = gradioApp().querySelector("#card_thumb_size > div > div > input");
-        applyValues(slider,heightWithoutPx)
         const style_savefolder_temp = gradioApp().querySelector("#style_savefolder_temp > label > textarea")
         applyValues(style_savefolder_temp,"Styles")
         gradioApp().getElementById('style_save_btn').addEventListener('click', () => {

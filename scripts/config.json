@@ -1,7 +1,8 @@
 {
-    "card_size": 121,
+    "card_size": 153,
     "card_size_min": 50,
     "card_size_max": 200,
     "autoconvert": false,
+    "hide_old_styles": true,
     "favourites": []
 }
