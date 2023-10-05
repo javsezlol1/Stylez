@@ -326,7 +326,7 @@ class Stylez(scripts.Script):
                             style_save_btn = gr.Button(save_symbol,label="Save Style", lines=1,elem_classes="tool", elem_id="style_save_btn")
                             style_clear_btn = gr.Button(clear_symbol,label="Clear", lines=1,elem_classes="tool" ,elem_id="style_clear_btn")
                             style_delete_btn = gr.Button(delete_style,label="Delete Style", lines=1,elem_classes="tool", elem_id="style_delete_btn")
-                        thumbnailbox = gr.Image(value=None,label="Thumbnail:",elem_id="style_thumbnailbox",elem_classes="image",interactive=True,type='pil')
+                        thumbnailbox = gr.Image(value=None,label="Thumbnail (Please use 1:1 images):",elem_id="style_thumbnailbox",elem_classes="image",interactive=True,type='pil')
                         style_img_url_txt = gr.Text(label=None,lines=1,placeholder="Invisible textbox", elem_id="style_img_url_txt",visible=False)
                 with gr.Row():
                     style_grab_current_btn = gr.Button("Grab Prompts",label="Grab Current", lines=1, elem_id="style_grab_current_btn")
