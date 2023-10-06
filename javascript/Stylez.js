@@ -1,7 +1,9 @@
 onUiLoaded(setupStylez);
 let orgPrompt = '';
 let orgNegative = '';
-
+let tabname = '';
+let promptNeg = '';
+let promptPos = '';
 
 function setupStylez() {
     //create new button (t2i)
@@ -83,10 +85,12 @@ function tabCheck(mutationsList, observer) {
             // Check if the display property of tab_txt2img is 'none'
             if (tabTxt2img.style.display === 'none') {
                 stylez.style.display = "none";
+                tabname = getENActiveTab();
             }
             // Check if the display property of tab_img2img is 'none'
             if (tabImg2img.style.display === 'none') {
                 stylez.style.display = "none";
+                tabname = getENActiveTab();
             }
         }
     }
@@ -96,12 +100,15 @@ function checkElement() {
     const tabTxt2img = gradioApp().getElementById('tab_txt2img');
     if (tabTxt2img) {
         const observer = new MutationObserver(tabCheck);
+        tabname = getENActiveTab();
+        promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+        promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
         const tab_txt2img = gradioApp().getElementById('tab_txt2img');
         const tab_img2img = gradioApp().getElementById('tab_img2img');
         const config = {attributes: true};
         observer.observe(tab_txt2img, config);
         observer.observe(tab_img2img, config);
-        const style_savefolder_temp = gradioApp().querySelector("#style_savefolder_temp > label > textarea")
+        const style_savefolder_temp = gradioApp().querySelector("#style_savefolder_temp > label > textarea");
         applyValues(style_savefolder_temp,"Styles")
         gradioApp().getElementById('style_save_btn').addEventListener('click', () => {
             saveRefresh();
@@ -114,50 +121,96 @@ function checkElement() {
     }
 }
 checkElement();
+
 //apply styles
 function applyStyle(prompt, negative) {
     prompt = removeFirstAndLastCharacter(prompt)
     negative = removeFirstAndLastCharacter(negative)
-    const tabname = getENActiveTab();
     const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
-    if (applyStylePrompt.checked === true) {
-        const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
-        if (prompt.includes("{prompt}")) {
-            orgPrompt = promptPos.value;
-            prompt = prompt.replace('{prompt}', orgPrompt);
-            promptPos.value = prompt;
-            updateInput(promptPos);
+    const applyStyleNeg = gradioApp().querySelector('#styles_apply_neg > label > input');
+    //positive checks
+    orgPrompt = promptPos.value;
+    orgNegative = promptNeg.value;
+    if(prompt.includes("{prompt}")) {
+        const promptPossections = prompt.split("{prompt}");
+        const promptPossectionA = promptPossections[0].trim();
+        const promptPossectionB = promptPossections[1].trim();
+        if (orgPrompt.includes(promptPossectionA) & orgPrompt.includes(promptPossectionB)) {
+            orgPrompt = orgPrompt.replace(promptPossectionA,"");
+            orgPrompt = orgPrompt.replace(promptPossectionB,"");
+            orgPrompt = orgPrompt.replace(/^\s+/, "");
+            orgPrompt = orgPrompt.replace(/^,+/g, "");
+            orgPrompt = orgPrompt.replace(/^\s+/, "");
+            applyValues(promptPos,orgPrompt)
         } else {
-            if (orgPrompt === '') {
-                orgPrompt = prompt;
-            } else {
-                orgPrompt += "," + prompt;
-            }
-            applyPrompts(promptPos, prompt);
+            appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
+        }
+    } else {
+        if (orgPrompt.includes(prompt) || orgPrompt.includes(", "+ prompt)) {
+            if(orgPrompt.includes(prompt)) {}
+            orgPrompt = orgPrompt.replace(", "+ prompt,"");
+            orgPrompt = orgPrompt.replace(prompt,"");
+            orgPrompt = orgPrompt.replace(/^\s+/, "");
+            orgPrompt = orgPrompt.replace(/^,+/g, "");
+            orgPrompt = orgPrompt.replace(/^\s+/, "");
+            applyValues(promptPos,orgPrompt)
+        } else {
+            appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
         }
     }
-    const applyStyleNeg = gradioApp().querySelector('#styles_apply_neg > label > input');
-    if (applyStyleNeg.checked === true) {
-        const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
-        if (negative !== '') {
-            if (orgNegative === '') {
-                orgNegative = negative;
+    if (orgNegative.includes(negative) || orgNegative.includes(", "+ negative)) {
+        if(orgNegative.includes(negative)) {}
+        orgNegative = orgNegative.replace(", "+ negative,"");
+        orgNegative = orgNegative.replace(negative,"");
+        orgNegative = orgNegative.replace(/^\s+/, "");
+        orgNegative = orgNegative.replace(/^,+/g, "");
+        orgNegative = orgNegative.replace(/^\s+/, "");
+        applyValues(promptNeg,orgNegative)
+    } else {
+        appendStyle(applyStyleNeg,negative,orgNegative,promptNeg)
+    }
+}
+function hoverPreviewStyle(prompt,negative) {
+    const enablePreviewChk = gradioApp().querySelector('#HoverOverStyle_preview > label > input');
+    const enablePreview = enablePreviewChk.checked;
+    if (enablePreview === true) { 
+        previewbox = gradioApp().getElementById("stylezPreviewBoxid");
+        previewbox.style.display = "block";
+        prompt = removeFirstAndLastCharacter(prompt)
+        negative = removeFirstAndLastCharacter(negative)
+        pos = gradioApp().getElementById("stylezPreviewPositive");
+        neg = gradioApp().getElementById("stylezPreviewNegative");
+        pos.textContent = "Prompt: " + prompt;
+        neg.textContent = "Negative: " + negative;
+    }
+}
+
+function hoverPreviewStyleOut() {
+    previewbox = gradioApp().getElementById("stylezPreviewBoxid");
+    pos.textContent = "Prompt: ";
+    neg.textContent = "Negative: ";
+    previewbox.style.display = "none";
+}
+function appendStyle(applyStyle,prompt,oldprompt,promptbox) {
+if (applyStyle.checked === true) {
+        if (prompt.includes("{prompt}")) {
+            oldprompt = promptbox.value;
+            prompt = prompt.replace('{prompt}', oldprompt);
+            promptbox.value = prompt;
+            updateInput(promptbox);
+        } else {
+            if (oldprompt === '') {
+                oldprompt = prompt;
+                promptbox.value = prompt;
+                updateInput(promptbox);
             } else {
-                orgNegative += "," + negative;
+                promptbox.value = oldprompt + ", " + prompt;
             }
-            applyPrompts(promptNeg, negative);
+            updateInput(promptbox);
         }
     }
 }
 
-function applyPrompts(a, b) {
-    if (a.value === '') {
-        a.value = b;
-    } else {
-        a.value +=b;
-    }
-    updateInput(a);
-}
 function applyValues(a, b) {
     a.value = b;
     updateInput(a);
@@ -171,57 +224,6 @@ function removeFirstAndLastCharacter(inputString) {
         return inputString;
     }
 }
-
-function hoverPreviewStyle(prompt, negative) {
-    prompt = removeFirstAndLastCharacter(prompt)
-    negative = removeFirstAndLastCharacter(negative)
-    const enablePreviewChk = gradioApp().querySelector('#HoverOverStyle_preview > label > input');
-    const enablePreview = enablePreviewChk.checked;
-    if (enablePreview === true) {
-      const tabname = getENActiveTab();
-      const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
-      const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
-      orgPrompt = promptPos.value;
-      orgNegative = promptNeg.value;
-      const previewPrompt = `${promptPos.value},${prompt}`;
-      const previewNegative = `${promptNeg.value},${negative}`;
-      const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
-      if (applyStylePrompt.checked === true) {
-        if (prompt !== '') {
-          if (prompt.includes('{prompt}')) {
-            prompt = prompt.replace('{prompt}',orgPrompt );
-            promptPos.value = prompt;
-            updateInput(promptPos);
-          } else {
-            promptPos.value = previewPrompt;
-            updateInput(promptPos);
-          }
-        }
-      }
-      const applyStyleNeg = gradioApp().querySelector('#styles_apply_neg > label > input');
-      if (applyStyleNeg.checked === true) {
-        if (negative !== '') {
-          promptNeg.value = previewNegative;
-          updateInput(promptNeg);
-        }
-      }
-    }
-}
-
-function hoverPreviewStyleOut() {
-    const enablePreview = gradioApp().querySelector('#HoverOverStyle_preview > label > input').checked;
-    if (enablePreview === true) {
-      const tabname = getENActiveTab();
-      const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
-      const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
-      promptPos.value = orgPrompt;
-      promptNeg.value = orgNegative;
-      updateInput(promptPos);
-      updateInput(promptNeg);
-      orgPrompt = '';
-      orgNegative = '';
-    }
-  }
 
 function cardSizeChange(value) {
     const styleCards = gradioApp().querySelectorAll('.style_card');
@@ -342,8 +344,8 @@ function editStyle(title, img, description, prompt, promptNeggative, folder, fil
         editorButton.click();
     }
 }
+
 function grabLastGeneratedimage() {
-    const tabname = getENActiveTab();
     const imagegallery = gradioApp().querySelector(`#${tabname}_gallery`);
     if (imagegallery) {
         const firstImage = imagegallery.querySelector('img');
@@ -359,21 +361,20 @@ function grabLastGeneratedimage() {
 
 function grabCurrentSettings() {
     // prompt
-    const tabname = getENActiveTab();
-    const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
     const editorPrompt = gradioApp().querySelector('#style_prompt_txt > label > textarea');
     applyValues(editorPrompt, promptPos.value);
     // promptNeggative
-    const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
     const editorPromptNeggative = gradioApp().querySelector('#style_negative_txt > label > textarea');
     applyValues(editorPromptNeggative, promptNeg.value);
 }
+
 function deleteRefresh() {
     const galleryrefresh = gradioApp().querySelector('#style_refresh');
     const stylesclear = gradioApp().querySelector('#style_clear_btn');
     galleryrefresh.click();
     stylesclear.click();
 }
+
 function saveRefresh() {
     setTimeout(() => {
         const galleryrefresh = gradioApp().querySelector('#style_refresh');
@@ -400,9 +401,6 @@ function addFavourite(folder, filename, element) {
 
 function addQuicksave () {
     const ulElement = gradioApp().getElementById('styles_quicksave_list');
-    const tabname = getENActiveTab();
-    const promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
-    const promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
     var liElement = document.createElement('li');
     var deleteButton = document.createElement('button');
     var innerButton = document.createElement('button');

@@ -283,7 +283,8 @@ class Stylez(scripts.Script):
         return "Stylez"
     def ui(self, is_img2img):
         global hideoldstyles
-        with gr.Tabs(elem_id = "Stylez"):
+        with gr.Tabs(elem_id = "Stylez"): 
+            gr.HTML("""<div id="stylezPreviewBoxid" class="stylezPreviewBox"><p id="stylezPreviewPositive">test</p><p id="stylezPreviewNegative">test</p></div>""")
             with gr.TabItem(label="Style Libary",elem_id="styles_libary"):
                 with gr.Column():
                     with gr.Row(elem_id="style_search_search"):

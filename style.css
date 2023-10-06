@@ -35,3 +35,4 @@
 .styles_quicksave_btn:hover{opacity: 100%;color: var(--button-primary-border-color);}
 .styles_quicksave_apply{border-left-style:solid;border-left-width: 2px;border-color:#0000006e;display: grid;margin-bottom:unset !important}
 #card_thumb_size{max-width: 60px;position: absolute;right: 0px;bottom: 10px;}
+.stylezPreviewBox{position: fixed;display: none;bottom: 10px;left: 10px;width: 400px;background-color:var(--body-background-fill);border: 1px solid #ccc;padding: 10px;border: solid var(--button-primary-border-color) !important;border-radius: 10px;border-width: 2px !important;box-shadow: #00000094 0px 0px 35px 1px;}
