@@ -141,7 +141,10 @@ function applyStyle(prompt, negative) {
             orgPrompt = orgPrompt.replace(/^\s+/, "");
             orgPrompt = orgPrompt.replace(/^,+/g, "");
             orgPrompt = orgPrompt.replace(/^\s+/, "");
-            applyValues(promptPos,orgPrompt)
+            if (applyStylePrompt.checked === true)
+            {
+                applyValues(promptPos,orgPrompt)
+            }
         } else {
             appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
         }
@@ -153,7 +156,10 @@ function applyStyle(prompt, negative) {
             orgPrompt = orgPrompt.replace(/^\s+/, "");
             orgPrompt = orgPrompt.replace(/^,+/g, "");
             orgPrompt = orgPrompt.replace(/^\s+/, "");
-            applyValues(promptPos,orgPrompt)
+            if (applyStylePrompt.checked === true)
+            {
+                applyValues(promptPos,orgPrompt)
+            }
         } else {
             appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
         }
@@ -165,7 +171,10 @@ function applyStyle(prompt, negative) {
         orgNegative = orgNegative.replace(/^\s+/, "");
         orgNegative = orgNegative.replace(/^,+/g, "");
         orgNegative = orgNegative.replace(/^\s+/, "");
-        applyValues(promptNeg,orgNegative)
+        if (applyStyleNeg.checked === true)
+        {
+            applyValues(promptNeg,orgNegative)
+        }
     } else {
         appendStyle(applyStyleNeg,negative,orgNegative,promptNeg)
     }

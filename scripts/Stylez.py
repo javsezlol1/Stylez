@@ -303,8 +303,8 @@ class Stylez(scripts.Script):
                             with gr.Row():
                                 Styles_html=gr.HTML(self.generate_styles_and_tags[0])
                     with gr.Row(elem_id="stylesPreviewRow"):
-                        gr.Checkbox(value=True,label="Apply Prompt", elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
-                        gr.Checkbox(value=True,label="Apply Negative", elem_id="styles_apply_neg", elem_classes="styles_checkbox checkbox", lines=1)
+                        gr.Checkbox(value=True,label="Apply/Remove Prompt", elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
+                        gr.Checkbox(value=True,label="Apply/Remove Negative", elem_id="styles_apply_neg", elem_classes="styles_checkbox checkbox", lines=1)
                         gr.Checkbox(value=True,label="Hover Over Preview", elem_id="HoverOverStyle_preview", elem_classes="styles_checkbox checkbox", lines=1)
                         oldstylesCB = gr.Checkbox(value=hideoldstyles,label="Hide Styles Bar", elem_id="hide_default_styles", elem_classes="styles_checkbox checkbox", lines=1,interactive=True)
                         setattr(oldstylesCB,"do_not_save_to_config",True)
