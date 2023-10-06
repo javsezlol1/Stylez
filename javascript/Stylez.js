@@ -86,11 +86,15 @@ function tabCheck(mutationsList, observer) {
             if (tabTxt2img.style.display === 'none') {
                 stylez.style.display = "none";
                 tabname = getENActiveTab();
+                promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+                promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
             }
             // Check if the display property of tab_img2img is 'none'
             if (tabImg2img.style.display === 'none') {
                 stylez.style.display = "none";
                 tabname = getENActiveTab();
+                promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+                promptNeg = gradioApp().querySelector(`#${tabname}_neg_prompt > label > textarea`);
             }
         }
     }
@@ -175,6 +179,7 @@ function applyStyle(prompt, negative) {
         {
             applyValues(promptNeg,orgNegative)
         }
+
     } else {
         appendStyle(applyStyleNeg,negative,orgNegative,promptNeg)
     }
@@ -423,7 +428,7 @@ function addQuicksave () {
             promptParagraph.textContent = "EMPTY"
         }
         else {
-            promptParagraph.disabled = false  
+            promptParagraph.disabled = false
             promptParagraph.textContent = promptPos.value;
         }
         if (promptNeg.value == "")
@@ -441,12 +446,12 @@ function addQuicksave () {
             deletequicksave(this)
         };
         promptParagraph.onclick = function() {
-            applyValues(promptPos,this.textContent)
+            applyQuickSave("pos",this.textContent)
         };
         promptParagraph.className = 'styles_quicksave_prompt styles_quicksave_btn';
 
         negParagraph.onclick = function() {
-            applyValues(promptNeg,this.textContent)
+            applyQuickSave("neg",this.textContent)
         };
         negParagraph.className = 'styles_quicksave_neg styles_quicksave_btn';
         innerButton.className = 'styles_quicksave_apply';
@@ -455,6 +460,14 @@ function addQuicksave () {
         liElement.appendChild(deleteButton);
         liElement.appendChild(innerButton);
         ulElement.appendChild(liElement);
+    }
+}
+function applyQuickSave(box,prompt) {
+    tabname = getENActiveTab();
+    if (box == "pos"){
+        applyValues(promptPos,prompt)
+    } else {
+        applyValues(promptNeg,prompt)
     }
 }
 
