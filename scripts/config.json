@@ -2,7 +2,7 @@
     "card_size": 140,
     "card_size_min": 50,
     "card_size_max": 200,
-    "autoconvert": false,
+    "autoconvert": true,
     "hide_old_styles": true,
     "favourites": []
 }
