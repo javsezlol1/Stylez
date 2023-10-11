@@ -39,6 +39,13 @@ Any prompts containing the keyword: {prompt} will automatically take you current
 applying the style 3d model will result in: 
 
     professional 3d model a red house octane render, highly detailed, volumetric, dramatic lighting.
+PromptGen:
+New Feature for generating prompts
+using https://huggingface.co/FredZhang7/distilgpt2-stable-diffusion-v2
+
+to install, git clone the link above to extension/stylez folder
+
+<img src="screenshots/Screenshot 2023-10-12.png" alt="Alt text" title="Optional title">
 Quicksave:
 New feature added for temporaily saving prompts.
 <img src="screenshots/Screenshot 2023-10-04 191935.png" alt="Alt text" title="Optional title">
