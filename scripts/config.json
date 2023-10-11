@@ -3,6 +3,6 @@
     "card_size_min": 50,
     "card_size_max": 200,
     "autoconvert": true,
-    "hide_old_styles": true,
+    "hide_old_styles": false,
     "favourites": []
 }

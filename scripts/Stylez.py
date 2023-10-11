@@ -11,6 +11,8 @@ import json
 import csv
 from json import loads
 import re
+from extensions.Stylez.scripts import promptgen as PG
+
 stylespath = ""
 
 refresh_symbol = '\U0001f504'  # 🔄
@@ -277,6 +279,10 @@ def oldstyles(value):
         else:
             save_settings("hide_old_styles",True)
 
+def generate_style(prompt,temperature,top_k,max_length,repitition_penalty):
+    result = PG.generate(prompt,temperature,top_k,max_length,repitition_penalty)
+    return gr.update(value=result)
+
 class Stylez(scripts.Script):
     generate_styles_and_tags = generate_html_code()
     def title(self):
@@ -314,6 +320,22 @@ class Stylez(scripts.Script):
                         favourite_temp = gr.Text(elem_id="favouriteTempTxt",interactive=False,label="Positive:",lines=2,visible=False)
                         add_favourite_btn = gr.Button(elem_id="stylezAddFavourite",visible=False)
                         remove_favourite_btn = gr.Button(elem_id="stylezRemoveFavourite",visible=False)
+            with gr.TabItem(label="Style Generator",elem_id="styles_generator"):
+                with gr.Row():
+                    with gr.Column():
+                        style_geninput_txt = gr.Textbox(label="Input:", lines=1,placeholder="Title goes here",elem_id="style_title_txt")
+                    with gr.Column():
+                        style_genoutput_txt = gr.Textbox(label="Output:", lines=1,placeholder="Description goes here", elem_id="style_description_txt")
+                        with gr.Row():
+                            style_gen_btn = gr.Button("Generate",elem_id="style_promptgen_btn")
+                            style_gensend_btn = gr.Button("Send to Prompt",elem_id="style_promptgen_send_btn")
+                with gr.Row():
+                    with gr.Column():
+                        style_gen_temp = gr.Slider(label="Temperature (Higher = More Diverse But Less Coherent): ", minimum=0.1, maximum=1.0 ,value=0.9)
+                        style_gen_top_k = gr.Slider(label="top_k (Number Of Tokens To Sample Per Step):", minimum=1, maximum=50 ,value=8,step=1)
+                    with gr.Column():
+                        style_max_length = gr.Slider(label="Maximum Number Of Tokens:", minimum=1, maximum=160 ,value=80,step=1)
+                        style_gen_repitition_penalty = gr.Slider(label="Repitition Penalty:", minimum=0.1, maximum=2 ,value=1.2,step=0.1)
             with gr.TabItem(label="Style Editor",elem_id="styles_editor"):
                 with gr.Row():
                     with gr.Column():
@@ -340,6 +362,9 @@ class Stylez(scripts.Script):
                             style_savefolder_refrsh_btn = gr.Button(refresh_symbol, label="Refresh", lines=1,elem_classes="tool")
                             style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=self.generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
                             style_savefolder_temp = gr.Textbox(label="Save Folder:", lines=1, elem_id="style_savefolder_temp",visible=False)
+            
+        style_gensend_btn.click(fn=None,_js='sendToPromtbox',inputs=[style_genoutput_txt])
+        style_gen_btn.click(fn=generate_style,inputs=[style_geninput_txt,style_gen_temp,style_gen_top_k,style_max_length,style_gen_repitition_penalty],outputs=[style_genoutput_txt])
         oldstylesCB.change(fn=oldstyles,inputs=[oldstylesCB],_js="hideOldStyles")
         refresh_button.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,category_dropdown,style_savefolder_txt])
         card_size_slider.release(fn=save_card_def,inputs=[card_size_slider])

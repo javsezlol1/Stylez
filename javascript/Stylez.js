@@ -483,3 +483,9 @@ function clearquicklist() {
         list.removeChild(list.firstChild);
     }
 }
+
+function sendToPromtbox(prompt) {
+    tabname = getENActiveTab();
+    promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+    applyValues(promptPos,prompt)
+}
