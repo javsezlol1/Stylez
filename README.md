@@ -45,7 +45,7 @@ using https://huggingface.co/FredZhang7/distilgpt2-stable-diffusion-v2
 
 to install, git clone the link above to extension/stylez folder
 
-<img src="screenshots/Screenshot 2023-10-12.png" alt="Alt text" title="Optional title">
+<img src="screenshots/Screenshot 2023-10-123.png" alt="Alt text" title="Optional title">
 Quicksave:
 New feature added for temporaily saving prompts.
 <img src="screenshots/Screenshot 2023-10-04 191935.png" alt="Alt text" title="Optional title">
