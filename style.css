@@ -12,7 +12,7 @@
 #img2img_styles_popout > div{left: 0.3vw;flex-flow: column;}
 #txt2img_styles_popout {border-left-style: solid;border-left-width: 2px}
 #img2img_styles_popout {border-left-style: solid;border-left-width: 2px}
-#style_refresh{min-width:unset !important;max-width: 2vw;align-self: baseline;}
+#style_refresh{min-width:unset !important;max-width: 2vw;align-self: flex-end;}
 #style_tags > label > div{margin-top: 10px;}
 .EditStyleJson{z-index: 9999;position: absolute;background-color: #00000094 !important;right: 0;bottom: 0; padding: 5px !important;}
 .favouriteStyleJson{z-index: 9999;position: absolute;left: 0;bottom: 0; padding: 5px !important;}
@@ -36,3 +36,4 @@
 .styles_quicksave_apply{border-left-style:solid;border-left-width: 2px;border-color:#0000006e;display: grid;margin-bottom:unset !important}
 #card_thumb_size{max-width: 60px;position: absolute;right: 0px;bottom: 10px;}
 .stylezPreviewBox{position: fixed;display: none;bottom: 10px;left: 10px;width: 400px;background-color:var(--body-background-fill);border: 1px solid #ccc;padding: 10px;border: solid var(--button-primary-border-color) !important;border-radius: 10px;border-width: 2px !important;box-shadow: #00000094 0px 0px 35px 1px;}
+#style_Catagory{align-self: flex-end;}
