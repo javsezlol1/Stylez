@@ -161,12 +161,12 @@ def generate_html_code():
                             <div class="style_card" data-category='{subfolder_name}' data-title='{titlelower}' style="height:{card_size_value}px;">
                                 <img class="styles_thumbnail" src="{"file=" + img +"?timestamp"+ formatted_time}" alt="{title} Preview">
                                 <div class="EditStyleJson">
-                                    <button onclick="editStyle('{title}','{imghack}','{description}','{prompt}','{prompt_negative}','{subfolder_name}','{encoded_filename}')">🖉</button>
+                                    <button onclick="editStyle(`{title}`,`{imghack}`,`{description}`,`{prompt}`,`{prompt_negative}`,`{subfolder_name}`,`{encoded_filename}`)">🖉</button>
                                 </div>
                                 <div class="favouriteStyleJson">
                                     <button class="favouriteStyleBtn" style="color:{color};" onclick="addFavourite('{subfolder_name}','{encoded_filename}', this)">★</button>
                                 </div>
-                                    <div onclick="applyStyle('{prompt}','{prompt_negative}')" onmouseenter="event.stopPropagation(); hoverPreviewStyle('{prompt}','{prompt_negative}')" onmouseleave="hoverPreviewStyleOut()" class="styles_overlay"></div>
+                                    <div onclick="applyStyle(`{prompt}`,`{prompt_negative}`)" onmouseenter="event.stopPropagation(); hoverPreviewStyle(`{prompt}`,`{prompt_negative}`)" onmouseleave="hoverPreviewStyleOut()" class="styles_overlay"></div>
                                     <div class="styles_title">{title}</div>
                                     <p class="styles_description">{description}</p>
                                 </img>
@@ -190,7 +190,7 @@ def refresh_styles(cat):
     return newhtml_sendback,gr.update(choices=newcat_sendback),gr.update(value="All"),gr.update(choices=newfilecat_sendback)
 
 def save_style(title, img, description, prompt, prompt_negative, filename, save_folder):
-    print(save_folder,filename)
+    print(f"""Saved: '{save_folder}/{filename}'""")
     if save_folder and filename:
         if img is None or img == "":
             img = os.path.join("extensions", "Stylez", "nopreview.jpg")
@@ -323,9 +323,9 @@ class Stylez(scripts.Script):
             with gr.TabItem(label="Style Generator",elem_id="styles_generator"):
                 with gr.Row():
                     with gr.Column():
-                        style_geninput_txt = gr.Textbox(label="Input:", lines=1,placeholder="Title goes here",elem_id="style_title_txt")
+                        style_geninput_txt = gr.Textbox(label="Input:", lines=1,placeholder="Title goes here")
                     with gr.Column():
-                        style_genoutput_txt = gr.Textbox(label="Output:", lines=1,placeholder="Description goes here", elem_id="style_description_txt")
+                        style_genoutput_txt = gr.Textbox(label="Output:", lines=1,placeholder="Description goes here")
                         with gr.Row():
                             style_gen_btn = gr.Button("Generate",elem_id="style_promptgen_btn")
                             style_gensend_btn = gr.Button("Send to Prompt",elem_id="style_promptgen_send_btn")

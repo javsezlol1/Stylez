@@ -201,6 +201,8 @@ function hoverPreviewStyle(prompt,negative) {
 
 function hoverPreviewStyleOut() {
     previewbox = gradioApp().getElementById("stylezPreviewBoxid");
+    pos = gradioApp().getElementById("stylezPreviewPositive");
+    neg = gradioApp().getElementById("stylezPreviewNegative");
     pos.textContent = "Prompt: ";
     neg.textContent = "Negative: ";
     previewbox.style.display = "none";
