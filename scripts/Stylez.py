@@ -279,8 +279,8 @@ def oldstyles(value):
         else:
             save_settings("hide_old_styles",True)
 
-def generate_style(prompt,temperature,top_k,max_length,repitition_penalty):
-    result = PG.generate(prompt,temperature,top_k,max_length,repitition_penalty)
+def generate_style(prompt,temperature,top_k,max_length,repitition_penalty,usecomma):
+    result = PG.generate(prompt,temperature,top_k,max_length,repitition_penalty,usecomma)
     return gr.update(value=result)
 
 class Stylez(scripts.Script):
@@ -324,8 +324,12 @@ class Stylez(scripts.Script):
                 with gr.Row():
                     with gr.Column():
                         style_geninput_txt = gr.Textbox(label="Input:", lines=1,placeholder="Title goes here")
+                        with gr.Row():
+                            style_gengrab_btn = gr.Button("Grab Current",elem_id="style_promptgengrab_btn")
                     with gr.Column():
                         style_genoutput_txt = gr.Textbox(label="Output:", lines=1,placeholder="Description goes here")
+                        with gr.Row():
+                            style_genusecomma_btn = gr.Checkbox(label="Use Commas", value=True)
                         with gr.Row():
                             style_gen_btn = gr.Button("Generate",elem_id="style_promptgen_btn")
                             style_gensend_btn = gr.Button("Send to Prompt",elem_id="style_promptgen_send_btn")
@@ -362,9 +366,9 @@ class Stylez(scripts.Script):
                             style_savefolder_refrsh_btn = gr.Button(refresh_symbol, label="Refresh", lines=1,elem_classes="tool")
                             style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=self.generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
                             style_savefolder_temp = gr.Textbox(label="Save Folder:", lines=1, elem_id="style_savefolder_temp",visible=False)
-            
+        style_gengrab_btn.click(fn=None,_js="stylesgrabprompt" ,outputs=[style_geninput_txt])
         style_gensend_btn.click(fn=None,_js='sendToPromtbox',inputs=[style_genoutput_txt])
-        style_gen_btn.click(fn=generate_style,inputs=[style_geninput_txt,style_gen_temp,style_gen_top_k,style_max_length,style_gen_repitition_penalty],outputs=[style_genoutput_txt])
+        style_gen_btn.click(fn=generate_style,inputs=[style_geninput_txt,style_gen_temp,style_gen_top_k,style_max_length,style_gen_repitition_penalty,style_genusecomma_btn],outputs=[style_genoutput_txt])
         oldstylesCB.change(fn=oldstyles,inputs=[oldstylesCB],_js="hideOldStyles")
         refresh_button.click(fn=refresh_styles,inputs=[category_dropdown], outputs=[Styles_html,category_dropdown,category_dropdown,style_savefolder_txt])
         card_size_slider.release(fn=save_card_def,inputs=[card_size_slider])

@@ -491,3 +491,9 @@ function sendToPromtbox(prompt) {
     promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
     applyValues(promptPos,prompt)
 }
+
+function stylesgrabprompt() {
+    tabname = getENActiveTab();
+    promptPos = gradioApp().querySelector(`#${tabname}_prompt > label > textarea`);
+    return promptPos.value
+}
