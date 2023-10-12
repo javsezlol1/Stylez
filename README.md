@@ -8,13 +8,13 @@ I hope the community enjoys and creates their own styles to share.
 
 
 #installation 
+
 launch webui normally (make sure your up-to-date) goto Extensions > Install form url and Paste
 https://github.com/javsezlol1/Stylez.git
+in the URL for extension's git repository
 
 To use promptgen:
 git clone https://huggingface.co/FredZhang7/distilgpt2-stable-diffusion-v2 to extension/stylez folder
-
-in the URL for extension's git repository
 
 
 #Usage
