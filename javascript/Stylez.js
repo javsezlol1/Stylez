@@ -120,6 +120,7 @@ function checkElement() {
         gradioApp().getElementById('style_delete_btn').addEventListener('click', () => {
             deleteRefresh();
         });
+        setupcivitapi()
     } else {
         setTimeout(checkElement, 100);
     }
@@ -127,71 +128,108 @@ function checkElement() {
 checkElement();
 
 //apply styles
-function applyStyle(prompt, negative) {
-    prompt = removeFirstAndLastCharacter(prompt)
-    negative = removeFirstAndLastCharacter(negative)
+function applyStyle(prompt, negative,origin) {
     const applyStylePrompt = gradioApp().querySelector('#styles_apply_prompt > label > input');
     const applyStyleNeg = gradioApp().querySelector('#styles_apply_neg > label > input');
     //positive checks
     orgPrompt = promptPos.value;
     orgNegative = promptNeg.value;
-    if(prompt.includes("{prompt}")) {
-        const promptPossections = prompt.split("{prompt}");
-        const promptPossectionA = promptPossections[0].trim();
-        const promptPossectionB = promptPossections[1].trim();
-        if (orgPrompt.includes(promptPossectionA) & orgPrompt.includes(promptPossectionB)) {
-            orgPrompt = orgPrompt.replace(promptPossectionA,"");
-            orgPrompt = orgPrompt.replace(promptPossectionB,"");
-            orgPrompt = orgPrompt.replace(/^\s+/, "");
-            orgPrompt = orgPrompt.replace(/^,+/g, "");
-            orgPrompt = orgPrompt.replace(/^\s+/, "");
-            if (applyStylePrompt.checked === true)
-            {
-                applyValues(promptPos,orgPrompt)
+    if (origin == "Stylez") {
+        prompt = removeFirstAndLastCharacter(prompt)
+        negative = removeFirstAndLastCharacter(negative)
+        if(prompt.includes("{prompt}")) {
+            const promptPossections = prompt.split("{prompt}");
+            const promptPossectionA = promptPossections[0].trim();
+            const promptPossectionB = promptPossections[1].trim();
+            if (orgPrompt.includes(promptPossectionA) & orgPrompt.includes(promptPossectionB)) {
+                orgPrompt = orgPrompt.replace(promptPossectionA,"");
+                orgPrompt = orgPrompt.replace(promptPossectionB,"");
+                orgPrompt = orgPrompt.replace(/^\s+/, "");
+                orgPrompt = orgPrompt.replace(/^,+/g, "");
+                orgPrompt = orgPrompt.replace(/^\s+/, "");
+                if (applyStylePrompt.checked === true)
+                {
+                    applyValues(promptPos,orgPrompt)
+                }
+            } else {
+                appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
             }
         } else {
-            appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
+            if (orgPrompt.includes(prompt) || orgPrompt.includes(", "+ prompt)) {
+                if(orgPrompt.includes(prompt)) {}
+                orgPrompt = orgPrompt.replace(", "+ prompt,"");
+                orgPrompt = orgPrompt.replace(prompt,"");
+                orgPrompt = orgPrompt.replace(/^\s+/, "");
+                orgPrompt = orgPrompt.replace(/^,+/g, "");
+                orgPrompt = orgPrompt.replace(/^\s+/, "");
+                if (applyStylePrompt.checked === true)
+                {
+                    applyValues(promptPos,orgPrompt)
+                }
+            } else {
+                appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
+            }
+        }
+        if (orgNegative.includes(negative) || orgNegative.includes(", "+ negative)) {
+            if(orgNegative.includes(negative)) {}
+            orgNegative = orgNegative.replace(", "+ negative,"");
+            orgNegative = orgNegative.replace(negative,"");
+            orgNegative = orgNegative.replace(/^\s+/, "");
+            orgNegative = orgNegative.replace(/^,+/g, "");
+            orgNegative = orgNegative.replace(/^\s+/, "");
+            if (applyStyleNeg.checked === true)
+            {
+                applyValues(promptNeg,orgNegative)
+            }
+    
+        } else {
+            appendStyle(applyStyleNeg,negative,orgNegative,promptNeg)
         }
     } else {
+        prompt = decodeURIComponent(prompt).replaceAll(/%27/g, "'")
+        negative = decodeURIComponent(negative).replaceAll(/%27/g, "'")
         if (orgPrompt.includes(prompt) || orgPrompt.includes(", "+ prompt)) {
             if(orgPrompt.includes(prompt)) {}
-            orgPrompt = orgPrompt.replace(", "+ prompt,"");
-            orgPrompt = orgPrompt.replace(prompt,"");
-            orgPrompt = orgPrompt.replace(/^\s+/, "");
-            orgPrompt = orgPrompt.replace(/^,+/g, "");
-            orgPrompt = orgPrompt.replace(/^\s+/, "");
+            orgPrompt = ""
             if (applyStylePrompt.checked === true)
             {
                 applyValues(promptPos,orgPrompt)
             }
         } else {
-            appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
+            appendStyle(applyStylePrompt,prompt,"",promptPos)
         }
-    }
-    if (orgNegative.includes(negative) || orgNegative.includes(", "+ negative)) {
-        if(orgNegative.includes(negative)) {}
-        orgNegative = orgNegative.replace(", "+ negative,"");
-        orgNegative = orgNegative.replace(negative,"");
-        orgNegative = orgNegative.replace(/^\s+/, "");
-        orgNegative = orgNegative.replace(/^,+/g, "");
-        orgNegative = orgNegative.replace(/^\s+/, "");
-        if (applyStyleNeg.checked === true)
-        {
-            applyValues(promptNeg,orgNegative)
+        if (orgNegative.includes(negative) || orgNegative.includes(", "+ negative)) {
+            if(orgNegative.includes(negative)) {}
+            orgNegative = ""
+            if (applyStyleNeg.checked === true)
+            {
+                applyValues(promptNeg,orgNegative)
+            }
+        } else {
+            appendStyle(applyStyleNeg,negative,"",promptNeg)
         }
-
-    } else {
-        appendStyle(applyStyleNeg,negative,orgNegative,promptNeg)
     }
 }
-function hoverPreviewStyle(prompt,negative) {
+
+function hoverPreviewStyle(prompt,negative,origin) {
     const enablePreviewChk = gradioApp().querySelector('#HoverOverStyle_preview > label > input');
     const enablePreview = enablePreviewChk.checked;
     if (enablePreview === true) { 
         previewbox = gradioApp().getElementById("stylezPreviewBoxid");
         previewbox.style.display = "block";
-        prompt = removeFirstAndLastCharacter(prompt)
-        negative = removeFirstAndLastCharacter(negative)
+        if (origin == "Stylez") {
+            prompt = removeFirstAndLastCharacter(prompt)
+            negative = removeFirstAndLastCharacter(negative)
+        } else {
+            prompt = decodeURIComponent(prompt).replaceAll(/%27/g, "'")
+            negative = decodeURIComponent(negative).replaceAll(/%27/g, "'")
+        }
+        if (prompt == ""){
+            prompt = "NULL"
+        }
+        if (negative == ""){
+            negative = "NULL"
+        }
         pos = gradioApp().getElementById("stylezPreviewPositive");
         neg = gradioApp().getElementById("stylezPreviewNegative");
         pos.textContent = "Prompt: " + prompt;
@@ -244,7 +282,10 @@ function removeFirstAndLastCharacter(inputString) {
 function cardSizeChange(value) {
     const styleCards = gradioApp().querySelectorAll('.style_card');
     styleCards.forEach((card) => {
-        card.style.height = value + 'px';
+        card.style.minHeight = value + 'px';
+        card.style.maxHeight = value + 'px';
+        card.style.minWidth = value + 'px';
+        card.style.maxWidth = value + 'px';
     });
 }
 
@@ -315,10 +356,15 @@ function filterSearch(cat, search) {
     }
 }
 
-function editStyle(title, img, description, prompt, promptNeggative, folder, filename) {
+function editStyle(title, img, description, prompt, promptNeggative, folder, filename,origin) {
     // title
-    prompt = removeFirstAndLastCharacter(prompt)
-    promptNeggative = removeFirstAndLastCharacter(promptNeggative)
+    if (origin == "Stylez") {
+        prompt = removeFirstAndLastCharacter(prompt)
+        promptNeggative = removeFirstAndLastCharacter(promptNeggative)
+    } else {
+        prompt = decodeURIComponent(prompt).replaceAll(/%27/g, "'")
+        promptNeggative = decodeURIComponent(promptNeggative.replaceAll(/%27/g, "'"))
+    }
     const editorTitle = gradioApp().querySelector('#style_title_txt > label > textarea');
     applyValues(editorTitle, title);
     // img
@@ -422,24 +468,30 @@ function addQuicksave () {
     var innerButton = document.createElement('button');
     var promptParagraph = document.createElement('button');
     var negParagraph = document.createElement('button');
+    let prompt = ""
+    let negprompt = ""
     if (promptPos.value !== "" || promptNeg.value !== "") {
        
         if (promptPos.value == "")
         {
             promptParagraph.disabled = true  
             promptParagraph.textContent = "EMPTY"
+            prompt = "EMPTY"
         }
         else {
             promptParagraph.disabled = false
             promptParagraph.textContent = promptPos.value;
+            prompt = encodeURIComponent(promptPos.value);
         }
         if (promptNeg.value == "")
         {
             negParagraph.disabled = true
             negParagraph.textContent = "EMPTY"
+            negprompt = "EMPTY"
         } else {
             negParagraph.disabled = false
             negParagraph.textContent = promptNeg.value;
+            negprompt = encodeURIComponent(promptNeg.value)
         }
         liElement.className = 'styles_quicksave';
         deleteButton.className = 'styles_quicksave_del';
@@ -450,11 +502,25 @@ function addQuicksave () {
         promptParagraph.onclick = function() {
             applyQuickSave("pos",this.textContent)
         };
+        promptParagraph.onmouseenter = function() {
+            event.stopPropagation(); 
+            hoverPreviewStyle(promptParagraph.textContent,negParagraph.textContent,'Quicksave');
+        }
+        promptParagraph.onmouseleave = function() {
+            hoverPreviewStyleOut()
+        }
         promptParagraph.className = 'styles_quicksave_prompt styles_quicksave_btn';
 
         negParagraph.onclick = function() {
             applyQuickSave("neg",this.textContent)
         };
+        negParagraph.onmouseenter = function() {
+            event.stopPropagation(); 
+            hoverPreviewStyle(promptParagraph.textContent,negParagraph.textContent,'Quicksave');
+        }
+        negParagraph.onmouseleave = function() {
+            hoverPreviewStyleOut()
+        }
         negParagraph.className = 'styles_quicksave_neg styles_quicksave_btn';
         innerButton.className = 'styles_quicksave_apply';
         innerButton.appendChild(promptParagraph);

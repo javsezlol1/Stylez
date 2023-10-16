@@ -12,6 +12,7 @@ import csv
 from json import loads
 import re
 from extensions.Stylez.scripts import promptgen as PG
+import requests
 
 stylespath = ""
 
@@ -111,6 +112,7 @@ if (autoconvert == True):
     else:
         save_settings("autoconvert", False)
 
+
 def generate_html_code():
     reload_favourites()
     style = None
@@ -158,15 +160,15 @@ def generate_html_code():
                             else:
                                 color = "#ffffff"
                             style_html += f"""
-                            <div class="style_card" data-category='{subfolder_name}' data-title='{titlelower}' style="height:{card_size_value}px;">
+                            <div class="style_card" data-category='{subfolder_name}' data-title='{titlelower}' style="min-height:{card_size_value}px;max-height:{card_size_value}px;min-width:{card_size_value}px;max-width:{card_size_value}px;">
                                 <img class="styles_thumbnail" src="{"file=" + img +"?timestamp"+ formatted_time}" alt="{title} Preview">
                                 <div class="EditStyleJson">
-                                    <button onclick="editStyle(`{title}`,`{imghack}`,`{description}`,`{prompt}`,`{prompt_negative}`,`{subfolder_name}`,`{encoded_filename}`)">🖉</button>
+                                    <button onclick="editStyle(`{title}`,`{imghack}`,`{description}`,`{prompt}`,`{prompt_negative}`,`{subfolder_name}`,`{encoded_filename}`,`Stylez`)">🖉</button>
                                 </div>
                                 <div class="favouriteStyleJson">
                                     <button class="favouriteStyleBtn" style="color:{color};" onclick="addFavourite('{subfolder_name}','{encoded_filename}', this)">★</button>
                                 </div>
-                                    <div onclick="applyStyle(`{prompt}`,`{prompt_negative}`)" onmouseenter="event.stopPropagation(); hoverPreviewStyle(`{prompt}`,`{prompt_negative}`)" onmouseleave="hoverPreviewStyleOut()" class="styles_overlay"></div>
+                                    <div onclick="applyStyle(`{prompt}`,`{prompt_negative}`,`Stylez`)" onmouseenter="event.stopPropagation(); hoverPreviewStyle(`{prompt}`,`{prompt_negative}`,`Stylez`)" onmouseleave="hoverPreviewStyleOut()" class="styles_overlay"></div>
                                     <div class="styles_title">{title}</div>
                                     <p class="styles_description">{description}</p>
                                 </img>
@@ -285,29 +287,74 @@ def generate_style(prompt,temperature,top_k,max_length,repitition_penalty,usecom
 
 class Stylez(scripts.Script):
     generate_styles_and_tags = generate_html_code()
+    current_script_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(current_script_dir)
+    nopreview = os.path.join(parent_dir, "nopreview.jpg")
     def title(self):
         return "Stylez"
     def ui(self, is_img2img):
         global hideoldstyles
         with gr.Tabs(elem_id = "Stylez"): 
             gr.HTML("""<div id="stylezPreviewBoxid" class="stylezPreviewBox"><p id="stylezPreviewPositive">test</p><p id="stylezPreviewNegative">test</p></div>""")
-            with gr.TabItem(label="Style Libary",elem_id="styles_libary"):
+            with gr.TabItem(label="Styles",elem_id="styles_libary"):
                 with gr.Column():
-                    with gr.Row(elem_id="style_search_search"):
-                        Style_Search = gr.Textbox('', label="Searchbox", elem_id="style_search", placeholder="Search...", elem_classes="textbox", lines=1,scale=3)
-                        category_dropdown = gr.Dropdown(label="Category", choices=self.generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown",scale=1)
-                        refresh_button = gr.Button(refresh_symbol, label="Refresh", elem_id="style_refresh", elem_classes="tool", lines=1)
-                    with gr.Row(elem_id="style_cards_row"):                        
-                        with gr.Column(elem_id="style_quicklist_column"):
-                            with gr.Row():
-                                gr.Text("QuickSave",show_label=False)
+                    with gr.Column():
+                        with gr.Tabs(elem_id = "libs"):
+
+                            with gr.TabItem(label="Style Libary"):
+                                with gr.Row():                      
+                                    with gr.Column(elem_id="style_quicklist_column"):
+                                        with gr.Row():
+                                            gr.Text("QuickSave",show_label=False)
+                                            with gr.Row():
+                                                stylezquicksave_add = gr.Button("Add" ,elem_classes="stylezquicksave_add")
+                                                stylezquicksave_clear = gr.Button("Clear" ,elem_classes="stylezquicksave_add")
+                                        with gr.Row(elem_id="style_cards_row"):                        
+                                                gr.HTML("""<ul id="styles_quicksave_list"></ul>""")
+                                    with gr.Column():
+                                        with gr.Row(elem_id="style_search_search"):
+                                            Style_Search = gr.Textbox('', label="Searchbox", elem_id="style_search", placeholder="Search...", elem_classes="textbox", lines=1,scale=3)
+                                            category_dropdown = gr.Dropdown(label="Category", choices=self.generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown",scale=1)
+                                            refresh_button = gr.Button(refresh_symbol, label="Refresh", elem_id="style_refresh", elem_classes="tool", lines=1)
+                                        with gr.Row():
+                                            with gr.Column(elem_id="style_cards_column"):
+                                                Styles_html=gr.HTML(self.generate_styles_and_tags[0])
+
+                            with gr.TabItem(label="CivitAI"):
                                 with gr.Row():
-                                    stylezquicksave_add = gr.Button("Add" ,elem_classes="stylezquicksave_add")
-                                    stylezquicksave_clear = gr.Button("Clear" ,elem_classes="stylezquicksave_add")
-                            gr.HTML("""<ul id="styles_quicksave_list"></ul>""")
-                        with gr.Column(elem_id="style_cards_column"):
-                            with gr.Row():
-                                Styles_html=gr.HTML(self.generate_styles_and_tags[0])
+                                    with gr.Column(elem_id="civit_tags_column"):
+                                        nsfwlvl = gr.Dropdown(label="NSFW:", choices=["None", "Soft", "Mature", "X"], value="None", lines=1, elem_id="civit_nsfwfilter", elem_classes="dropdown styles_dropdown",scale=1)
+                                        sortcivit  = gr.Dropdown(label="Sort:", choices=["Most Reactions", "Most Comments", "Newest"], value="Most Reactions", lines=1, elem_id="civit_sortfilter", elem_classes="dropdown styles_dropdown",scale=1)
+                                        periodcivit  = gr.Dropdown(label="Period:", choices=["AllTime", "Year", "Month", "Week", "Day"], value="AllTime", lines=1, elem_id="civit_periodfilter", elem_classes="dropdown styles_dropdown",scale=1)
+                                    with gr.Column():
+                                        with gr.Row(elem_id="style_search_search"):
+                                            fdg = gr.Textbox('', label="Searchbox", elem_id="style_search", placeholder="DOES NOT WORK! NOT SUPPORTED BY API ", elem_classes="textbox", lines=1,scale=3)
+                                            civitAI_refresh = gr.Button(refresh_symbol, label="Refresh", elem_id="style_refresh", elem_classes="tool", lines=1)
+                                            pagenumber = gr.Number(label="Page:",value=1,minimum=1,visible=False)
+                                        with gr.Row():
+                                            with gr.Column(elem_id="civit_cards_column"):
+                                                gr.HTML(f"""<div><div id="civitaiimages_loading"><p>Loading...</p></div><div onscroll="civitaiaCursorLoad(this)" id="civitai_cardholder" data-nopreview='{self.nopreview}'></div></div>""")
+
+                            with gr.TabItem(label="Style Generator",elem_id="styles_generator"):
+                                with gr.Row():
+                                    with gr.Column():
+                                        style_geninput_txt = gr.Textbox(label="Input:", lines=7,placeholder="Title goes here", elem_classes="stylez_promptgenbox")
+                                        with gr.Row():
+                                            style_gengrab_btn = gr.Button("Grab Current",elem_id="style_promptgengrab_btn")
+                                    with gr.Column():
+                                        style_genoutput_txt = gr.Textbox(label="Output:", lines=7,placeholder="Description goes here",elem_classes="stylez_promptgenbox")
+                                        with gr.Row():
+                                            style_gen_btn = gr.Button("Generate",elem_id="style_promptgen_btn")
+                                            style_gensend_btn = gr.Button("Send to Prompt",elem_id="style_promptgen_send_btn")
+                                with gr.Row():
+                                    style_genusecomma_btn = gr.Checkbox(label="Use Commas", value=True)
+                                with gr.Row():
+                                    with gr.Column():
+                                        style_gen_temp = gr.Slider(label="Temperature (Higher = More Diverse But Less Coherent): ", minimum=0.1, maximum=1.0 ,value=0.9)
+                                        style_gen_top_k = gr.Slider(label="top_k (Number Of Tokens To Sample Per Step):", minimum=1, maximum=50 ,value=8,step=1)
+                                    with gr.Column():
+                                        style_max_length = gr.Slider(label="Maximum Number Of Tokens:", minimum=1, maximum=160 ,value=80,step=1)
+                                        style_gen_repitition_penalty = gr.Slider(label="Repitition Penalty:", minimum=0.1, maximum=2 ,value=1.2,step=0.1)
                     with gr.Row(elem_id="stylesPreviewRow"):
                         gr.Checkbox(value=True,label="Apply/Remove Prompt", elem_id="styles_apply_prompt", elem_classes="styles_checkbox checkbox", lines=1)
                         gr.Checkbox(value=True,label="Apply/Remove Negative", elem_id="styles_apply_neg", elem_classes="styles_checkbox checkbox", lines=1)
@@ -320,26 +367,6 @@ class Stylez(scripts.Script):
                         favourite_temp = gr.Text(elem_id="favouriteTempTxt",interactive=False,label="Positive:",lines=2,visible=False)
                         add_favourite_btn = gr.Button(elem_id="stylezAddFavourite",visible=False)
                         remove_favourite_btn = gr.Button(elem_id="stylezRemoveFavourite",visible=False)
-            with gr.TabItem(label="Style Generator",elem_id="styles_generator"):
-                with gr.Row():
-                    with gr.Column():
-                        style_geninput_txt = gr.Textbox(label="Input:", lines=1,placeholder="Title goes here")
-                        with gr.Row():
-                            style_gengrab_btn = gr.Button("Grab Current",elem_id="style_promptgengrab_btn")
-                    with gr.Column():
-                        style_genoutput_txt = gr.Textbox(label="Output:", lines=1,placeholder="Description goes here")
-                        with gr.Row():
-                            style_genusecomma_btn = gr.Checkbox(label="Use Commas", value=True)
-                        with gr.Row():
-                            style_gen_btn = gr.Button("Generate",elem_id="style_promptgen_btn")
-                            style_gensend_btn = gr.Button("Send to Prompt",elem_id="style_promptgen_send_btn")
-                with gr.Row():
-                    with gr.Column():
-                        style_gen_temp = gr.Slider(label="Temperature (Higher = More Diverse But Less Coherent): ", minimum=0.1, maximum=1.0 ,value=0.9)
-                        style_gen_top_k = gr.Slider(label="top_k (Number Of Tokens To Sample Per Step):", minimum=1, maximum=50 ,value=8,step=1)
-                    with gr.Column():
-                        style_max_length = gr.Slider(label="Maximum Number Of Tokens:", minimum=1, maximum=160 ,value=80,step=1)
-                        style_gen_repitition_penalty = gr.Slider(label="Repitition Penalty:", minimum=0.1, maximum=2 ,value=1.2,step=0.1)
             with gr.TabItem(label="Style Editor",elem_id="styles_editor"):
                 with gr.Row():
                     with gr.Column():
@@ -366,6 +393,10 @@ class Stylez(scripts.Script):
                             style_savefolder_refrsh_btn = gr.Button(refresh_symbol, label="Refresh", lines=1,elem_classes="tool")
                             style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=self.generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
                             style_savefolder_temp = gr.Textbox(label="Save Folder:", lines=1, elem_id="style_savefolder_temp",visible=False)
+        civitAI_refresh.click(fn=None,_js="refreshfetchCivitai",inputs=[nsfwlvl,sortcivit,periodcivit])
+        periodcivit.change(fn=None,_js="refreshfetchCivitai",inputs=[nsfwlvl,sortcivit,periodcivit])
+        sortcivit.change(fn=None,_js="refreshfetchCivitai",inputs=[nsfwlvl,sortcivit,periodcivit])
+        nsfwlvl.change(fn=None,_js="refreshfetchCivitai",inputs=[nsfwlvl,sortcivit,periodcivit])
         style_gengrab_btn.click(fn=None,_js="stylesgrabprompt" ,outputs=[style_geninput_txt])
         style_gensend_btn.click(fn=None,_js='sendToPromtbox',inputs=[style_genoutput_txt])
         style_gen_btn.click(fn=generate_style,inputs=[style_geninput_txt,style_gen_temp,style_gen_top_k,style_max_length,style_gen_repitition_penalty,style_genusecomma_btn],outputs=[style_genoutput_txt])
