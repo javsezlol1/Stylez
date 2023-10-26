@@ -155,36 +155,40 @@ function applyStyle(prompt, negative,origin) {
                 appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
             }
         } else {
-            if (orgPrompt.includes(prompt) || orgPrompt.includes(", "+ prompt)) {
-                if(orgPrompt.includes(prompt)) {}
-                orgPrompt = orgPrompt.replace(", "+ prompt,"");
-                orgPrompt = orgPrompt.replace(prompt,"");
-                orgPrompt = orgPrompt.replace(/^\s+/, "");
-                orgPrompt = orgPrompt.replace(/^,+/g, "");
-                orgPrompt = orgPrompt.replace(/^\s+/, "");
-                if (applyStylePrompt.checked === true)
-                {
-                    applyValues(promptPos,orgPrompt)
+                if (prompt !== "") {
+                    if (orgPrompt.includes(prompt) || orgPrompt.includes(", "+ prompt)) {
+                        if(orgPrompt.includes(prompt)) {}
+                        orgPrompt = orgPrompt.replace(", "+ prompt,"");
+                        orgPrompt = orgPrompt.replace(prompt,"");
+                        orgPrompt = orgPrompt.replace(/^\s+/, "");
+                        orgPrompt = orgPrompt.replace(/^,+/g, "");
+                        orgPrompt = orgPrompt.replace(/^\s+/, "");
+                        if (applyStylePrompt.checked === true)
+                        {
+                            applyValues(promptPos,orgPrompt)
+                        }
+                    } else {
+                        appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
+                    }
                 }
-            } else {
-                appendStyle(applyStylePrompt,prompt,orgPrompt,promptPos)
             }
-        }
-        if (orgNegative.includes(negative) || orgNegative.includes(", "+ negative)) {
-            if(orgNegative.includes(negative)) {}
-            orgNegative = orgNegative.replace(", "+ negative,"");
-            orgNegative = orgNegative.replace(negative,"");
-            orgNegative = orgNegative.replace(/^\s+/, "");
-            orgNegative = orgNegative.replace(/^,+/g, "");
-            orgNegative = orgNegative.replace(/^\s+/, "");
-            if (applyStyleNeg.checked === true)
-            {
-                applyValues(promptNeg,orgNegative)
+            if (negative !== "") {
+                if (orgNegative.includes(negative) || orgNegative.includes(", "+ negative)) {
+                    if(orgNegative.includes(negative)) {}
+                    orgNegative = orgNegative.replace(", "+ negative,"");
+                    orgNegative = orgNegative.replace(negative,"");
+                    orgNegative = orgNegative.replace(/^\s+/, "");
+                    orgNegative = orgNegative.replace(/^,+/g, "");
+                    orgNegative = orgNegative.replace(/^\s+/, "");
+                    if (applyStyleNeg.checked === true)
+                    {
+                        applyValues(promptNeg,orgNegative)
+                    }
+            
+                } else {
+                    appendStyle(applyStyleNeg,negative,orgNegative,promptNeg)
+                }
             }
-    
-        } else {
-            appendStyle(applyStyleNeg,negative,orgNegative,promptNeg)
-        }
     } else {
         prompt = decodeURIComponent(prompt).replaceAll(/%27/g, "'")
         negative = decodeURIComponent(negative).replaceAll(/%27/g, "'")
