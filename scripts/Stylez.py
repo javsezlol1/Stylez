@@ -194,7 +194,7 @@ def save_style(title, img, description, prompt, prompt_negative, filename, save_
     print(f"""Saved: '{save_folder}/{filename}'""")
     if save_folder and filename:
         if img is None or img == "":
-            img = os.path.join(extension_path, "nopreview.jpg")
+            img = Image.open(os.path.join(extension_path, "nopreview.jpg")) 
         img = img.resize((200, 200))
         save_folder_path = os.path.join(extension_path, "styles", save_folder)
         if not os.path.exists(save_folder_path):
