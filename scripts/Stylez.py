@@ -4,18 +4,17 @@ import datetime
 import urllib.parse
 import gradio as gr
 from PIL import Image
-from modules import scripts
 from pathlib import Path
 from typing import List, Tuple
 import json
 import csv
 from json import loads
 import re
-from extensions.Stylez.scripts import promptgen as PG
-import requests
+from modules import scripts
+from scripts import promptgen as PG
+from modules import cmd_args
 
-stylespath = ""
-
+extension_path = scripts.basedir()
 refresh_symbol = '\U0001f504'  # 🔄
 close_symbol = '\U0000274C'  # ❌
 save_symbol = '\U0001F4BE' #💾
@@ -33,7 +32,7 @@ def save_card_def(value):
     save_settings("card_size",value)
     card_size_value = value
 
-config_json = os.path.join(os.path.dirname(__file__), "config.json")
+config_json = os.path.join(extension_path,"scripts" ,"config.json")
 
 def reload_favourites():
     with open(config_json, "r") as json_file:
@@ -91,7 +90,7 @@ def save_json_objects(json_objects):
         print("Warning: No JSON objects to save.")
         return
 
-    styles_dir = os.path.join("extensions", "Stylez", "styles")
+    styles_dir = os.path.join(extension_path, "styles")
     csv_conversion_dir = os.path.join(styles_dir, "CSVConversion")
     os.makedirs(csv_conversion_dir, exist_ok=True)
 
@@ -100,11 +99,11 @@ def save_json_objects(json_objects):
         with open(json_file_path, 'w') as jsonfile:
             json.dump(json_obj, jsonfile, indent=4)
         image_path = os.path.join(csv_conversion_dir, f"{json_obj['name']}.jpg")
-        img = Image.open(os.path.join("extensions", "Stylez", "nopreview.jpg"))
+        img = Image.open(os.path.join(extension_path, "nopreview.jpg"))
         img.save(image_path)
         
 if (autoconvert == True):
-    csv_file_path = os.path.join(os.getcwd(), "styles.csv")
+    csv_file_path = cmd_args.parser.parse_args().styles_file
     if os.path.exists(csv_file_path):
         json_objects = create_json_objects_from_csv(csv_file_path)
         save_json_objects(json_objects)
@@ -119,7 +118,7 @@ def generate_html_code():
     style_html = ""
     categories_list = ["All","Favourites"]
     save_categories_list =[]
-    styles_dir = os.path.join("extensions", "Stylez", "styles")
+    styles_dir = os.path.join(extension_path, "styles")
     current_time = datetime.datetime.now()
     formatted_time = current_time.strftime('%H:%M:%S.%f')
     formatted_time = formatted_time.replace(":", "")
@@ -195,9 +194,9 @@ def save_style(title, img, description, prompt, prompt_negative, filename, save_
     print(f"""Saved: '{save_folder}/{filename}'""")
     if save_folder and filename:
         if img is None or img == "":
-            img = os.path.join("extensions", "Stylez", "nopreview.jpg")
+            img = os.path.join(extension_path, "nopreview.jpg")
         img = img.resize((200, 200))
-        save_folder_path = os.path.join("extensions", "Stylez", "styles", save_folder)
+        save_folder_path = os.path.join(extension_path, "styles", save_folder)
         if not os.path.exists(save_folder_path):
             os.makedirs(save_folder_path)
         json_data = {
@@ -232,7 +231,7 @@ def filename_check(folder,filename):
     if filename is None or len(filename) == 0 :
         warning = """<p id="style_filename_check" style="color:red;">please add a file name</p>"""
     else:
-        save_folder_path = os.path.join("extensions", "Stylez", "styles", folder)
+        save_folder_path = os.path.join(extension_path, "styles", folder)
         json_file_path = os.path.join(save_folder_path, filename + ".json")
         if os.path.exists(json_file_path):
             warning = f"""<p id="style_filename_check" style="color:red;">Overwrite!! File Already Exists In '{folder}'</p>"""
@@ -241,11 +240,11 @@ def filename_check(folder,filename):
     return gr.update(value=warning)
 
 def clear_style():
-    previewimage = os.path.join("extensions", "Stylez", "nopreview.jpg")
+    previewimage = os.path.join(extension_path, "nopreview.jpg")
     return gr.update(value=None),gr.update(value=previewimage),gr.update(value=None),gr.update(value=None),gr.update(value=None),gr.update(value=None),gr.update(value=None)
 
 def deletestyle(folder, filename):
-    base_path = os.path.join("extensions", "Stylez", "styles", folder)
+    base_path = os.path.join(extension_path, "styles", folder)
     json_file_path = os.path.join(base_path, filename + ".json")
     jpg_file_path = os.path.join(base_path, filename + ".jpg")
 
@@ -287,9 +286,7 @@ def generate_style(prompt,temperature,top_k,max_length,repitition_penalty,usecom
 
 class Stylez(scripts.Script):
     generate_styles_and_tags = generate_html_code()
-    current_script_dir = os.path.dirname(os.path.abspath(__file__))
-    parent_dir = os.path.dirname(current_script_dir)
-    nopreview = os.path.join(parent_dir, "nopreview.jpg")
+    nopreview = os.path.join(extension_path, "nopreview.jpg")
     def title(self):
         return "Stylez"
     def ui(self, is_img2img):
