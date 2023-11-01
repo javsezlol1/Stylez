@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Cybernetic Robot",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Cybernetic Robot.jpg",
+    "prompt": "cybernetic robot {prompt}, android, AI, machine, metal, wires, tech, futuristic, highly detailed",
+    "negative": "organic, natural, human, sketch, watercolor, low contrast"
+}

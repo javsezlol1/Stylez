@@ -1,0 +1,7 @@
+{
+    "name": "Game Mario",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Mario.jpg",
+    "prompt": "Super Mario style {prompt}, vibrant, cute, cartoony, fantasy, playful, reminiscent of Super Mario series",
+    "negative": "realistic, modern, horror, dystopian, violent"
+}

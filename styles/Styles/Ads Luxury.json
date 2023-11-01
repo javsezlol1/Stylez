@@ -1,0 +1,7 @@
+{
+    "name": "Ads Luxury",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Luxury.jpg",
+    "prompt": "luxury product style {prompt}, elegant, sophisticated, high-end, luxurious, professional, highly detailed",
+    "negative": "cheap, noisy, blurry, unattractive, amateurish"
+}

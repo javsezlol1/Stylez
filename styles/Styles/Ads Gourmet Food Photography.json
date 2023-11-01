@@ -1,0 +1,7 @@
+{
+    "name": "Ads Gourmet Food Photography",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Gourmet Food Photography.jpg",
+    "prompt": "gourmet food photo of {prompt}, soft natural lighting, macro details, vibrant colors, fresh ingredients, glistening textures, bokeh background, styled plating, wooden tabletop, garnished, tantalizing, editorial quality",
+    "negative": "cartoon, anime, sketch, grayscale, dull, overexposed, cluttered, messy plate, deformed"
+}

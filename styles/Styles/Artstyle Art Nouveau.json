@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Art Nouveau",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Art Nouveau.jpg",
+    "prompt": "art nouveau style {prompt}, elegant, decorative, curvilinear forms, nature-inspired, ornate, detailed",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, modernist, minimalist"
+}

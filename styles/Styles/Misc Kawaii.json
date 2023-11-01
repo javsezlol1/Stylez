@@ -1,0 +1,7 @@
+{
+    "name": "Misc Kawaii",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Kawaii.jpg",
+    "prompt": "kawaii style {prompt}, cute, adorable, brightly colored, cheerful, anime influence, highly detailed",
+    "negative": "dark, scary, realistic, monochrome, abstract"
+}

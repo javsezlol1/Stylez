@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Typography",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Typography.jpg",
+    "prompt": "typographic art {prompt}, stylized, intricate, detailed, artistic, text-based",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic"
+}

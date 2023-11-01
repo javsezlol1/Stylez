@@ -1,0 +1,7 @@
+{
+    "name": "Misc Zentangle",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Zentangle.jpg",
+    "prompt": "zentangle {prompt}, intricate, abstract, monochrome, patterns, meditative, highly detailed",
+    "negative": "colorful, representative, simplistic, large fields of color"
+}

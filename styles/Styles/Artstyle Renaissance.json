@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Renaissance",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Renaissance.jpg",
+    "prompt": "renaissance style {prompt}, realistic, perspective, light and shadow, religious or mythological themes, highly detailed",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, modernist, minimalist, abstract"
+}

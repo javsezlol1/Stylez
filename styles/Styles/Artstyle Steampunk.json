@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Steampunk",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Steampunk.jpg",
+    "prompt": "steampunk style {prompt}, antique, mechanical, brass and copper tones, gears, intricate, detailed",
+    "negative": "deformed, glitch, noisy, low contrast, anime, photorealistic"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Misc Dreamscape",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Dreamscape.jpg",
+    "prompt": "dreamscape {prompt}, surreal, ethereal, dreamy, mysterious, fantasy, highly detailed",
+    "negative": "realistic, concrete, ordinary, mundane"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Ads Food Photography",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Food Photography.jpg",
+    "prompt": "food photography style {prompt}, appetizing, professional, culinary, high-resolution, commercial, highly detailed",
+    "negative": "unappetizing, sloppy, unprofessional, noisy, blurry"
+}

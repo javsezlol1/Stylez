@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Biomechanical",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Biomechanical.jpg",
+    "prompt": "biomechanical style {prompt}, blend of organic and mechanical elements, futuristic, cybernetic, detailed, intricate",
+    "negative": "natural, rustic, primitive, organic, simplistic"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Misc Grunge",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Grunge.jpg",
+    "prompt": "grunge style {prompt}, textured, distressed, vintage, edgy, punk rock vibe, dirty, noisy",
+    "negative": "smooth, clean, minimalist, sleek, modern, photorealistic"
+}

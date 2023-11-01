@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Abstract Expressionism",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Abstract Expressionism.jpg",
+    "prompt": "abstract expressionist painting {prompt}, energetic brushwork, bold colors, abstract forms, expressive, emotional",
+    "negative": "realistic, photorealistic, low contrast, plain, simple, monochrome"
+}

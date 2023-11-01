@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Cybernetic",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Cybernetic.jpg",
+    "prompt": "cybernetic style {prompt}, futuristic, technological, cybernetic enhancements, robotics, artificial intelligence themes",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, historical, medieval"
+}

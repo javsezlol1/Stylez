@@ -1,0 +1,7 @@
+{
+    "name": "Misc Lovecraftian",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Lovecraftian.jpg",
+    "prompt": "lovecraftian horror {prompt}, eldritch, cosmic horror, unknown, mysterious, surreal, highly detailed",
+    "negative": "light-hearted, mundane, familiar, simplistic, realistic"
+}

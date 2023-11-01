@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Paper Quilling",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Paper Quilling.jpg",
+    "prompt": "paper quilling art of {prompt}, intricate, delicate, curling, rolling, shaping, coiling, loops, 3D, dimensional, ornamental",
+    "negative": "photo, painting, drawing, 2D, flat, deformed, noisy, blurry"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Flat Papercut",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Flat Papercut.jpg",
+    "prompt": "flat papercut style {prompt}, silhouette, clean cuts, paper, sharp edges, minimalist, color block",
+    "negative": "3D, high detail, noise, grainy, blurry, painting, drawing, photo, disfigured"
+}

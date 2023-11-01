@@ -1,0 +1,7 @@
+{
+    "name": "Photo Alien",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Alien.jpg",
+    "prompt": "alien-themed {prompt}, extraterrestrial, cosmic, otherworldly, mysterious, sci-fi, highly detailed",
+    "negative": "earthly, mundane, common, realistic, simple"
+}

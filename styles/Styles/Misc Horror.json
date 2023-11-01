@@ -1,0 +1,7 @@
+{
+    "name": "Misc Horror",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Horror.jpg",
+    "prompt": "horror-themed {prompt}, eerie, unsettling, dark, spooky, suspenseful, grim, highly detailed",
+    "negative": "cheerful, bright, vibrant, light-hearted, cute"
+}

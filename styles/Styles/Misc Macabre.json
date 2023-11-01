@@ -1,0 +1,7 @@
+{
+    "name": "Misc Macabre",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Macabre.jpg",
+    "prompt": "macabre style {prompt}, dark, gothic, grim, haunting, highly detailed",
+    "negative": "bright, cheerful, light-hearted, cartoonish, cute"
+}

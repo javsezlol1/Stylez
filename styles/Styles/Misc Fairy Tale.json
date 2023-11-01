@@ -1,0 +1,7 @@
+{
+    "name": "Misc Fairy Tale",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Fairy Tale.jpg",
+    "prompt": "fairy tale {prompt}, magical, fantastical, enchanting, storybook style, highly detailed",
+    "negative": "realistic, modern, ordinary, mundane"
+}

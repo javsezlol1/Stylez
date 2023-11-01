@@ -1,0 +1,7 @@
+{
+    "name": "Misc Disco",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Disco.jpg",
+    "prompt": "disco-themed {prompt}, vibrant, groovy, retro 70s style, shiny disco balls, neon lights, dance floor, highly detailed",
+    "negative": "minimalist, rustic, monochrome, contemporary, simplistic"
+}

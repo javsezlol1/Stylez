@@ -1,0 +1,7 @@
+{
+    "name": "Ads Corporate",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Corporate.jpg",
+    "prompt": "corporate branding style {prompt}, professional, clean, modern, sleek, minimalist, business-oriented, highly detailed",
+    "negative": "noisy, blurry, grungy, sloppy, cluttered, disorganized"
+}

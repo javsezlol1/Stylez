@@ -1,0 +1,7 @@
+{
+    "name": "Misc Minimalist",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Minimalist.jpg",
+    "prompt": "minimalist style {prompt}, simple, clean, uncluttered, modern, elegant",
+    "negative": "ornate, complicated, highly detailed, cluttered, disordered, messy, noisy"
+}

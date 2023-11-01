@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Biomechanical Cyberpunk",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Biomechanical Cyberpunk.jpg",
+    "prompt": "biomechanical cyberpunk {prompt}, cybernetics, human-machine fusion, dystopian, organic meets artificial, dark, intricate, highly detailed",
+    "negative": "natural, colorful, deformed, sketch, low contrast, watercolor"
+}

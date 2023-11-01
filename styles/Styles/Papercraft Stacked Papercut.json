@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Stacked Papercut",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Stacked Papercut.jpg",
+    "prompt": "stacked papercut art of {prompt}, 3D, layered, dimensional, depth, precision cut, stacked layers, papercut, high contrast",
+    "negative": "2D, flat, noisy, blurry, painting, drawing, photo, deformed"
+}

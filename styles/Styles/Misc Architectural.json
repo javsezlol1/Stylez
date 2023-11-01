@@ -1,0 +1,7 @@
+{
+    "name": "Misc Architectural",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Architectural.jpg",
+    "prompt": "architectural style {prompt}, clean lines, geometric shapes, minimalist, modern, architectural drawing, highly detailed",
+    "negative": "curved lines, ornate, baroque, abstract, grunge"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Photo Long Exposure",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Long Exposure.jpg",
+    "prompt": "long exposure photo of {prompt}, Blurred motion, streaks of light, surreal, dreamy, ghosting effect, highly detailed",
+    "negative": "static, noisy, deformed, shaky, abrupt, flat, low contrast"
+}

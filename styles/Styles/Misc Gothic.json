@@ -1,0 +1,7 @@
+{
+    "name": "Misc Gothic",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Gothic.jpg",
+    "prompt": "gothic style {prompt}, dark, mysterious, haunting, dramatic, ornate, detailed",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, cheerful, optimistic"
+}

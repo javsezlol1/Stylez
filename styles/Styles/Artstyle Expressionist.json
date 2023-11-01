@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Expressionist",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Expressionist.jpg",
+    "prompt": "expressionist {prompt}, raw, emotional, dynamic, distortion for emotional effect, vibrant, use of unusual colors, detailed",
+    "negative": "realism, symmetry, quiet, calm, photo"
+}

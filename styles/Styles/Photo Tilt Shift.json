@@ -1,0 +1,7 @@
+{
+    "name": "Photo Tilt Shift",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Tilt Shift.jpg",
+    "prompt": "tilt-shift photo of {prompt}, selective focus, miniature effect, blurred background, highly detailed, vibrant, perspective control",
+    "negative": "blurry, noisy, deformed, flat, low contrast, unrealistic, oversaturated, underexposed"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Pointillism",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Pointillism.jpg",
+    "prompt": "pointillism style {prompt}, composed entirely of small, distinct dots of color, vibrant, highly detailed",
+    "negative": "line drawing, smooth shading, large color fields, simplistic"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Vaporwave",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Vaporwave.jpg",
+    "prompt": "vaporwave style {prompt}, retro aesthetic, cyberpunk, vibrant, neon colors, vintage 80s and 90s style, highly detailed",
+    "negative": "monochrome, muted colors, realism, rustic, minimalist, dark"
+}

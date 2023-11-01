@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Surrealist",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Surrealist.jpg",
+    "prompt": "surrealist art {prompt}, dreamlike, mysterious, provocative, symbolic, intricate, detailed",
+    "negative": "anime, photorealistic, realistic, deformed, glitch, noisy, low contrast"
+}

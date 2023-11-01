@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Hyperrealism",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Hyperrealism.jpg",
+    "prompt": "hyperrealistic art {prompt}, extremely high-resolution details, photographic, realism pushed to extreme, fine texture, incredibly lifelike",
+    "negative": "simplified, abstract, unrealistic, impressionistic, low resolution"
+}

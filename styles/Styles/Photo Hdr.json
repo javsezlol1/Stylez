@@ -1,0 +1,7 @@
+{
+    "name": "Photo Hdr",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Hdr.jpg",
+    "prompt": "HDR photo of {prompt}, High dynamic range, vivid, rich details, clear shadows and highlights, realistic, intense, enhanced contrast, highly detailed",
+    "negative": "flat, low contrast, oversaturated, underexposed, overexposed, blurred, noisy"
+}

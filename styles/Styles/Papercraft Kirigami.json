@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Kirigami",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Kirigami.jpg",
+    "prompt": "kirigami representation of {prompt}, 3D, paper folding, paper cutting, Japanese, intricate, symmetrical, precision, clean lines",
+    "negative": "painting, drawing, 2D, noisy, blurry, deformed"
+}

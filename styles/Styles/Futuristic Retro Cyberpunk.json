@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Retro Cyberpunk",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Retro Cyberpunk.jpg",
+    "prompt": "retro cyberpunk {prompt}, 80\u2019s inspired, synthwave, neon, vibrant, detailed, retro futurism",
+    "negative": "modern, desaturated, black and white, realism, low contrast"
+}

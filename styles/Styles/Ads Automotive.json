@@ -1,0 +1,7 @@
+{
+    "name": "Ads Automotive",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Automotive.jpg",
+    "prompt": "automotive advertisement style {prompt}, sleek, dynamic, professional, commercial, vehicle-focused, high-resolution, highly detailed",
+    "negative": "noisy, blurry, unattractive, sloppy, unprofessional"
+}

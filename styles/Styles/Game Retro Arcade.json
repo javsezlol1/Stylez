@@ -1,0 +1,7 @@
+{
+    "name": "Game Retro Arcade",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Retro Arcade.jpg",
+    "prompt": "retro arcade style {prompt}, 8-bit, pixelated, vibrant, classic video game, old school gaming, reminiscent of 80s and 90s arcade games",
+    "negative": "modern, ultra-high resolution, photorealistic, 3D"
+}

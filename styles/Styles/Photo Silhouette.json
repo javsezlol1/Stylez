@@ -1,0 +1,7 @@
+{
+    "name": "Photo Silhouette",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Silhouette.jpg",
+    "prompt": "silhouette style {prompt}, high contrast, minimalistic, black and white, stark, dramatic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, color, realism, photorealistic"
+}

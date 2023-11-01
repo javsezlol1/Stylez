@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Futuristic",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Futuristic.jpg",
+    "prompt": "futuristic style {prompt}, sleek, modern, ultramodern, high tech, detailed",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, vintage, antique"
+}

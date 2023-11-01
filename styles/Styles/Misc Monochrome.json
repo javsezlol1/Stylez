@@ -1,0 +1,7 @@
+{
+    "name": "Misc Monochrome",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Monochrome.jpg",
+    "prompt": "monochrome {prompt}, black and white, contrast, tone, texture, detailed",
+    "negative": "colorful, vibrant, noisy, blurry, deformed"
+}

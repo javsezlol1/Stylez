@@ -1,0 +1,7 @@
+{
+    "name": "Game Bubble Bobble",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Bubble Bobble.jpg",
+    "prompt": "Bubble Bobble style {prompt}, 8-bit, cute, pixelated, fantasy, vibrant, reminiscent of Bubble Bobble game",
+    "negative": "realistic, modern, photorealistic, violent, horror"
+}

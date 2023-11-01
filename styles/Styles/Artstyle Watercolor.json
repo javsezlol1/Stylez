@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Watercolor",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Watercolor.jpg",
+    "prompt": "watercolor painting {prompt}, vibrant, beautiful, painterly, detailed, textural, artistic",
+    "negative": "anime, photorealistic, 35mm film, deformed, glitch, low contrast, noisy"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Game Fighting Game",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Fighting Game.jpg",
+    "prompt": "fighting game style {prompt}, dynamic, vibrant, action-packed, detailed character design, reminiscent of fighting video games",
+    "negative": "peaceful, calm, minimalist, photorealistic"
+}

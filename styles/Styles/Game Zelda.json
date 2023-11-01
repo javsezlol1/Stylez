@@ -1,0 +1,7 @@
+{
+    "name": "Game Zelda",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Zelda.jpg",
+    "prompt": "Legend of Zelda style {prompt}, vibrant, fantasy, detailed, epic, heroic, reminiscent of The Legend of Zelda series",
+    "negative": "sci-fi, modern, realistic, horror"
+}

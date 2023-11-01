@@ -1,0 +1,7 @@
+{
+    "name": "Photo Film Noir",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Film Noir.jpg",
+    "prompt": "film noir style {prompt}, monochrome, high contrast, dramatic shadows, 1940s style, mysterious, cinematic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, vibrant, colorful"
+}

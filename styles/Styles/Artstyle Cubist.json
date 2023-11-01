@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Cubist",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Cubist.jpg",
+    "prompt": "cubist artwork {prompt}, geometric shapes, abstract, innovative, revolutionary",
+    "negative": "anime, photorealistic, 35mm film, deformed, glitch, low contrast, noisy"
+}

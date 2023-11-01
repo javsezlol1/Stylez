@@ -1,0 +1,7 @@
+{
+    "name": "Game Minecraft",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Minecraft.jpg",
+    "prompt": "Minecraft style {prompt}, blocky, pixelated, vibrant colors, recognizable characters and objects, game assets",
+    "negative": "smooth, realistic, detailed, photorealistic, noise, blurry, deformed"
+}

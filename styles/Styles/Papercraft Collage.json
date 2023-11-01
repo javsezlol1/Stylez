@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Collage",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Collage.jpg",
+    "prompt": "collage style {prompt}, mixed media, layered, textural, detailed, artistic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic"
+}

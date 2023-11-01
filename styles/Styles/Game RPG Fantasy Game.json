@@ -1,0 +1,7 @@
+{
+    "name": "Game RPG Fantasy Game",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game RPG Fantasy Game.jpg",
+    "prompt": "role-playing game (RPG) style fantasy {prompt}, detailed, vibrant, immersive, reminiscent of high fantasy RPG games",
+    "negative": "sci-fi, modern, urban, futuristic, low detailed"
+}

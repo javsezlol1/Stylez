@@ -1,0 +1,7 @@
+{
+    "name": "Ads Real Estate",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Real Estate.jpg",
+    "prompt": "real estate photography style {prompt}, professional, inviting, well-lit, high-resolution, property-focused, commercial, highly detailed",
+    "negative": "dark, blurry, unappealing, noisy, unprofessional"
+}

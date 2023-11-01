@@ -1,0 +1,7 @@
+{
+    "name": "Misc Metropolis",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Metropolis.jpg",
+    "prompt": "metropolis-themed {prompt}, urban, cityscape, skyscrapers, modern, futuristic, highly detailed",
+    "negative": "rural, natural, rustic, historical, simple"
+}

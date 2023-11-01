@@ -1,0 +1,7 @@
+{
+    "name": "Misc Techwear Fashion",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Techwear Fashion.jpg",
+    "prompt": "techwear fashion {prompt}, futuristic, cyberpunk, urban, tactical, sleek, dark, highly detailed",
+    "negative": "vintage, rural, colorful, low contrast, realism, sketch, watercolor"
+}

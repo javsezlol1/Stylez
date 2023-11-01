@@ -1,0 +1,7 @@
+{
+    "name": "Misc Manga",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Manga.jpg",
+    "prompt": "manga style {prompt}, vibrant, high-energy, detailed, iconic, Japanese comic style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, Western comic style"
+}

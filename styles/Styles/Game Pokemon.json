@@ -1,0 +1,7 @@
+{
+    "name": "Game Pokemon",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Pokemon.jpg",
+    "prompt": "Pok\u00e9mon style {prompt}, vibrant, cute, anime, fantasy, reminiscent of Pok\u00e9mon series",
+    "negative": "realistic, modern, horror, dystopian, violent"
+}

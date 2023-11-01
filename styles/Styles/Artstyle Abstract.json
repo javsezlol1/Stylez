@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Abstract",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Abstract.jpg",
+    "prompt": "abstract style {prompt}, non-representational, colors and shapes, expression of feelings, imaginative, highly detailed",
+    "negative": "realistic, photographic, figurative, concrete"
+}

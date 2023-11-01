@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Psychedelic",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Psychedelic.jpg",
+    "prompt": "psychedelic style {prompt}, vibrant colors, swirling patterns, abstract forms, surreal, trippy",
+    "negative": "monochrome, black and white, low contrast, realistic, photorealistic, plain, simple"
+}

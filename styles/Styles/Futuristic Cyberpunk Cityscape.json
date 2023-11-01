@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Cyberpunk Cityscape",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Cyberpunk Cityscape.jpg",
+    "prompt": "cyberpunk cityscape {prompt}, neon lights, dark alleys, skyscrapers, futuristic, vibrant colors, high contrast, highly detailed",
+    "negative": "natural, rural, deformed, low contrast, black and white, sketch, watercolor"
+}

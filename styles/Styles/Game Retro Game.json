@@ -1,0 +1,7 @@
+{
+    "name": "Game Retro Game",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Retro Game.jpg",
+    "prompt": "retro game art {prompt}, 16-bit, vibrant colors, pixelated, nostalgic, charming, fun",
+    "negative": "realistic, photorealistic, 35mm film, deformed, glitch, low contrast, noisy"
+}

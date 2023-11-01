@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Papercut Shadow Box",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Papercut Shadow Box.jpg",
+    "prompt": "3D papercut shadow box of {prompt}, layered, dimensional, depth, silhouette, shadow, papercut, handmade, high contrast",
+    "negative": "painting, drawing, photo, 2D, flat, high detail, blurry, noisy, disfigured"
+}

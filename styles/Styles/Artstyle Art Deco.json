@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Art Deco",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Art Deco.jpg",
+    "prompt": "art deco style {prompt}, geometric shapes, bold colors, luxurious, elegant, decorative, symmetrical, ornate, detailed",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, modernist, minimalist"
+}

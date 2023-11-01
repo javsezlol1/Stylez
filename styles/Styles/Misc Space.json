@@ -1,0 +1,7 @@
+{
+    "name": "Misc Space",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Space.jpg",
+    "prompt": "space-themed {prompt}, cosmic, celestial, stars, galaxies, nebulas, planets, science fiction, highly detailed",
+    "negative": "earthly, mundane, ground-based, realism"
+}

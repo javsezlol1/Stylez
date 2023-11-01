@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Thick Layered Papercut",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Thick Layered Papercut.jpg",
+    "prompt": "thick layered papercut art of {prompt}, deep 3D, volumetric, dimensional, depth, thick paper, high stack, heavy texture, tangible layers",
+    "negative": "2D, flat, thin paper, low stack, smooth texture, painting, drawing, photo, deformed"
+}

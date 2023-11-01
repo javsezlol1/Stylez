@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Paper Mache",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Paper Mache.jpg",
+    "prompt": "paper mache representation of {prompt}, 3D, sculptural, textured, handmade, vibrant, fun",
+    "negative": "2D, flat, photo, sketch, digital art, deformed, noisy, blurry"
+}

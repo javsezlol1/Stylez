@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Graffiti",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Graffiti.jpg",
+    "prompt": "graffiti style {prompt}, street art, vibrant, urban, detailed, tag, mural",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic"
+}

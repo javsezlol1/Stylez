@@ -1,0 +1,7 @@
+{
+    "name": "Papercraft Papercut Collage",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Papercraft Papercut Collage.jpg",
+    "prompt": "papercut collage of {prompt}, mixed media, textured paper, overlapping, asymmetrical, abstract, vibrant",
+    "negative": "photo, 3D, realistic, drawing, painting, high detail, disfigured"
+}

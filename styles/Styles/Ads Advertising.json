@@ -1,0 +1,7 @@
+{
+    "name": "Ads Advertising",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Advertising.jpg",
+    "prompt": "advertising poster style {prompt}, Professional, modern, product-focused, commercial, eye-catching, highly detailed",
+    "negative": "noisy, blurry, amateurish, sloppy, unattractive"
+}

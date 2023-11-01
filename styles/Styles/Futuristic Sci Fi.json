@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Sci Fi",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Sci Fi.jpg",
+    "prompt": "sci-fi style {prompt}, futuristic, technological, alien worlds, space themes, advanced civilizations",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, historical, medieval"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Game Cyberpunk Game",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Cyberpunk Game.jpg",
+    "prompt": "cyberpunk game style {prompt}, neon, dystopian, futuristic, digital, vibrant, detailed, high contrast, reminiscent of cyberpunk genre video games",
+    "negative": "historical, natural, rustic, low detailed"
+}

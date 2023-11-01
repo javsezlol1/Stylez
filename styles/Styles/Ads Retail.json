@@ -1,0 +1,7 @@
+{
+    "name": "Ads Retail",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Retail.jpg",
+    "prompt": "retail packaging style {prompt}, vibrant, enticing, commercial, product-focused, eye-catching, professional, highly detailed",
+    "negative": "noisy, blurry, amateurish, sloppy, unattractive"
+}

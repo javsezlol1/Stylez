@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Impressionist",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Impressionist.jpg",
+    "prompt": "impressionist painting {prompt}, loose brushwork, vibrant color, light and shadow play, captures feeling over form",
+    "negative": "anime, photorealistic, 35mm film, deformed, glitch, low contrast, noisy"
+}

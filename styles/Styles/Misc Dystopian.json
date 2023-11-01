@@ -1,0 +1,7 @@
+{
+    "name": "Misc Dystopian",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Dystopian.jpg",
+    "prompt": "dystopian style {prompt}, bleak, post-apocalyptic, somber, dramatic, highly detailed",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, cheerful, optimistic, vibrant, colorful"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Photo Glamour",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Glamour.jpg",
+    "prompt": "glamorous photo {prompt}, high fashion, luxurious, extravagant, stylish, sensual, opulent, elegance, stunning beauty, professional, high contrast, detailed",
+    "negative": "ugly, deformed, noisy, blurry, distorted, grainy, sketch, low contrast, dull, plain, modest"
+}

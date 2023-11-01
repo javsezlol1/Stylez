@@ -1,0 +1,7 @@
+{
+    "name": "Misc Tribal",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Tribal.jpg",
+    "prompt": "tribal style {prompt}, indigenous, ethnic, traditional patterns, bold, natural colors, highly detailed",
+    "negative": "modern, futuristic, minimalist, pastel"
+}

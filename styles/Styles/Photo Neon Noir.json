@@ -1,0 +1,7 @@
+{
+    "name": "Photo Neon Noir",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Photo Neon Noir.jpg",
+    "prompt": "neon noir {prompt}, cyberpunk, dark, rainy streets, neon signs, high contrast, low light, vibrant, highly detailed",
+    "negative": "bright, sunny, daytime, low contrast, black and white, sketch, watercolor"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Game Gta",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Gta.jpg",
+    "prompt": "GTA-style artwork {prompt}, satirical, exaggerated, pop art style, vibrant colors, iconic characters, action-packed",
+    "negative": "realistic, black and white, low contrast, impressionist, cubist, noisy, blurry, deformed"
+}

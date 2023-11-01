@@ -1,0 +1,7 @@
+{
+    "name": "Futuristic Retro Futurism",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Futuristic Retro Futurism.jpg",
+    "prompt": "retro-futuristic {prompt}, vintage sci-fi, 50s and 60s style, atomic age, vibrant, highly detailed",
+    "negative": "contemporary, realistic, rustic, primitive"
+}

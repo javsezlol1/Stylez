@@ -1,0 +1,7 @@
+{
+    "name": "Ads Fashion Editorial",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Ads Fashion Editorial.jpg",
+    "prompt": "fashion editorial style {prompt}, high fashion, trendy, stylish, editorial, magazine style, professional, highly detailed",
+    "negative": "outdated, blurry, noisy, unattractive, sloppy"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Pop Art",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Pop Art.jpg",
+    "prompt": "pop Art style {prompt}, bright colors, bold outlines, popular culture themes, ironic or kitsch",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, minimalist"
+}

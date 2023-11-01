@@ -1,0 +1,7 @@
+{
+    "name": "Game Streetfighter",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Streetfighter.jpg",
+    "prompt": "Street Fighter style {prompt}, vibrant, dynamic, arcade, 2D fighting game, highly detailed, reminiscent of Street Fighter series",
+    "negative": "3D, realistic, modern, photorealistic, turn-based strategy"
+}

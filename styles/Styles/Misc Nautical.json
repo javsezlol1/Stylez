@@ -1,0 +1,7 @@
+{
+    "name": "Misc Nautical",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Nautical.jpg",
+    "prompt": "nautical-themed {prompt}, sea, ocean, ships, maritime, beach, marine life, highly detailed",
+    "negative": "landlocked, desert, mountains, urban, rustic"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Artstyle Constructivist",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Artstyle Constructivist.jpg",
+    "prompt": "constructivist style {prompt}, geometric shapes, bold colors, dynamic composition, propaganda art style",
+    "negative": "realistic, photorealistic, low contrast, plain, simple, abstract expressionism"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Misc Stained Glass",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Misc Stained Glass.jpg",
+    "prompt": "stained glass style {prompt}, vibrant, beautiful, translucent, intricate, detailed",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic"
+}

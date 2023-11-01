@@ -1,0 +1,7 @@
+{
+    "name": "Game Strategy Game",
+    "description": "These prompt templates are found in [SDXL Prompt Styler]",
+    "preview": "Game Strategy Game.jpg",
+    "prompt": "strategy game style {prompt}, overhead view, detailed map, units, reminiscent of real-time strategy video games",
+    "negative": "first-person view, modern, photorealistic"
+}
