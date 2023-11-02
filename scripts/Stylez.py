@@ -26,20 +26,27 @@ card_size_min = 0
 card_size_max = 0
 favourites = []
 hideoldstyles = False
+config_json = os.path.join(extension_path,"scripts" ,"config.json")
 
 def save_card_def(value):
     global card_size_value
     save_settings("card_size",value)
     card_size_value = value
+    
+if not os.path.exists(config_json):
+    default_config = {
+        "card_size": 120,
+        "card_size_min": 50,
+        "card_size_max": 200,
+        "autoconvert": True,
+        "hide_old_styles": False,
+        "favourites": []
+    }
+    
+    with open(config_json, 'w') as config_file:
+        json.dump(default_config, config_file, indent=4)
 
-config_json = os.path.join(extension_path,"scripts" ,"config.json")
-
-def reload_favourites():
-    with open(config_json, "r") as json_file:
-        data = json.load(json_file)
-        global favourites
-        favourites = data["favourites"]
-
+# Load values from the JSON file
 with open(config_json, "r") as json_file:
     data = json.load(json_file)
     card_size_value = data["card_size"]
@@ -47,7 +54,13 @@ with open(config_json, "r") as json_file:
     card_size_max = data["card_size_max"]
     autoconvert = data["autoconvert"]
     favourites = data["favourites"]
-    hideoldstyles = data["hide_old_styles"]
+    hide_old_styles = data["hide_old_styles"]
+
+def reload_favourites():
+    with open(config_json, "r") as json_file:
+        data = json.load(json_file)
+        global favourites
+        favourites = data["favourites"]
 
 def save_settings(setting,value):
     with open(config_json, "r") as json_file:
