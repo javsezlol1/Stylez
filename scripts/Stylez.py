@@ -6,6 +6,7 @@ import gradio as gr
 from PIL import Image
 from pathlib import Path
 from typing import List, Tuple
+import shutil
 import json
 import csv
 from json import loads
@@ -72,8 +73,33 @@ def save_settings(setting,value):
 def img_to_thumbnail(img):
     return gr.update(value=img)
 
-def remove_special_characters(input_string):
-    return re.sub(r'[^a-zA-Z0-9 ]', '', input_string)
+character_translation_table = str.maketrans('"*/:<>?\\|\t\n\v\f\r', '＂＊／：＜＞？＼￨     ')
+leading_space_or_dot_pattern = re.compile(r'^[\s.]')
+
+
+def replace_illegal_filename_characters(input_filename: str):
+    r"""
+    Replace illegal characters with full-width variant
+    if leading space or dot then add underscore prefix
+    if input is blank then return underscore
+    Table
+    "           ->  uff02 full-width quotation mark         ＂
+    *           ->  uff0a full-width asterisk               ＊
+    /           ->  uff0f full-width solidus                ／
+    :           ->  uff1a full-width colon                  ：
+    <           ->  uff1c full-width less-than sign         ＜
+    >           ->  uff1e full-width greater-than sign      ＞
+    ?           ->  uff1f full-width question mark          ？
+    \           ->  uff3c full-width reverse solidus        ＼
+    |           ->  uffe8 half-width forms light vertical   ￨
+    \t\n\v\f\r  ->  u0020 space
+    """
+    if input_filename:
+        output_filename = input_filename.translate(character_translation_table)
+        # if  leading character is a space or a dot, add _ in front
+        return '_' + output_filename if re.match(leading_space_or_dot_pattern, output_filename) else output_filename
+    return '_'  # if input is None or blank
+
 
 def create_json_objects_from_csv(csv_file):
     json_objects = []
@@ -87,11 +113,11 @@ def create_json_objects_from_csv(csv_file):
             if name is None or prompt is None or negative_prompt is None:
                 print("Warning: Skipping row with missing values.")
                 continue
-            cleaned_name = remove_special_characters(name)
+            safe_name = replace_illegal_filename_characters(name)
             json_data = {
-                "name": cleaned_name,
+                "name": safe_name,
                 "description": "converted from csv",
-                "preview": f"{cleaned_name}.jpg",
+                "preview": f"{safe_name}.jpg",
                 "prompt": prompt,
                 "negative": negative_prompt,
             }
@@ -107,13 +133,17 @@ def save_json_objects(json_objects):
     csv_conversion_dir = os.path.join(styles_dir, "CSVConversion")
     os.makedirs(csv_conversion_dir, exist_ok=True)
 
+    nopreview_image_path = os.path.join(extension_path, "nopreview.jpg")
     for json_obj in json_objects:
-        json_file_path = os.path.join(csv_conversion_dir, f"{json_obj['name']}.json")
-        with open(json_file_path, 'w') as jsonfile:
-            json.dump(json_obj, jsonfile, indent=4)
-        image_path = os.path.join(csv_conversion_dir, f"{json_obj['name']}.jpg")
-        img = Image.open(os.path.join(extension_path, "nopreview.jpg"))
-        img.save(image_path)
+        try:
+            json_file_path = os.path.join(csv_conversion_dir, f"{json_obj['name']}.json")
+            with open(json_file_path, 'w') as jsonfile:
+                json.dump(json_obj, jsonfile, indent=4)
+            image_path = os.path.join(csv_conversion_dir, f"{json_obj['name']}.jpg")
+            shutil.copy(nopreview_image_path, image_path)
+        except Exception as e:
+            print(f'{e}\nStylez Failed to convert {json_obj.get("name", str(json_obj))}')
+
         
 if (autoconvert == True):
     csv_file_path = cmd_args.parser.parse_args().styles_file
