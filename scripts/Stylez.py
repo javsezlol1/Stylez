@@ -11,9 +11,8 @@ import json
 import csv
 from json import loads
 import re
-from modules import scripts
+from modules import scripts, shared
 from scripts import promptgen as PG
-from modules import cmd_args
 
 extension_path = scripts.basedir()
 refresh_symbol = '\U0001f504'  # 🔄
@@ -145,10 +144,9 @@ def save_json_objects(json_objects):
             print(f'{e}\nStylez Failed to convert {json_obj.get("name", str(json_obj))}')
 
         
-if (autoconvert == True):
-    csv_file_path = cmd_args.parser.parse_args().styles_file
-    if os.path.exists(csv_file_path):
-        json_objects = create_json_objects_from_csv(csv_file_path)
+if autoconvert:
+    if os.path.exists(shared.cmd_opts.styles_file):
+        json_objects = create_json_objects_from_csv(shared.cmd_opts.styles_file)
         save_json_objects(json_objects)
         save_settings("autoconvert", False)
     else:
