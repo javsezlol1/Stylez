@@ -31,15 +31,26 @@ function setupStylez() {
     } else {
         hideOldStyles(false)
     }
-    const tab_t2i = gradioApp().getElementById("tab_txt2img");
-    const tab_i2i = gradioApp().getElementById("tab_img2img");
-    const t2i_stylez_container = tab_t2i.querySelector("#Stylez");
-    const i2i_stylez_container = tab_i2i.querySelector("#Stylez");
+    const t2i_stylez_container = gradioApp().querySelector("#Stylez");
+    console.log(t2i_stylez_container)
     const tabs = gradioApp().getElementById("tabs");
-    t2i_stylez_container.parentNode.removeChild(t2i_stylez_container);
-    i2i_stylez_container.parentNode.removeChild(i2i_stylez_container);
     tabs.appendChild(t2i_stylez_container);
+    const tabNav = document.querySelector(".tab-nav");
+    if (tabNav) {
+      const buttonTextToFind = "stylez_menutab";
+      const buttons = tabNav.querySelectorAll("button.svelte-kqij2n");
+      let styleztabbtn = null;
+      buttons.forEach(button => {
+        if (button.innerText.trim() === buttonTextToFind) {
+            styleztabbtn = button;
+        }
+      });
+      if (styleztabbtn) {
+        styleztabbtn.style.display = "none";
+      } 
+    }
 }
+
 function hideOldStyles(bool) {
     if(bool == true){
         const stylesOld_t2i = gradioApp().getElementById("txt2img_styles_row");

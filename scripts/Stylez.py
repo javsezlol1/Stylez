@@ -11,7 +11,7 @@ import json
 import csv
 from json import loads
 import re
-from modules import scripts, shared
+from modules import scripts, shared,script_callbacks
 from scripts import promptgen as PG
 
 extension_path = scripts.basedir()
@@ -325,13 +325,11 @@ def generate_style(prompt,temperature,top_k,max_length,repitition_penalty,usecom
     result = PG.generate(prompt,temperature,top_k,max_length,repitition_penalty,usecomma)
     return gr.update(value=result)
 
-class Stylez(scripts.Script):
+def add_tab():
     generate_styles_and_tags = generate_html_code()
     nopreview = os.path.join(extension_path, "nopreview.jpg")
-    def title(self):
-        return "Stylez"
-    def ui(self, is_img2img):
-        global hideoldstyles
+    global hideoldstyles
+    with gr.Blocks(analytics_enabled=False,) as ui:
         with gr.Tabs(elem_id = "Stylez"): 
             gr.HTML("""<div id="stylezPreviewBoxid" class="stylezPreviewBox"><p id="stylezPreviewPositive">test</p><p id="stylezPreviewNegative">test</p></div>""")
             with gr.TabItem(label="Styles",elem_id="styles_libary"):
@@ -352,11 +350,11 @@ class Stylez(scripts.Script):
                                     with gr.Column():
                                         with gr.Row(elem_id="style_search_search"):
                                             Style_Search = gr.Textbox('', label="Searchbox", elem_id="style_search", placeholder="Search...", elem_classes="textbox", lines=1,scale=3)
-                                            category_dropdown = gr.Dropdown(label="Category", choices=self.generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown",scale=1)
+                                            category_dropdown = gr.Dropdown(label="Category", choices=generate_styles_and_tags[1], value="All", lines=1, elem_id="style_Catagory", elem_classes="dropdown styles_dropdown",scale=1)
                                             refresh_button = gr.Button(refresh_symbol, label="Refresh", elem_id="style_refresh", elem_classes="tool", lines=1)
                                         with gr.Row():
                                             with gr.Column(elem_id="style_cards_column"):
-                                                Styles_html=gr.HTML(self.generate_styles_and_tags[0])
+                                                Styles_html=gr.HTML(generate_styles_and_tags[0])
 
                             with gr.TabItem(label="CivitAI"):
                                 with gr.Row():
@@ -371,7 +369,7 @@ class Stylez(scripts.Script):
                                             pagenumber = gr.Number(label="Page:",value=1,minimum=1,visible=False)
                                         with gr.Row():
                                             with gr.Column(elem_id="civit_cards_column"):
-                                                gr.HTML(f"""<div><div id="civitaiimages_loading"><p>Loading...</p></div><div onscroll="civitaiaCursorLoad(this)" id="civitai_cardholder" data-nopreview='{self.nopreview}'></div></div>""")
+                                                gr.HTML(f"""<div><div id="civitaiimages_loading"><p>Loading...</p></div><div onscroll="civitaiaCursorLoad(this)" id="civitai_cardholder" data-nopreview='{nopreview}'></div></div>""")
 
                             with gr.TabItem(label="Style Generator",elem_id="styles_generator"):
                                 with gr.Row():
@@ -429,7 +427,7 @@ class Stylez(scripts.Script):
                     with gr.Column():
                         with gr.Row():
                             style_savefolder_refrsh_btn = gr.Button(refresh_symbol, label="Refresh", lines=1,elem_classes="tool")
-                            style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=self.generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
+                            style_savefolder_txt = gr.Dropdown(label="Save Folder (Type To Create A New Folder):", value="Styles", lines=1, choices=generate_styles_and_tags[2], elem_id="style_savefolder_txt", elem_classes="dropdown",allow_custom_value=True)
                             style_savefolder_temp = gr.Textbox(label="Save Folder:", lines=1, elem_id="style_savefolder_temp",visible=False)
         civitAI_refresh.click(fn=None,_js="refreshfetchCivitai",inputs=[nsfwlvl,sortcivit,periodcivit])
         periodcivit.change(fn=None,_js="refreshfetchCivitai",inputs=[nsfwlvl,sortcivit,periodcivit])
@@ -458,3 +456,6 @@ class Stylez(scripts.Script):
         remove_favourite_btn.click(fn=removeFavourite, inputs=[favourite_temp])
         stylezquicksave_add.click(fn=None,_js="addQuicksave")
         stylezquicksave_clear.click(fn=None,_js="clearquicklist")
+    return [(ui, "stylez_menutab", "stylez_menutab")]
+
+script_callbacks.on_ui_tabs(add_tab)
