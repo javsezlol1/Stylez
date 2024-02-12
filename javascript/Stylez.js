@@ -27,10 +27,11 @@ function setupStylez() {
     //Setup Browser
     const hideoldbar = gradioApp().querySelector('#hide_default_styles > label > input');
     if (hideoldbar.checked === true) {
-        hideOldStyles(true)
+        hideOldStyles(true);
     } else {
-        hideOldStyles(false)
+        hideOldStyles(false);
     }
+    
     const t2i_stylez_container = gradioApp().querySelector("#Stylez");
     console.log(t2i_stylez_container)
     const tabs = gradioApp().getElementById("tabs");
@@ -429,6 +430,7 @@ function grabLastGeneratedimage() {
         if (firstImage) {
             let imageSrc = firstImage.src;
             imageSrc = imageSrc.replace(/.*file=/, '');
+            imageSrc = imageSrc.split('?')[0]; //fix for Forge
             imageSrc = decodeURIComponent(imageSrc); // Decode the URL-encoded file name
             const imgUrlHolderElement = gradioApp().querySelector('#style_img_url_txt > label > textarea');
             applyValues(imgUrlHolderElement, imageSrc);

@@ -4,12 +4,9 @@ import datetime
 import urllib.parse
 import gradio as gr
 from PIL import Image
-from pathlib import Path
-from typing import List, Tuple
 import shutil
 import json
 import csv
-from json import loads
 import re
 from modules import scripts, shared,script_callbacks
 from scripts import promptgen as PG
@@ -145,12 +142,15 @@ def save_json_objects(json_objects):
 
         
 if autoconvert:
-    if os.path.exists(shared.cmd_opts.styles_file):
-        json_objects = create_json_objects_from_csv(shared.cmd_opts.styles_file)
-        save_json_objects(json_objects)
-        save_settings("autoconvert", False)
-    else:
-        save_settings("autoconvert", False)
+    styles_files = shared.cmd_opts.styles_file if isinstance(shared.cmd_opts.styles_file, list) else [shared.cmd_opts.styles_file]
+    for styles_file_path in styles_files:
+        if os.path.exists(styles_file_path):
+            json_objects = create_json_objects_from_csv(styles_file_path)
+            save_json_objects(json_objects)
+        else:
+            print(f"File does not exist: {styles_file_path}")  # Optional: log or handle the case where a file doesn't exist
+
+    save_settings("autoconvert", False)
 
 
 def generate_html_code():
